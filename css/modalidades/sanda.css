@@ -1,0 +1,52 @@
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS PARA O HERO DE SANDA
+   Identidade: Dinâmico, Energético, Fluido, Moderno.
+   ========================================================================== */
+
+/* 1. TEMA GERAL E FUNDO */
+.hero-modality-v2.sanda-hero {
+    /* Laranja vibrante para energia */
+    --hero-accent-color: #FF8C00; 
+
+    /* Fundo com gradiente radial para focar a atenção e dar profundidade */
+    background-image: radial-gradient(circle at center, #2a2a2a, #0C0C0C 80%);
+}
+
+/* 2. TIPOGRAFIA */
+.hero-modality-v2.sanda-hero .hero-text-content h1 {
+    font-weight: 400;
+    /* Leve inclinação para sugerir movimento e dinamismo */
+    transform: skewX(-8deg);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-modality-v2.sanda-hero .hero-text-content p {
+    color: #e0e0e0;
+}
+
+/* 3. ELEMENTOS DE DESTAQUE (TAG E BOTÃO) */
+.hero-modality-v2.sanda-hero .hero-text-content .modality-tag {
+    background-color: var(--hero-accent-color);
+    color: #0C0C0C; /* Texto escuro para contraste no laranja */
+    font-weight: 700;
+}
+
+.hero-modality-v2.sanda-hero .btn-hero {
+    background-color: var(--hero-accent-color);
+    color: #0C0C0C;
+    font-weight: 700;
+    box-shadow: 0 0 25px -5px rgba(255, 140, 0, 0.5); /* Efeito de brilho sutil */
+}
+
+.hero-modality-v2.sanda-hero .btn-hero:hover {
+    transform: translateY(-3px) scale(1.05); /* Efeito de pulo mais pronunciado */
+    box-shadow: 0 0 35px -2px rgba(255, 140, 0, 0.7);
+}
+
+/* 4. MÍDIA (VÍDEO/IMAGEM) */
+.hero-modality-v2.sanda-hero .hero-media-content {
+    /* Efeito de brilho (glow) para destacar o vídeo */
+    box-shadow: 0 0 40px -10px rgba(255, 140, 0, 0.6);
+    border-radius: 8px;
+    overflow: hidden;
+}

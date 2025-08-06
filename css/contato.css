@@ -1,0 +1,351 @@
+/* ==========================================================================
+   ESTILOS PARA A PÁGINA DE CONTATO E HORÁRIOS
+   ========================================================================== */
+
+/* STATUS DE FUNCIONAMENTO */
+.status-section {
+    padding: 15px 5%;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    margin-top: 81px; /* Altura do navbar */
+    border-bottom: 1px solid #eee;
+}
+
+.status-aula.open {
+    background-color: #e8f5e9; /* Verde claro */
+    color: #2e7d32; /* Verde escuro */
+}
+
+.status-aula.closed {
+    background-color: #fff3e0; /* Laranja claro */
+    color: #e65100; /* Laranja escuro */
+}
+
+/* CONTAINER PRINCIPAL DA PÁGINA */
+.contato-page-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 5%;
+}
+
+/* CABEÇALHO DA SEÇÃO */
+.contato-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contato-header h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: #0C0C0C;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.contato-header p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* SEÇÃO DE CONTATO (PÓS-HORÁRIOS) */
+.contato-section {
+    text-align: center;
+}
+.contato-section .contato-header {
+    margin-bottom: 40px;
+}
+
+/* LISTA DE INFORMAÇÕES DE CONTATO */
+.contato-info-lista {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    min-width: 300px;
+}
+
+.info-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #fdfdfd;
+    border: 1px solid #f1f1f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-icon img {
+    width: 20px;
+    height: 20px;
+    filter: invert(21%) sepia(15%) saturate(1229%) hue-rotate(35deg) brightness(93%) contrast(89%); /* Cor #4B5320 */
+}
+
+.info-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #0C0C0C;
+}
+
+.info-item p, .info-item a {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    color: #B22222;
+}
+
+.contato-actions {
+    margin-top: 40px;
+}
+
+/* DIVISOR DE SEÇÃO */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    margin: 80px auto;
+    width: 80%;
+}
+
+/* SEÇÃO DE HORÁRIOS */
+.horarios-section {
+    text-align: center;
+}
+
+.horarios-header h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #4B5320;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.horarios-header p {
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.horarios-filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    transition: all 0.3s;
+}
+
+.filtro-btn:hover {
+    background-color: #f5f5f5;
+    border-color: #4B5320;
+    color: #0C0C0C;
+}
+
+.filtro-btn.active {
+    background-color: #B22222;
+    color: #fff;
+    border-color: #B22222;
+    font-weight: 700;
+}
+
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.dia-card {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.dia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.dia-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: #0C0C0C;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.dia-card ul {
+    list-style: none;
+}
+
+.dia-card li {
+    padding: 10px 0;
+    color: #333;
+    transition: all 0.4s ease;
+    max-height: 50px;
+    overflow: hidden;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.dia-card li:last-child {
+    border-bottom: none;
+}
+
+.dia-card li.hidden {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-width: 0;
+}
+
+/* SEÇÃO DO MAPA */
+.mapa-section {
+    padding: 0 5%; /* Adiciona espaçamento lateral para telas menores */
+    margin-top: 80px;
+    margin-bottom: 80px; /* Adiciona espaço antes do rodapé */
+}
+
+.mapa-section iframe {
+    width: 100%;
+    max-width: 1100px; /* Limita a largura máxima, igual ao conteúdo principal */
+    display: block; /* Necessário para centralizar com margem automática */
+    margin: 0 auto; /* Centraliza o mapa na página */
+    height: 450px;
+    border: 0;
+    border-radius: 8px; /* Bordas arredondadas para um visual mais suave */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidade */
+}
+
+/* ===== MODAL DE CONTATO ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.modal-content p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.modal-form { display: flex; flex-direction: column; text-align: left; }
+.modal-form label { margin-bottom: 5px; color: #555; font-size: 0.9rem; }
+.modal-form input, .modal-form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+}
+
+.modal-form input:focus, .modal-form textarea:focus {
+    outline: none;
+    border-color: #4B5320;
+    box-shadow: 0 0 0 3px rgba(75, 83, 32, 0.1);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    .contato-info-lista {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contato-page-wrapper {
+        padding: 60px 5%;
+    }
+    .info-item {
+        flex-direction: column;
+        align-items: center;
+    }
+}

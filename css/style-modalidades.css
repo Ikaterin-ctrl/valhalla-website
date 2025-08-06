@@ -1,0 +1,624 @@
+
+
+/* ===== HERO DA PÁGINA ===== */
+.page-hero {
+    background: url('../assets/images/hero-modalidades.jpg') center/cover no-repeat;
+    min-height: 60vh;
+    display: flex;
+    padding-top: 80px; /* Espaço para o header fixo */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.page-hero-content h1 {
+    font-family: 'Yuji Syuku', cursive;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 15px;
+}
+
+.page-hero-content p {
+    font-size: 1.1rem;
+    font-family: 'Noto Serif JP', serif;
+}
+
+/* ===== LISTA DE MODALIDADES ===== */
+.modalidades-lista {
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #fff;
+}
+
+.modalidade-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.modalidade-card:hover {
+    transform: translateY(-4px);
+}
+
+.modalidade-card img {
+    width: 100%;
+    max-width: 420px;
+    height: 280px;
+    object-fit: cover;
+    flex: 1;
+}
+
+.modalidade-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.modalidade-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #4B5320;
+    margin-bottom: 15px;
+}
+
+.modalidade-info p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.modalidade-info .btn-cta {
+    background-color: #B22222;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.modalidade-info .btn-cta:hover {
+    background-color: #4B5320;
+}
+
+/* ===== CTA FINAL ===== */
+.cta-final {
+    background-color: #0C0C0C;
+    color: #fff;
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.cta-final h2 {
+    font-family: 'Yuji Syuku', cursive;
+    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.btn-cta-big {
+    background-color: #B22222;
+    color: #fff;
+    padding: 15px 30px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-cta-big:hover {
+    background-color: #4B5320;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+    .modalidade-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modalidade-card img {
+        max-width: 100%;
+        height: 240px;
+    }
+
+    .modalidade-info {
+        padding: 15px;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS PARA PÁGINAS DE MODALIDADE INDIVIDUAL (Ex: Jiu-Jitsu)
+   ========================================================================== */
+
+/* Container genérico para centralizar conteúdo */
+.container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+/* ===== HERO DA PÁGINA ===== */
+.page-hero {
+    background: url('../assets/images/hero-modalidades.jpg') center/cover no-repeat;
+    min-height: 60vh;
+    display: flex;
+    padding-top: 80px; /* Espaço para o header fixo */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.page-hero-content h1 {
+    font-family: 'Yuji Syuku', cursive;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 15px;
+}
+
+.page-hero-content p {
+    font-size: 1.1rem;
+    font-family: 'Noto Serif JP', serif;
+}
+
+/* ===== LISTA DE MODALIDADES ===== */
+.modalidades-lista {
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #fff;
+}
+
+.modalidade-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.modalidade-card:hover {
+    transform: translateY(-4px);
+}
+
+.modalidade-card img {
+    width: 100%;
+    max-width: 420px;
+    height: 280px;
+    object-fit: cover;
+    flex: 1;
+}
+
+.modalidade-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.modalidade-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #4B5320;
+    margin-bottom: 15px;
+}
+
+.modalidade-info p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.modalidade-info .btn-cta {
+    background-color: #B22222;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.modalidade-info .btn-cta:hover {
+    background-color: #4B5320;
+}
+
+/* ===== CTA FINAL ===== */
+.cta-final {
+    background-color: #0C0C0C;
+    color: #fff;
+    text-align: center;
+    padding: 80px 10%;
+}
+
+.cta-final h2 {
+    font-family: 'Yuji Syuku', cursive;
+    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.btn-cta-big {
+    background-color: #B22222;
+    color: #fff;
+    padding: 15px 30px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-cta-big:hover {
+    background-color: #4B5320;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+    .modalidade-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modalidade-card img {
+        max-width: 100%;
+        height: 240px;
+    }
+
+    .modalidade-info {
+        padding: 15px;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS PARA PÁGINAS DE MODALIDADE INDIVIDUAL (Ex: Jiu-Jitsu)
+   ========================================================================== */
+
+/* Container genérico para centralizar conteúdo */
+.container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* HERO DA MODALIDADE (NOVO DESIGN V2) */
+.hero-modality-v2 {
+    --hero-accent-color: #B22222; /* Cor de destaque padrão, pode ser sobrescrita no HTML */
+
+    background-color: #0C0C0C;
+    color: #fff;
+    min-height: 90vh;
+    padding: 120px 5% 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text-content .modality-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--hero-accent-color);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-text-content h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.hero-text-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--hero-accent-color);
+    color: #fff;
+    padding: 15px 30px;
+    border: 2px solid transparent; /* Borda padrão para transições */
+    border-radius: 5px;
+    font-weight: 700; /* Peso da fonte padrão para botões hero */
+    font-family: 'Noto Sans JP', sans-serif;
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    letter-spacing: 1px; /* Espaçamento padrão */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+/* INTRODUÇÃO DA MODALIDADE */
+.modality-intro {
+    padding: 100px 20px;
+    text-align: center;
+}
+.modality-intro h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: #4B5320;
+    margin-bottom: 20px;
+}
+.modality-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* SEÇÃO DE BENEFÍCIOS */
+.benefits-section {
+    background-color: #f9f9f9;
+    padding: 100px 0;
+    text-align: center;
+}
+.benefits-section h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: #4B5320;
+    margin-bottom: 50px;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.benefit-card {
+    background: #fff;
+    padding: 40px 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+.benefit-card img { width: 60px; margin-bottom: 20px; }
+.benefit-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #B22222; margin-bottom: 10px; }
+.benefit-card p { color: #333; }
+
+/* SEÇÃO PÚBLICO-ALVO */
+.target-audience-section { padding: 100px 20px; text-align: center; }
+.target-audience-section h2 { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 300; color: #4B5320; margin-bottom: 50px; }
+.audience-tabs { display: flex; flex-direction: column; gap: 25px; text-align: left; }
+.audience-profile { background: #f9f9f9; padding: 25px; border-left: 4px solid #B22222; border-radius: 0 4px 4px 0; }
+.audience-profile h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 10px; }
+.audience-profile p { color: #333; }
+
+/* GALERIA DE FOTOS */
+.gallery-modality { padding: 100px 20px; text-align: center; }
+.gallery-modality h2 { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 300; color: #4B5320; margin-bottom: 50px; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.gallery-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
+
+/* CTA FINAL DA PÁGINA */
+.final-cta-section {
+    background: #0C0C0C;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+.final-cta-section h2 { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 300; margin-bottom: 15px; }
+.final-cta-section p { max-width: 600px; margin: 0 auto 30px; }
+.final-cta-section .btn-cta { background: #B22222; color: #fff; padding: 12px 28px; border-radius: 4px; font-size: 1.1rem; border: none; box-shadow: 0 0 12px 2px rgba(75, 83, 32, 0.6); transition: .3s; }
+.final-cta-section .btn-cta:hover { background: #4B5320; box-shadow: none; }
+/* HERO DA MODALIDADE (NOVO DESIGN V2) */
+.hero-modality-v2 {
+    --hero-accent-color: #B22222; /* Cor de destaque padrão, pode ser sobrescrita no HTML */
+
+    background-color: #0C0C0C;
+    color: #fff;
+    min-height: 90vh;
+    padding: 120px 5% 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text-content .modality-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--hero-accent-color);
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-text-content h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ccc;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: var(--hero-accent-color);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+/* INTRODUÇÃO DA MODALIDADE */
+.modality-intro {
+    padding: 100px 20px;
+    text-align: center;
+}
+.modality-intro h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: #4B5320;
+    margin-bottom: 20px;
+}
+.modality-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* SEÇÃO DE BENEFÍCIOS */
+.benefits-section {
+    background-color: #f9f9f9;
+    padding: 100px 0;
+    text-align: center;
+}
+.benefits-section h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: #4B5320;
+    margin-bottom: 50px;
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.benefit-card {
+    background: #fff;
+    padding: 40px 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+.benefit-card img { width: 60px; margin-bottom: 20px; }
+.benefit-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #B22222; margin-bottom: 10px; }
+.benefit-card p { color: #333; }
+
+/* SEÇÃO PÚBLICO-ALVO */
+.target-audience-section { padding: 100px 20px; text-align: center; }
+.target-audience-section h2 { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 300; color: #4B5320; margin-bottom: 50px; }
+.audience-tabs { display: flex; flex-direction: column; gap: 25px; text-align: left; }
+.audience-profile { background: #f9f9f9; padding: 25px; border-left: 4px solid #B22222; border-radius: 0 4px 4px 0; }
+.audience-profile h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 10px; }
+.audience-profile p { color: #333; }
+
+/* GALERIA DE FOTOS */
+.gallery-modality { padding: 100px 20px; text-align: center; }
+.gallery-modality h2 { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 300; color: #4B5320; margin-bottom: 50px; }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.gallery-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
+
+/* CTA FINAL DA PÁGINA */
+.final-cta-section {
+    background: #0C0C0C;
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+}
+.final-cta-section h2 { font-family: 'Noto Sans JP', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 300; margin-bottom: 15px; }
+.final-cta-section p { max-width: 600px; margin: 0 auto 30px; }
+.final-cta-section .btn-cta { background: #B22222; color: #fff; padding: 12px 28px; border-radius: 4px; font-size: 1.1rem; border: none; box-shadow: 0 0 12px 2px rgba(75, 83, 32, 0.6); transition: .3s; }
+.final-cta-section .btn-cta:hover { background: #4B5320; box-shadow: none; }

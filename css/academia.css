@@ -1,0 +1,112 @@
+/* ==========================================================================
+   ESTILOS PARA A PÁGINA "SOBRE NÓS" (A ACADEMIA)
+   ========================================================================== */
+
+/* HERO DA PÁGINA "SOBRE" */
+.hero-sobre {
+    background: url('../assets/images/academia/hero-sobre.jpg') center/cover no-repeat;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    padding: 180px 5% 80px; /* Aumenta o padding superior para compensar o header */
+}
+
+.hero-sobre::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.65);
+}
+
+.hero-sobre-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+.hero-sobre-content h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.hero-sobre-content p {
+    font-size: 1.2rem;
+    font-family: 'Noto Serif JP', serif;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* SEÇÃO DE CONTEÚDO (HISTÓRIA, VALORES) */
+.historia-valhalla, .valores {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.historia-valhalla {
+    background-color: #fff;
+}
+
+.valores {
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.historia-valhalla h2, .valores h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: #4B5320;
+}
+
+.historia-valhalla p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* GRID DE VALORES */
+.grid-valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.valor {
+    background-color: #fff;
+    padding: 40px 25px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+}
+
+.valor h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #B22222;
+    margin-bottom: 15px;
+}
+
+.valor p {
+    font-size: 1rem;
+    color: #333;
+}

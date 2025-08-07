@@ -7,15 +7,15 @@
 .hero-modality-v2.jiu-jitsu-hero {
     /* Azul royal como cor principal, representando estratégia e calma. */
     --hero-accent-color: #4169E1; 
-    --hero-secondary-color: #f4f4f4; /* Cinza claro para o fundo. */
 
-    /* Fundo claro com um padrão geométrico sutil que remete a um tatame. */
-    background-color: var(--hero-secondary-color);
+    /* Fundo com a imagem da modalidade e um gradiente escuro para legibilidade. */
     background-image: 
-        linear-gradient(rgba(244, 244, 244, 0), rgba(244, 244, 244, 1)),
-        url('../../assets/textures/tatami-pattern.svg'); /* Sugestão de textura de tatame */
-    background-size: 100px;
-    color: #1a1a1a; /* Texto escuro para contraste no fundo claro. */
+        linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.85)),
+        url('../../assets/modalidades/jiu_jitsu.png'); /* Imagem específica do Jiu-Jitsu */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    color: #fff; /* Texto claro para contraste no fundo escuro. */
 }
 
 /* 2. TIPOGRAFIA */

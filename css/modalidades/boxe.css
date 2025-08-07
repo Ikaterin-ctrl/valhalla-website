@@ -10,11 +10,12 @@
     /* Sobrescreve a cor de destaque para um dourado "campeão", mais cru. */
     --hero-accent-color: #d4af37;
 
-    /* Fundo com textura de tijolos e um gradiente escuro para dar profundidade e um ar urbano. */
+    /* Fundo com a imagem da modalidade e um gradiente escuro para legibilidade. */
     background-image: 
-        linear-gradient(rgba(12, 12, 12, 0.85), rgba(12, 12, 12, 0.95)),
-        url('../../assets/textures/brick-wall.png'); /* Certifique-se que o caminho está correto */
+        linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.85)),
+        url('../../assets/modalidades/boxe.png'); /* Imagem específica do Boxe */
     background-size: cover;
+    background-position: center;
     background-blend-mode: multiply;
 }
 

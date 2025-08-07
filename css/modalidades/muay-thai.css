@@ -10,11 +10,12 @@
     --hero-secondary-color: #003366; /* Azul escuro para detalhes, representando disciplina. */
     --hero-gold-color: #d4af37; /* Dourado para destaques. */
 
-    /* Fundo com textura sutil e gradiente escuro. */
+    /* Fundo com a imagem da modalidade e um gradiente escuro para legibilidade. */
     background-image: 
-        linear-gradient(rgba(12, 12, 12, 0.9), rgba(12, 12, 12, 0.98)),
-        url('../../assets/textures/thai-pattern.png'); /* Sugestão de textura tradicional */
-    background-size: 400px;
+        linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.85)),
+        url('../../assets/modalidades/muay_thai.png'); /* Imagem específica do Muay Thai */
+    background-size: cover;
+    background-position: center;
     background-blend-mode: multiply;
 }
 

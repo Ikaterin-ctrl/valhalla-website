@@ -1,19 +1,10 @@
 // Espera o conteúdo da página carregar completamente antes de executar o script
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- FUNCIONALIDADE 1: MENU MOBILE (HAMBÚRGUER) ---
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.menu');
+    // SUGESTÃO: A lógica do menu mobile foi movida para 'js/script.js' para evitar duplicação
+    // e garantir que o menu funcione consistentemente em todas as páginas.
 
-    // Adiciona um "ouvinte" para o evento de clique no botão do menu
-    menuToggle.addEventListener('click', function() {
-        // Adiciona ou remove a classe 'active' da lista do menu
-        // O CSS se encarregará de mostrar ou esconder o menu com base nessa classe
-        navMenu.classList.toggle('active');
-    });
-
-
-    // --- FUNCIONALIDADE 2: FILTRO DE POSTS DO BLOG ---
+    // --- FUNCIONALIDADE: FILTRO DE POSTS DO BLOG ---
     // Seleciona todos os botões de filtro
     const filterButtons = document.querySelectorAll('.filter-btn');
     // Seleciona todos os cards de post
@@ -35,9 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Pega o texto da categoria do post
                 const category = card.querySelector('.post-category').textContent;
 
-                // Se o filtro for "Ver Todos" (all) OU a categoria do post for a mesma do filtro
+                // SUGESTÃO: Em vez de manipular diretamente 'style.display', considere usar
+                // classes CSS (ex: 'hidden-post') e alterná-las. Isso permite que o CSS
+                // controle a transição de visibilidade (fade-in/out) e mantém a separação
+                // de preocupações entre JS (lógica) e CSS (apresentação).
                 if (filter === 'all' || category === filter) {
-                    card.style.display = 'block'; // Mostra o card
+                    card.style.display = 'flex'; // Mostra o card (mantido flex para o layout original)
                 } else {
                     card.style.display = 'none'; // Esconde o card
                 }

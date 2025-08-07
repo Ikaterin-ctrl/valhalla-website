@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Animação 3: Transição Suave (Fade-out) entre Páginas
+     * SUGESTÃO: Para uma transição mais robusta e acessível, considere usar a API View Transitions
+     * (se o suporte do navegador for suficiente) ou bibliotecas dedicadas como Highway.js ou Swup.js.
+     * Isso pode oferecer mais controle sobre o estado da página durante a transição e melhor feedback ao usuário.
      */
     function pageTransition() {
         // Seleciona todos os links que não abrem em nova aba e não são âncoras

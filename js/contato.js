@@ -73,7 +73,9 @@ function checarAulaAgora() {
     for (const slot of hoje) {
         const [horaInicio, minutoInicio] = slot.hora.split(':').map(Number);
         const inicioEmMinutos = horaInicio * 60 + minutoInicio;
-        const fimEmMinutos = inicioEmMinutos + 60; // Assumindo 1h de duração para cada aula
+        // SUGESTÃO: A duração da aula é assumida como 1 hora (60 minutos).
+        // Se as aulas tiverem durações variáveis, considere adicionar uma propriedade 'duracao' ao objeto 'aula'.
+        const fimEmMinutos = inicioEmMinutos + 60; 
 
         if (agoraEmMinutos >= inicioEmMinutos && agoraEmMinutos < fimEmMinutos) {
             aulaAtual = slot;
@@ -136,7 +138,9 @@ function criarGradeHorarios() {
                 const itemLista = document.createElement('li');
                 itemLista.innerHTML = `<strong>${aula.hora}</strong> - ${aula.aula}`;
                 
-                // Adiciona data-attributes para filtragem
+                // SUGESTÃO: A lógica de filtragem atual depende de `aula.aula` conter o nome da modalidade.
+                // Para maior robustez e flexibilidade, considere adicionar uma propriedade `modalidades` (array de strings)
+                // ao objeto `aula` no `horarios` para listar explicitamente as modalidades daquela aula.
                 const aulaLower = aula.aula.toLowerCase();
                 let dataModalidade = [];
                 filtrosPrincipais.forEach(f => {

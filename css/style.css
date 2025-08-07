@@ -1,3 +1,6 @@
+/* SUGESTÃO DE PERFORMANCE: O uso de @import pode bloquear a renderização da página
+   enquanto o arquivo de fontes é carregado. Para otimizar, considere mover esta importação
+   para uma tag <link> no <head> do seu HTML. */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;500&family=Yuji+Syuku&display=swap');
 
  /* ==========================================================================
@@ -19,8 +22,26 @@
 }
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
-body {background: var(--color-light-bg); color: var(--color-dark-text); font-family: var(--font-body); line-height: 1.6;}
-body {overflow-x: hidden;}
+
+/* SUGESTÃO DE RESPONSIVIDADE: A propriedade `overflow-x: hidden` no body é uma solução rápida,
+   mas muitas vezes esconde um problema real de um elemento filho que está causando o overflow.
+   É uma boa prática inspecionar o layout para encontrar e corrigir o elemento causador,
+   garantindo que o design seja verdadeiramente responsivo. */
+body {
+    background: var(--color-light-bg); 
+    color: var(--color-dark-text); 
+    font-family: var(--font-body); 
+    line-height: 1.6;
+    overflow-x: hidden;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Classe que será adicionada via JS para o efeito de fade-out */
+body.fade-out {
+    opacity: 0;
+}
+
 a {text-decoration: none; color: inherit;}
 
 /* NAVBAR */
@@ -35,7 +56,6 @@ a {text-decoration: none; color: inherit;}
     top: 0; left: 0;
     z-index: 1000;
     border-bottom: 1px solid #222; /* Borda sutil para fundo escuro */
-    /* box-shadow removido pois não é eficaz em fundo preto */
 }
 .logo img {
     max-height: 50px; /* <-- Ajuste este valor como preferir */
@@ -45,8 +65,35 @@ a {text-decoration: none; color: inherit;}
 .menu {list-style: none; display: flex; gap: 20px;}
 .menu li a {font-family: var(--font-serif); font-size: 1.1rem; transition: color .3s; color: var(--color-light-text);}
 .menu li a:hover, .menu li a.active {color: var(--color-primary);}
-.btn-header {background: var(--color-primary); padding: 10px 20px; color: var(--color-light-bg); border-radius: 4px; transition: .3s; box-shadow: 0 0 12px 2px var(--color-shadow);}
-.btn-header:hover {background: var(--color-secondary); box-shadow: none;}
+
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+
+/* SUGESTÃO DE ORGANIZAÇÃO: Criada uma classe base .btn para unificar estilos comuns
+   a todos os botões, reduzindo a repetição de código. As classes existentes
+   (.btn-header, .btn-cta, etc.) agora servem como modificadores. */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: var(--color-light-bg);
+    background: var(--color-primary);
+    transition: .3s;
+    box-shadow: 0 0 12px 2px var(--color-shadow);
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--color-secondary);
+    box-shadow: none;
+}
+
+.btn-cta-big {
+    padding: 15px 30px;
+    font-weight: bold;
+}
 
 /* HERO */
 .hero {
@@ -91,11 +138,6 @@ a {text-decoration: none; color: inherit;}
 
 .hero-content h1 span {
     color: var(--color-primary);
-}
-.btn-cta {background: var(--color-primary); color: var(--color-light-bg); padding: 12px 28px; border-radius: 4px; font-size: 1.1rem; border: none; box-shadow: 0 0 12px 2px var(--color-shadow);}
-.btn-cta:hover {
-    background: var(--color-secondary);
-    box-shadow: none; /* Remove o brilho no hover para uma transição suave */
 }
 
 /* Seta de rolagem */
@@ -143,11 +185,33 @@ a {text-decoration: none; color: inherit;}
 .modalidades-home {padding: 100px 10%; text-align: center; background: #f9f9f9;}
 .modalidades-home h2 {font-family: var(--font-sans); color: var(--color-primary); margin-bottom: 40px; font-weight: 300;}
 .cards {display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;}
-.card {background: var(--color-light-bg); border: 1px solid #eee; border-radius: 6px; width: 220px; padding: 10px; transition: .3s;}
-.card img {width: 100%; height: 160px; object-fit: cover; border-radius: 4px;}
-.card:hover {border-color: var(--color-secondary);}
-.btn-ver-mais {display: inline-block; margin-top: 20px; background: var(--color-primary); padding: 10px 20px; border-radius: 4px; color: var(--color-light-bg); transition: .3s; box-shadow: 0 0 12px 2px var(--color-shadow);}
-.btn-ver-mais:hover {background: var(--color-secondary); box-shadow: none;}
+.card {
+    background: var(--color-light-bg);
+    border: 1px solid #eee;
+    border-radius: 6px;
+    width: 220px;
+    overflow: hidden; 
+    transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição mais suave */
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform .4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03); /* Levanta e aumenta o card */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra para dar profundidade */
+    border-color: var(--color-primary);
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Efeito de zoom na imagem */
+}
 
 /* DEPOIMENTOS */
 .depoimentos {background: var(--color-light-bg); padding: 100px 0; text-align: center; overflow: hidden;}
@@ -157,7 +221,6 @@ a {text-decoration: none; color: inherit;}
     display: flex;
     width: fit-content; /* Largura se ajusta ao conteúdo */
     gap: 20px;
-    /* Animação de rolagem */
     animation: scroll 40s linear infinite;
 }
 .carrossel-wrapper:hover .carrossel-depoimentos {
@@ -189,8 +252,6 @@ a {text-decoration: none; color: inherit;}
 /* CTA FINAL */
 .cta-final {background: var(--color-dark-bg); text-align: center; padding: 80px 10%; color: var(--color-light-bg);}
 .cta-final h2 {font-family: var(--font-sans); margin-bottom: 20px; font-weight: 300;}
-.btn-cta-big {background: var(--color-primary); color: var(--color-light-bg); padding: 15px 30px; border-radius: 4px; font-weight: bold; transition: .3s; box-shadow: 0 0 12px 2px var(--color-shadow);}
-.btn-cta-big:hover {background: var(--color-secondary); box-shadow: none;}
 
 /* BOTÕES FLUTUANTES */
 .btn-whatsapp {
@@ -299,6 +360,10 @@ a {text-decoration: none; color: inherit;}
    PÁGINA DE MODALIDADE INDIVIDUAL (TEMA ESCURO PADRÃO)
    ========================================================================== */
 
+/* SUGESTÃO DE ORGANIZAÇÃO: Para manter o style.css focado nos estilos globais,
+   considere mover todas as regras abaixo, que são específicas para as páginas de
+   modalidades, para um arquivo dedicado como `css/style-modalidades.css`. */
+
 /* Adicione a classe "modalidade-page" ao <body> de cada página de modalidade */
 .modalidade-page {
     background-color: #181a18; /* Verde militar muito escuro, quase preto */
@@ -354,7 +419,7 @@ a {text-decoration: none; color: inherit;}
     padding: 25px;
     border-radius: 6px;
     /* Destaque com o vermelho. Você pode criar classes para mudar essa cor por modalidade */
-    border-left: 4px solid var
+    border-left: 4px solid var(--color-primary);
 }
 
 .beneficio-card h3 {
@@ -461,49 +526,4 @@ a {text-decoration: none; color: inherit;}
         order: -1; /* Coloca a imagem antes do texto */
         margin-bottom: 20px;
     }
-}
-
-/* Na sua estilização do .card */
-.card {
-    background: var(--color-light-bg);
-    border: 1px solid #eee;
-    border-radius: 6px;
-    width: 220px;
-    /* Adicione overflow: hidden e ajuste a transição */
-    overflow: hidden; 
-    transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição mais suave */
-    cursor: pointer;
-}
-
-/* NOVO EFEITO HOVER */
-.card:hover {
-    transform: translateY(-10px) scale(1.03); /* Levanta e aumenta o card */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra para dar profundidade */
-    border-color: var(--color-primary);
-}
-
-/* Na sua estilização da imagem dentro do card */
-.card img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 4px;
-    /* Adicione a transição aqui também */
-    transition: transform .4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* NOVO EFEITO HOVER NA IMAGEM */
-.card:hover img {
-    transform: scale(1.1); /* Efeito de zoom na imagem */
-}
-
-/* CSS para a transição de página */
-body {
-    opacity: 1;
-    transition: opacity 0.4s ease-in-out;
-}
-
-/* Classe que será adicionada via JS para o efeito de fade-out */
-body.fade-out {
-    opacity: 0;
 }

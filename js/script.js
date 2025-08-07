@@ -1,28 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Lógica para o filtro de horários na página de horários
-    const filtroButtons = document.querySelectorAll('#horarios-filtros .filtro-btn');
-    const aulas = document.querySelectorAll('#grade-horarios .aula');
-
-    if (filtroButtons.length > 0 && aulas.length > 0) {
-        filtroButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Gerencia a classe 'active' para o feedback visual
-                filtroButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                const filter = this.getAttribute('data-filter');
-
-                // Mostra ou esconde as aulas de acordo com o filtro
-                aulas.forEach(aula => {
-                    if (filter === 'all' || aula.classList.contains(filter)) {
-                        aula.classList.remove('hidden');
-                    } else {
-                        aula.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    }
+    // SUGESTÃO: A lógica de filtro de horários foi movida para 'js/contato.js'
+    // para melhor organização e para evitar que este script global execute lógica
+    // desnecessária em páginas onde os elementos de horário não existem.
 
     // Lógica para o menu mobile (hambúrguer)
     const menuToggle = document.querySelector('.menu-toggle');

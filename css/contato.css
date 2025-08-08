@@ -2,11 +2,13 @@
    ESTILOS PARA A PÁGINA DE CONTATO E HORÁRIOS
    ========================================================================== */
 
+/* SUGGESTION: Headings throughout this file (h1, h2, h3) consistently use `font-family: var(--font-heading); font-weight: 700; text-transform: uppercase;`. Consider creating a utility class in `style.css` (e.g., `.section-title`) and applying it to these elements in the HTML to reduce repetition and improve maintainability. */
+
 /* STATUS DE FUNCIONAMENTO */
 .status-section {
     padding: 15px 5%;
     text-align: center;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-body);
     font-weight: 500;
     margin-top: 81px; /* Altura do navbar */
     border-bottom: 1px solid #eee;
@@ -36,16 +38,16 @@
 }
 
 .contato-header h1 {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    color: #0C0C0C;
-    font-weight: 300;
+    color: var(--color-black);
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .contato-header p {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--color-black);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -77,8 +79,8 @@
     flex-shrink: 0;
     width: 40px;
     height: 40px;
-    background-color: #fdfdfd;
-    border: 1px solid #f1f1f1;
+    background-color: var(--color-light-green);
+    border: 1px solid var(--color-dark-green);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -88,25 +90,25 @@
 .info-icon img {
     width: 20px;
     height: 20px;
-    filter: invert(21%) sepia(15%) saturate(1229%) hue-rotate(35deg) brightness(93%) contrast(89%); /* Cor #4B5320 */
+    filter: brightness(0) invert(1); /* Ícones brancos */
 }
 
 .info-item h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     margin-bottom: 5px;
-    color: #0C0C0C;
+    color: var(--color-dark-green);
 }
 
 .info-item p, .info-item a {
     font-size: 1rem;
-    color: #333;
+    color: var(--color-black);
     line-height: 1.5;
     text-decoration: none;
 }
 
 .info-item a:hover {
-    color: #B22222;
+    color: var(--color-red);
 }
 
 .contato-actions {
@@ -128,15 +130,15 @@
 }
 
 .horarios-header h2 {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(1.8rem, 4vw, 2.5rem);
-    color: #4B5320;
-    font-weight: 300;
+    color: var(--color-dark-green);
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .horarios-header p {
-    color: #555;
+    color: var(--color-black);
     margin-bottom: 40px;
 }
 
@@ -149,28 +151,27 @@
 }
 
 .filtro-btn {
-    background: transparent;
-    border: 1px solid #ccc;
-    padding: 8px 18px;
-    border-radius: 20px;
+    background-color: var(--color-light-green);
+    color: var(--color-black);
+    padding: 10px 20px;
+    border: 1px solid var(--color-dark-green);
+    border-radius: 5px;
     cursor: pointer;
-    font-family: 'Noto Sans JP', sans-serif;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
     font-size: 0.9rem;
-    color: #555;
-    transition: all 0.3s;
+    text-transform: uppercase;
 }
 
 .filtro-btn:hover {
-    background-color: #f5f5f5;
-    border-color: #4B5320;
-    color: #0C0C0C;
+    background-color: var(--color-dark-green);
+    color: var(--color-white);
 }
 
 .filtro-btn.active {
-    background-color: #B22222;
-    color: #fff;
-    border-color: #B22222;
-    font-weight: 700;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-color: var(--color-red);
 }
 
 .horarios-grid {
@@ -181,8 +182,8 @@
 }
 
 .dia-card {
-    background-color: #fdfdfd;
-    border: 1px solid #eee;
+    background-color: var(--color-beige);
+    border: 1px solid var(--color-light-green);
     border-radius: 8px;
     padding: 25px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -194,12 +195,12 @@
 }
 
 .dia-card h3 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-heading);
     font-size: 1.6rem;
-    color: #0C0C0C;
+    color: var(--color-dark-green);
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid var(--color-light-green);
 }
 
 .dia-card ul {
@@ -208,11 +209,11 @@
 
 .dia-card li {
     padding: 10px 0;
-    color: #333;
+    color: var(--color-black);
     transition: all 0.4s ease;
     max-height: 50px;
     overflow: hidden;
-    border-bottom: 1px solid #f7f7f7;
+    border-bottom: 1px solid var(--color-light-green);
 }
 
 .dia-card li:last-child {
@@ -270,7 +271,7 @@
 }
 
 .modal-content {
-    background: #fff;
+    background: var(--color-beige);
     padding: 40px;
     border-radius: 8px;
     width: 90%;
@@ -291,44 +292,45 @@
     background: transparent;
     border: none;
     font-size: 2rem;
-    color: #aaa;
+    color: var(--color-black);
     cursor: pointer;
     transition: color 0.3s;
 }
 
 .modal-close:hover {
-    color: #333;
+    color: var(--color-red);
 }
 
 .modal-content h2 {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 300;
+    font-family: var(--font-heading);
+    font-weight: 700;
     font-size: 2rem;
     margin-bottom: 10px;
     text-align: center;
+    color: var(--color-dark-green);
 }
 
 .modal-content p {
     text-align: center;
-    color: #555;
+    color: var(--color-black);
     margin-bottom: 30px;
 }
 
 .modal-form { display: flex; flex-direction: column; text-align: left; }
-.modal-form label { margin-bottom: 5px; color: #555; font-size: 0.9rem; }
+.modal-form label { margin-bottom: 5px; color: var(--color-black); font-size: 0.9rem; }
 .modal-form input, .modal-form textarea {
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-light-green);
     border-radius: 4px;
-    font-family: 'Noto Serif JP', serif;
+    font-family: var(--font-body);
     font-size: 1rem;
 }
 
 .modal-form input:focus, .modal-form textarea:focus {
     outline: none;
-    border-color: #4B5320;
-    box-shadow: 0 0 0 3px rgba(75, 83, 32, 0.1);
+    border-color: var(--color-dark-green);
+    box-shadow: 0 0 0 3px rgba(85, 107, 47, 0.1);
 }
 
 /* RESPONSIVIDADE */

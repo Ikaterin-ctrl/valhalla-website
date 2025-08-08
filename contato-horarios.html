@@ -13,7 +13,7 @@
   <!-- HEADER -->
   <header class="navbar">
     <div class="logo">
-      <a href="index.html"><img src="assets/logos/logo_valhalla.png" alt="Valhalla"></a>
+      <a href="index.html"><img src="assets/logos/logo_valhalla.png" alt="Logo da Valhalla Fight Center"></a>
     </div>
     <nav>
       <ul class="menu">
@@ -29,7 +29,7 @@
       <span class="line"></span>
       <span class="line"></span>
     </button>
-    <a href="contato-horarios.html" class="btn-header">Agende uma Aula</a>
+    <a href="contato-horarios.html" class="btn btn-header">Agende uma Aula</a>
   </header>
 
   <!-- STATUS DE FUNCIONAMENTO -->
@@ -69,11 +69,8 @@
             <p>R. Roberto Símonsen, 619 - Taquaral<br>Campinas - SP, 13076-416</p>
           </div>
         </li>
-        <!-- SUGESTÃO: Adicionar mais itens de contato aqui, como telefone e e-mail, 
-             seguindo a mesma estrutura para manter a consistência visual e semântica. -->
-        <!-- Exemplo:
         <li class="info-item">
-          <div class="info-icon"><img src="assets/icons/phone.png" alt="Ícone de telefone"></div>
+          <div class="info-icon"><img src="assets/logos/whatsapp_logo.png" alt="Ícone de telefone"></div>
           <div class="info-text">
             <h3>Telefone</h3>
             <p><a href="tel:+5519991844414">(19) 99184-4414</a></p>
@@ -86,11 +83,10 @@
             <p><a href="mailto:contato@valhalla.com">contato@valhalla.com</a></p>
           </div>
         </li>
-        -->
       </ul>
 
       <div class="contato-actions">
-        <button id="open-form-btn" class="btn-cta">Enviar uma Mensagem</button>
+        <button id="open-form-btn" class="btn">Enviar uma Mensagem</button>
       </div>
     </section>
   </main>
@@ -101,10 +97,10 @@
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização da Valhalla Fight Center no Google Maps"></iframe>
   </section>
 
-  <!-- MODAL DO FORMULÁRIO DE CONTATO -->
+  <!-- MODAL DO FORMULÁrio DE CONTATO -->
   <div id="contact-form-modal" class="modal-overlay">
     <div class="modal-content">
-      <button id="close-form-btn" class="modal-close">&times;</button>
+      <button id="close-form-btn" class="modal-close" aria-label="Fechar formulário">&times;</button>
       <h2>Envie sua Mensagem</h2>
       <p>Retornaremos o mais breve possível.</p>
       <form class="modal-form" action="#" method="POST">
@@ -117,7 +113,7 @@
         <label for="mensagem">Mensagem</label>
         <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos te ajudar?" required></textarea>
 
-        <button type="submit" class="btn-cta">Enviar</button>
+        <button type="submit" class="btn">Enviar</button>
       </form>
     </div>
   </div>
@@ -128,14 +124,14 @@
     <div class="footer-content">
         <!-- Redes sociais à esquerda -->
         <div class="social-links">
-            <a href="https://instagram.com/valhalla" target="_blank"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
-            <a href="https://facebook.com/valhalla" target="_blank"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
-            <a href="https://tiktok.com/@valhalla" target="_blank"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
+            <a href="https://instagram.com/valhalla" target="_blank" aria-label="Visite nosso Instagram"><img src="assets/instagram-removebg-preview.png" alt="Ícone do Instagram"></a>
+            <a href="https://facebook.com/valhalla" target="_blank" aria-label="Visite nosso Facebook"><img src="assets/facebook-removebg-preview.png" alt="Ícone do Facebook"></a>
+            <a href="https://tiktok.com/@valhalla" target="_blank" aria-label="Visite nosso TikTok"><img src="assets/tikotk-removebg-preview.png" alt="Ícone do TikTok"></a>
         </div>
 
         <!-- Logo/Tubarão central -->
         <div class="footer-logo">
-            <img src="assets/logos/tubarao.png" alt="Valhalla Logo">
+            <img src="assets/logos/tubarao.png" alt="Logo secundário da Valhalla com um tubarão">
         </div>
 
         <!-- Links do site à direita -->
@@ -153,13 +149,13 @@
 </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
-  <script src="js/script.js"></script>
-  <script src="js/contato.js"></script>
-  <script src="js/gsap-animations.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/contato.js" defer></script>
+  <script src="js/animations.js" defer></script>
 
 </body>
 </html>

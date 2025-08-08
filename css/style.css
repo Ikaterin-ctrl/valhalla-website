@@ -1,35 +1,26 @@
-/* SUGESTÃO DE PERFORMANCE: O uso de @import pode bloquear a renderização da página
-   enquanto o arquivo de fontes é carregado. Para otimizar, considere mover esta importação
-   para uma tag <link> no <head> do seu HTML. */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;500&family=Yuji+Syuku&display=swap');
-
- /* ==========================================================================
+/* ==========================================================================
    CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
    ========================================================================== */
 :root {
-    --color-primary: #B22222; /* Vermelho Valhalla */
-    --color-secondary: #4B5320; /* Verde Militar */
-    --color-dark-bg: #0C0C0C;
-    --color-dark-text: #0C0C0C;
-    --color-light-bg: #fff;
-    --color-light-text: #f0f0f0;
-    --color-gray-text: #333;
-    --color-shadow: rgba(75, 83, 32, 0.6);
+    --color-black: #000000;
+    --color-red: #BE2828;
+    --color-dark-green: #556B2F;
+    --color-light-green: #96A082;
+    --color-beige: #EBE1D2;
+    --color-white: #FFFFFF;
+    --color-shadow: rgba(0,0,0,0.2); /* Define a shadow color variable */
 
-    --font-serif: 'Cormorant Garamond', serif;
-    --font-sans: 'Noto Sans JP', sans-serif;
-    --font-body: 'Noto Serif JP', serif;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 }
+
+/* SUGGESTION: Consider creating a utility class for common heading styles like font-family, font-weight, and text-transform (e.g., .section-heading) to reduce repetition and improve maintainability. Apply this class directly to the HTML heading elements. */
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
-/* SUGESTÃO DE RESPONSIVIDADE: A propriedade `overflow-x: hidden` no body é uma solução rápida,
-   mas muitas vezes esconde um problema real de um elemento filho que está causando o overflow.
-   É uma boa prática inspecionar o layout para encontrar e corrigir o elemento causador,
-   garantindo que o design seja verdadeiramente responsivo. */
 body {
-    background: var(--color-light-bg); 
-    color: var(--color-dark-text); 
+    background: var(--color-beige); 
+    color: var(--color-dark-green); 
     font-family: var(--font-body); 
     line-height: 1.6;
     overflow-x: hidden;
@@ -48,46 +39,52 @@ a {text-decoration: none; color: inherit;}
 .navbar {
     width: 100%;
     padding: 15px 5%;
-    background-color: #000; /* Mantido preto para contraste máximo */
+    background-color: var(--color-black); 
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0; left: 0;
     z-index: 1000;
-    border-bottom: 1px solid #222; /* Borda sutil para fundo escuro */
+    border-bottom: 1px solid #222; 
 }
 .logo img {
-    max-height: 50px; /* <-- Ajuste este valor como preferir */
+    max-height: 50px; 
     width: auto;
-    display: block; /* Remove espaços extras abaixo da imagem */
+    display: block; 
 }
 .menu {list-style: none; display: flex; gap: 20px;}
-.menu li a {font-family: var(--font-serif); font-size: 1.1rem; transition: color .3s; color: var(--color-light-text);}
-.menu li a:hover, .menu li a.active {color: var(--color-primary);}
+.menu li a {font-family: var(--font-heading); font-size: 1.1rem; transition: color .3s; color: var(--color-white);}
+.menu li a:hover, .menu li a.active {color: var(--color-red);}
 
 /* ==========================================================================
    BOTÕES
    ========================================================================== */
 
-/* SUGESTÃO DE ORGANIZAÇÃO: Criada uma classe base .btn para unificar estilos comuns
-   a todos os botões, reduzindo a repetição de código. As classes existentes
-   (.btn-header, .btn-cta, etc.) agora servem como modificadores. */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 28px;
     border-radius: 4px;
-    color: var(--color-light-bg);
-    background: var(--color-primary);
+    color: var(--color-white);
+    background: var(--color-red);
     transition: .3s;
-    box-shadow: 0 0 12px 2px var(--color-shadow);
     border: none;
     cursor: pointer;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn:hover {
-    background: var(--color-secondary);
-    box-shadow: none;
+    background: var(--color-dark-green);
+}
+
+.btn-secondary {
+    background: var(--color-dark-green);
+}
+
+.btn-secondary:hover {
+    background: var(--color-light-green);
 }
 
 .btn-cta-big {
@@ -97,23 +94,22 @@ a {text-decoration: none; color: inherit;}
 
 /* HERO */
 .hero {
-    position: relative; /* Base para posicionamento absoluto */
+    position: relative; 
     height: 100vh;
-    padding: 0 5%; /* Mantém o padding lateral */
-    background-color: var(--color-dark-bg);
-    color: var(--color-light-bg);
-    overflow: hidden; /* Garante que a imagem não vaze */
-    display: flex; /* ATIVA O FLEXBOX */
+    padding: 0 5%; 
+    background-color: var(--color-black);
+    color: var(--color-white);
+    overflow: hidden; 
+    display: flex; 
     align-items: center;
-    justify-content: center; /* Centraliza o conteúdo */
-    gap: 2rem; /* Espaço entre imagem e texto */
+    justify-content: center; 
+    gap: 2rem; 
 }
 
-/* Div da imagem (esquerda) */
 .hero-visual {
-    flex: 1; /* Ocupa metade do espaço disponível */
+    flex: 1; 
     display: flex;
-    justify-content: flex-end; /* Alinha a imagem à direita do seu contêiner */
+    justify-content: flex-end; 
     align-items: center;
 }
 
@@ -124,20 +120,45 @@ a {text-decoration: none; color: inherit;}
 }
 
 .hero-content {
-    flex: 1; /* Ocupa a outra metade do espaço */
+    flex: 1; 
     text-align: left;
-    z-index: 2; /* Garante que o texto fique sobre a imagem se houver sobreposição */
+    z-index: 2; 
 }
 
 .hero-content h1 {
-    font-family: var(--font-sans);
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 300;
-    line-height: 1.2;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--color-white); /* Ensure text is white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
 }
 
-.hero-content h1 span {
-    color: var(--color-primary);
+.hero-slogan {
+    font-family: var(--font-body);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--color-red);
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add text shadow for readability */
+}
+
+.hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: var(--color-white); /* Ensure text is white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+}
+
+.hero-subtitle span {
+    color: var(--color-red);
 }
 
 /* Seta de rolagem */
@@ -150,12 +171,12 @@ a {text-decoration: none; color: inherit;}
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: -12px; /* Sobrepõe as setas para o efeito >> */
+    gap: -12px; 
 }
 .scroll-down-arrow svg {
     width: 30px;
     height: 30px;
-    stroke: var(--color-primary);
+    stroke: var(--color-red);
     opacity: 0;
     animation: cascade-bounce 1.8s infinite;
 }
@@ -177,21 +198,21 @@ a {text-decoration: none; color: inherit;}
 }
 
 /* HISTÓRIA */
-.historia {padding: 100px 10%; background: var(--color-light-bg);}
-.historia h2 {font-family: var(--font-sans); color: var(--color-secondary); margin-bottom: 20px; font-weight: 300;}
-.historia p {margin-bottom: 15px; color: var(--color-gray-text);}
+.historia {padding: 100px 10%; background: var(--color-beige);}
+.historia h2 {font-family: var(--font-heading); color: var(--color-dark-green); margin-bottom: 20px; font-weight: 700; text-transform: uppercase;}
+.historia p {margin-bottom: 15px; color: var(--color-black);}
 
 /* MODALIDADES */
-.modalidades-home {padding: 100px 10%; text-align: center; background: #f9f9f9;}
-.modalidades-home h2 {font-family: var(--font-sans); color: var(--color-primary); margin-bottom: 40px; font-weight: 300;}
+.modalidades-home {padding: 100px 10%; text-align: center; background: var(--color-light-green);}
+.modalidades-home h2 {font-family: var(--font-heading); color: var(--color-red); margin-bottom: 40px; font-weight: 700; text-transform: uppercase;}
 .cards {display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;}
 .card {
-    background: var(--color-light-bg);
-    border: 1px solid #eee;
+    background: var(--color-beige);
+    border: 1px solid #ddd;
     border-radius: 6px;
     width: 220px;
     overflow: hidden; 
-    transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição mais suave */
+    transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1); 
     cursor: pointer;
 }
 
@@ -204,40 +225,44 @@ a {text-decoration: none; color: inherit;}
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.03); /* Levanta e aumenta o card */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra para dar profundidade */
-    border-color: var(--color-primary);
+    transform: translateY(-10px) scale(1.03); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    border-color: var(--color-red);
 }
 
 .card:hover img {
-    transform: scale(1.1); /* Efeito de zoom na imagem */
+    transform: scale(1.1); 
+}
+
+.card h4 {
+    color: var(--color-dark-green);
 }
 
 /* DEPOIMENTOS */
-.depoimentos {background: var(--color-light-bg); padding: 100px 0; text-align: center; overflow: hidden;}
-.depoimentos h2 {color: var(--color-secondary); margin-bottom: 40px; font-family: var(--font-sans); font-weight: 300;}
+.depoimentos {background: var(--color-beige); padding: 100px 0; text-align: center; overflow: hidden;}
+.depoimentos h2 {color: var(--color-dark-green); margin-bottom: 40px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase;}
 .carrossel-wrapper {width: 100%;}
 .carrossel-depoimentos {
     display: flex;
-    width: fit-content; /* Largura se ajusta ao conteúdo */
+    width: fit-content; 
     gap: 20px;
     animation: scroll 40s linear infinite;
 }
 .carrossel-wrapper:hover .carrossel-depoimentos {
-    animation-play-state: paused; /* Pausa a animação ao passar o mouse */
+    animation-play-state: paused; 
 }
 .depoimento {
-    background: #f9f9f9;
+    background: var(--color-light-green);
     padding: 25px;
-    border: 1px solid #eee;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    flex: 0 0 320px; /* Largura fixa para cada card */
+    flex: 0 0 320px; 
     text-align: left;
 }
 .depoimento-header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
-.reviewer-name {font-weight: bold; font-family: var(--font-sans);}
+.reviewer-name {font-weight: bold; font-family: var(--font-heading);}
 .stars {color: #f0c14b; font-size: 1.2rem;}
-.depoimento p {font-size: 0.95rem; color: var(--color-gray-text); line-height: 1.5;}
+.depoimento p {font-size: 0.95rem; color: var(--color-black); line-height: 1.5;}
 .depoimentos .btn-ver-mais {margin-top: 40px;}
 
 @keyframes scroll {
@@ -245,20 +270,20 @@ a {text-decoration: none; color: inherit;}
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Move até a metade (onde começam as cópias) */
+        transform: translateX(-50%); 
     }
 }
 
 /* CTA FINAL */
-.cta-final {background: var(--color-dark-bg); text-align: center; padding: 80px 10%; color: var(--color-light-bg);}
-.cta-final h2 {font-family: var(--font-sans); margin-bottom: 20px; font-weight: 300;}
+.cta-final {background: var(--color-black); text-align: center; padding: 80px 10%; color: var(--color-white);}
+.cta-final h2 {font-family: var(--font-heading); margin-bottom: 20px; font-weight: 700; text-transform: uppercase;}
 
 /* BOTÕES FLUTUANTES */
 .btn-whatsapp {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #d5f5f2;
+    background-color: var(--color-red);
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -266,7 +291,7 @@ a {text-decoration: none; color: inherit;}
     align-items: center;
     justify-content: center;
     z-index: 100;
-    box-shadow: 0 0 12px 2px var(--color-shadow);
+    box-shadow: 0 0 12px 2px rgba(0,0,0,0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-whatsapp:hover { transform: scale(1.1); box-shadow: none; }
@@ -274,7 +299,7 @@ a {text-decoration: none; color: inherit;}
 
 /* FOOTER */
 .site-footer {
-    background-color: #111;
+    background-color: var(--color-black);
     color: #aaa;
     padding: 20px 5%;
     text-align: center;
@@ -313,10 +338,11 @@ a {text-decoration: none; color: inherit;}
     margin-left: 15px;
     color: #aaa;
     transition: color 0.3s;
+    font-family: var(--font-heading);
 }
 
 .footer-links a:hover {
-    color: var(--color-primary);
+    color: var(--color-red);
 }
 
 .footer-bottom {
@@ -333,48 +359,27 @@ a {text-decoration: none; color: inherit;}
      flex-wrap: wrap;
  }
  
-.filtro-btn {
-    background: #f1f1f1;
-    border: 1px solid #ddd;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: .3s;
-    font-family: var(--font-serif);
-    font-size: 1rem;
-}
-
-.filtro-btn:hover { background: #ddd; }
-.filtro-btn.active { background: var(--color-primary); color: var(--color-light-bg); border-color: var(--color-primary); box-shadow: 0 0 12px 2px var(--color-shadow);}
-.filtro-btn.active:hover { background: var(--color-secondary); box-shadow: none; }
-
  #grade-horarios {
      width: 100%;
      border-collapse: collapse;
      text-align: center;
      transition: .3s; border: none; cursor: pointer; align-self: flex-start; font-size: 1.1rem; box-shadow: 0 0 12px 2px var(--color-shadow);
  }
- .contato-form button:hover { background: var(--color-secondary); box-shadow: none; }
+ .contato-form button:hover { background: var(--color-dark-green); box-shadow: none; }
  
 /* ==========================================================================
    PÁGINA DE MODALIDADE INDIVIDUAL (TEMA ESCURO PADRÃO)
    ========================================================================== */
 
-/* SUGESTÃO DE ORGANIZAÇÃO: Para manter o style.css focado nos estilos globais,
-   considere mover todas as regras abaixo, que são específicas para as páginas de
-   modalidades, para um arquivo dedicado como `css/style-modalidades.css`. */
-
-/* Adicione a classe "modalidade-page" ao <body> de cada página de modalidade */
 .modalidade-page {
-    background-color: #181a18; /* Verde militar muito escuro, quase preto */
-    color: #e0e0e0; /* Cor de texto padrão clara */
+    background-color: var(--color-black);
+    color: var(--color-beige);
 }
 
 .modalidade-page .page-content h1 {
-    color: #ffffff; /* Título principal branco */
+    color: var(--color-white);
 }
 
-/* Estrutura principal da página da modalidade */
 .mod-destaque {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -392,20 +397,20 @@ a {text-decoration: none; color: inherit;}
 .mod-destaque-img img {
     width: 100%;
     border-radius: 8px;
-    border: 2px solid var(--color-secondary); /* Borda com o verde da identidade visual */
+    border: 2px solid var(--color-dark-green);
 }
 
-/* Seção de benefícios ou características */
 .mod-beneficios {
     margin: 60px 0;
 }
 
 .mod-beneficios h2 {
     text-align: center;
-    font-family: var(--font-sans);
-    font-weight: 300;
-    color: #ffffff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-white);
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 .beneficios-grid {
@@ -415,17 +420,16 @@ a {text-decoration: none; color: inherit;}
 }
 
 .beneficio-card {
-    background: #222522; /* Fundo do card um pouco mais claro */
+    background: #1a1a1a;
     padding: 25px;
     border-radius: 6px;
-    /* Destaque com o vermelho. Você pode criar classes para mudar essa cor por modalidade */
-    border-left: 4px solid var(--color-primary);
+    border-left: 4px solid var(--color-red);
 }
 
 .beneficio-card h3 {
     margin-bottom: 10px;
     color: #fff;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-heading);
 }
 
 /* ==========================================================================
@@ -433,7 +437,7 @@ a {text-decoration: none; color: inherit;}
    ========================================================================== */
 
 .menu-toggle {
-    display: none; /* Escondido em telas grandes */
+    display: none; 
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
@@ -448,14 +452,13 @@ a {text-decoration: none; color: inherit;}
 .menu-toggle .line {
     width: 30px;
     height: 3px;
-    background-color: #fff; /* Cor do ícone hamburguer para fundo escuro */
+    background-color: var(--color-white);
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
 }
 
-/* Animação do Hamburguer para 'X' */
 .menu-toggle.active .line:nth-child(1) {
     transform: rotate(45deg);
 }
@@ -471,10 +474,10 @@ a {text-decoration: none; color: inherit;}
     .menu {
         position: fixed;
         top: 0;
-        right: -100%; /* Começa fora da tela */
+        right: -100%; 
         width: 100%;
         height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(5px);
         flex-direction: column;
         justify-content: center;
@@ -483,7 +486,7 @@ a {text-decoration: none; color: inherit;}
         transition: right 0.4s ease-in-out;
     }
     .menu.active { right: 0; }
-    .menu li a { font-size: 1.8rem; }
+    .menu li a { font-size: 1.8rem; color: var(--color-white); }
     .btn-header { display: none; }
     .menu-toggle { display: flex; }
 }
@@ -494,36 +497,34 @@ a {text-decoration: none; color: inherit;}
     .contato-wrapper { grid-template-columns: 1fr; }
     .mestre-content { flex-direction: column; text-align: center; }
     .hero {
-        flex-direction: column; /* Empilha imagem e texto */
+        flex-direction: column; 
         text-align: center;
-        padding-top: 80px; /* Espaço para o header */
+        padding-top: 80px; 
     }
     .hero-content { text-align: center; }
     .hero-content h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
 
-    /* FOOTER RESPONSIVO */
     .footer-content {
-        flex-direction: column; /* Empilha os itens verticalmente */
-        gap: 30px; /* Adiciona um bom espaço entre os itens */
+        flex-direction: column; 
+        gap: 30px; 
     }
 
     .footer-logo {
-        order: -1; /* Move o logo para o topo da pilha flex */
+        order: -1; 
     }
 
     .footer-links {
         display: flex;
-        flex-direction: column; /* Empilha os links do menu */
-        gap: 15px; /* Espaço entre os links */
+        flex-direction: column; 
+        gap: 15px; 
     }
 
     .footer-links a {
-        margin-left: 0; /* Remove a margem que só fazia sentido na horizontal */
+        margin-left: 0; 
     }
 
-    /* Ajuste para a página de modalidade em telas menores */
     .modalidade-page .mod-destaque-img {
-        order: -1; /* Coloca a imagem antes do texto */
+        order: -1; 
         margin-bottom: 20px;
     }
 }

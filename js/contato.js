@@ -1,67 +1,67 @@
 const horarios = {
     "domingo": [],
     "segunda": [
-        { hora: "06:30", aula: "Jiu-Jitsu" },
-            { hora: "09:00", aula: "Sanda" },
-            { hora: "10:00", aula: "MMA Grappling" },
-            { hora: "11:00", aula: "Jiu-Jitsu Agendado" },
-            { hora: "16:50", aula: "Jiu-Jitsu Kids" },
-            { hora: "17:30", aula: "Sanda Kids" },
-            { hora: "18:00", aula: "Boxe Fem / Kickboxing / Grappling" },
-            { hora: "19:00", aula: "Boxe" },
-            { hora: "20:00", aula: "Jiu-Jitsu Avançado/Competição" },
-            { hora: "21:30", aula: "Jiu-Jitsu" }
-        ],
-        "terça": [
-            { hora: "06:30", aula: "Jiu-Jitsu" },
-            { hora: "09:00", aula: "MMA" },
-            { hora: "10:00", aula: "Grappling / Jiu-Jitsu" },
-            { hora: "11:00", aula: "Jiu-Jitsu Agendado" },
-            { hora: "16:50", aula: "Muay-Thai Kids" },
-            { hora: "17:30", aula: "Sanda Kids" },
-            { hora: "18:00", aula: "Boxe Fem / Kickboxing / Grappling" },
-            { hora: "19:00", aula: "Jiu-Jitsu" },
-            { hora: "20:00", aula: "Jiu-Jitsu Fem/Kids / MMA" },
-            { hora: "21:30", aula: "Jiu-Jitsu" }
-        ],
-        "quarta": [
-            { hora: "06:30", aula: "Jiu-Jitsu" },
-            { hora: "09:00", aula: "Sanda" },
-            { hora: "10:00", aula: "MMA Grappling" },
-            { hora: "11:00", aula: "Jiu-Jitsu Agendado" },
-            { hora: "16:50", aula: "Jiu-Jitsu Kids" },
-            { hora: "18:00", aula: "Boxe Fem / Kickboxing / Grappling" },
-            { hora: "19:00", aula: "Boxe" },
-            { hora: "20:00", aula: "Jiu-Jitsu Avançado/Competição" },
-            { hora: "21:30", aula: "Jiu-Jitsu" }
-        ],
-        "quinta": [
-            { hora: "06:30", aula: "Jiu-Jitsu" },
-            { hora: "09:00", aula: "MMA" },
-            { hora: "10:00", aula: "Jiu-Jitsu / MMA" },
-            { hora: "11:00", aula: "MMA Sparring" },
-            { hora: "16:50", aula: "Muay-Thai Kids" },
-            { hora: "17:30", aula: "Sanda Kids" },
-            { hora: "18:00", aula: "Jiu-Jitsu Comp / Graduação" },
-            { hora: "19:00", aula: "Jiu-Jitsu" },
-            { hora: "20:00", aula: "Jiu-Jitsu Fem/Kids / MMA" },
-            { hora: "21:30", aula: "Jiu-Jitsu" }
-        ],
-        "sexta": [
-            { hora: "06:30", aula: "Jiu-Jitsu" },
-            { hora: "09:00", aula: "MMA Fem" },
-            { hora: "10:00", aula: "Grappling / Jiu-Jitsu" },
-            { hora: "16:50", aula: "Muay-Thai Kids" },
-            { hora: "18:00", aula: "Jiu-Jitsu Comp / Graduação" },
-            { hora: "19:00", aula: "MMA Fem" },
-            { hora: "20:00", aula: "Jiu-Jitsu Fem/Kids / MMA" },
-            { hora: "21:30", aula: "Jiu-Jitsu" }
-        ],
-        "sábado": [
-            { hora: "10:00", aula: "Sparring" }
-        ]
-    };
-    
+        { hora: "06:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] },
+        { hora: "09:00", aula: "Sanda", tags: ["sanda"] },
+        { hora: "10:00", aula: "MMA Grappling", tags: ["mma", "grappling"] },
+        { hora: "11:00", aula: "Jiu-Jitsu Agendado", tags: ["jiu-jitsu"] },
+        { hora: "16:50", aula: "Jiu-Jitsu Kids", tags: ["jiu-jitsu", "kids"] },
+        { hora: "17:30", aula: "Sanda Kids", tags: ["sanda", "kids"] },
+        { hora: "18:00", aula: "Boxe Fem / Kickboxing / Grappling", tags: ["boxe", "kickboxing", "grappling", "feminino"] },
+        { hora: "19:00", aula: "Boxe", tags: ["boxe"] },
+        { hora: "20:00", aula: "Jiu-Jitsu Avançado/Competição", tags: ["jiu-jitsu"] },
+        { hora: "21:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] }
+    ],
+    "terça": [
+        { hora: "06:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] },
+        { hora: "09:00", aula: "MMA", tags: ["mma"] },
+        { hora: "10:00", aula: "Grappling / Jiu-Jitsu", tags: ["grappling", "jiu-jitsu"] },
+        { hora: "11:00", aula: "Jiu-Jitsu Agendado", tags: ["jiu-jitsu"] },
+        { hora: "16:50", aula: "Muay-Thai Kids", tags: ["muay-thai", "kids"] },
+        { hora: "17:30", aula: "Sanda Kids", tags: ["sanda", "kids"] },
+        { hora: "18:00", aula: "Boxe Fem / Kickboxing / Grappling", tags: ["boxe", "kickboxing", "grappling", "feminino"] },
+        { hora: "19:00", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] },
+        { hora: "20:00", aula: "Jiu-Jitsu Fem/Kids / MMA", tags: ["jiu-jitsu", "feminino", "kids", "mma"] },
+        { hora: "21:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] }
+    ],
+    "quarta": [
+        { hora: "06:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] },
+        { hora: "09:00", aula: "Sanda", tags: ["sanda"] },
+        { hora: "10:00", aula: "MMA Grappling", tags: ["mma", "grappling"] },
+        { hora: "11:00", aula: "Jiu-Jitsu Agendado", tags: ["jiu-jitsu"] },
+        { hora: "16:50", aula: "Jiu-Jitsu Kids", tags: ["jiu-jitsu", "kids"] },
+        { hora: "18:00", aula: "Boxe Fem / Kickboxing / Grappling", tags: ["boxe", "kickboxing", "grappling", "feminino"] },
+        { hora: "19:00", aula: "Boxe", tags: ["boxe"] },
+        { hora: "20:00", aula: "Jiu-Jitsu Avançado/Competição", tags: ["jiu-jitsu"] },
+        { hora: "21:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] }
+    ],
+    "quinta": [
+        { hora: "06:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] },
+        { hora: "09:00", aula: "MMA", tags: ["mma"] },
+        { hora: "10:00", aula: "Jiu-Jitsu / MMA", tags: ["jiu-jitsu", "mma"] },
+        { hora: "11:00", aula: "MMA Sparring", tags: ["mma", "sparring"] },
+        { hora: "16:50", aula: "Muay-Thai Kids", tags: ["muay-thai", "kids"] },
+        { hora: "17:30", aula: "Sanda Kids", tags: ["sanda", "kids"] },
+        { hora: "18:00", aula: "Jiu-Jitsu Comp / Graduação", tags: ["jiu-jitsu"] },
+        { hora: "19:00", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] },
+        { hora: "20:00", aula: "Jiu-Jitsu Fem/Kids / MMA", tags: ["jiu-jitsu", "feminino", "kids", "mma"] },
+        { hora: "21:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] }
+    ],
+    "sexta": [
+        { hora: "06:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] },
+        { hora: "09:00", aula: "MMA Fem", tags: ["mma", "feminino"] },
+        { hora: "10:00", aula: "Grappling / Jiu-Jitsu", tags: ["grappling", "jiu-jitsu"] },
+        { hora: "16:50", aula: "Muay-Thai Kids", tags: ["muay-thai", "kids"] },
+        { hora: "18:00", aula: "Jiu-Jitsu Comp / Graduação", tags: ["jiu-jitsu"] },
+        { hora: "19:00", aula: "MMA Fem", tags: ["mma", "feminino"] },
+        { hora: "20:00", aula: "Jiu-Jitsu Fem/Kids / MMA", tags: ["jiu-jitsu", "feminino", "kids", "mma"] },
+        { hora: "21:30", aula: "Jiu-Jitsu", tags: ["jiu-jitsu"] }
+    ],
+    "sábado": [
+        { hora: "10:00", aula: "Sparring", tags: ["sparring"] }
+    ]
+};
+
 function checarAulaAgora() {
     const agora = new Date();
     const diaSemana = agora.toLocaleDateString('pt-BR', { weekday: 'long' }).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); // Remove acentos
@@ -104,7 +104,7 @@ function criarGradeHorarios() {
     if (!gridContainer || !filtrosContainer) return;
 
     const diasSemana = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado'];
-    const filtrosPrincipais = ['Jiu-Jitsu', 'Boxe', 'Muay Thai', 'Sanda', 'MMA', 'Kids', 'Grappling'];
+    const filtrosPrincipais = ['Jiu-Jitsu', 'Boxe', 'Muay Thai', 'Sanda', 'MMA', 'Kids', 'Grappling', 'Feminino', 'Sparring'];
 
     // --- Cria os botões de filtro ---
     const btnTodos = document.createElement('button');
@@ -117,7 +117,7 @@ function criarGradeHorarios() {
         const btn = document.createElement('button');
         btn.className = 'filtro-btn';
         btn.textContent = filtro;
-        btn.dataset.filter = filtro.toLowerCase().replace(' ', '-');
+        btn.dataset.filter = filtro.toLowerCase().replace(/ /g, '-');
         filtrosContainer.appendChild(btn);
     });
 
@@ -138,17 +138,8 @@ function criarGradeHorarios() {
                 const itemLista = document.createElement('li');
                 itemLista.innerHTML = `<strong>${aula.hora}</strong> - ${aula.aula}`;
                 
-                // SUGESTÃO: A lógica de filtragem atual depende de `aula.aula` conter o nome da modalidade.
-                // Para maior robustez e flexibilidade, considere adicionar uma propriedade `modalidades` (array de strings)
-                // ao objeto `aula` no `horarios` para listar explicitamente as modalidades daquela aula.
-                const aulaLower = aula.aula.toLowerCase();
-                let dataModalidade = [];
-                filtrosPrincipais.forEach(f => {
-                    if (aulaLower.includes(f.toLowerCase().split('-')[0])) {
-                        dataModalidade.push(f.toLowerCase().replace(' ', '-'));
-                    }
-                });
-                itemLista.dataset.modalidade = dataModalidade.join(' ');
+                // Usa as tags para o data-modalidade
+                itemLista.dataset.modalidade = aula.tags.join(' ');
                 listaAulas.appendChild(itemLista);
             });
         }

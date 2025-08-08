@@ -6,9 +6,9 @@
 /* 1. TEMA GERAL E FUNDO */
 .hero-modality-v2.muay-thai-hero {
     /* Vermelho forte como cor principal, representando poder. */
-    --hero-accent-color: #B22222; 
-    --hero-secondary-color: #003366; /* Azul escuro para detalhes, representando disciplina. */
-    --hero-gold-color: #d4af37; /* Dourado para destaques. */
+    --hero-accent-color: var(--color-dark-green); 
+    --hero-secondary-color: var(--color-dark-green); /* Verde escuro para detalhes, representando disciplina. */
+    --hero-gold-color: var(--color-light-green); /* Dourado para destaques. */
 
     /* Fundo com a imagem da modalidade e um gradiente escuro para legibilidade. */
     background-image: 
@@ -51,7 +51,7 @@
     background-color: var(--hero-gold-color);
     color: #0C0C0C;
     border-color: var(--hero-accent-color);
-    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 25px var(--color-light-green);
 }
 
 /* 4. MÍDIA (VÍDEO/IMAGEM) */
@@ -60,5 +60,5 @@
     padding: 5px;
     background-color: var(--hero-secondary-color);
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px var(--color-dark-green);
 }

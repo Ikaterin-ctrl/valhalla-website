@@ -1,13 +1,13 @@
 /* ===== HERO DA PÁGINA ===== */
 .page-hero {
-    background: url('../assets/images/hero-modalidades.jpg') center/cover no-repeat;
+    background: url('../assets/hero.png') center/cover no-repeat;
     min-height: 60vh;
     display: flex;
     padding-top: 80px; /* Espaço para o header fixo */
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: var(--color-white);
     position: relative;
 }
 
@@ -27,14 +27,14 @@
 }
 
 .page-hero-content h1 {
-    font-family: 'Yuji Syuku', cursive;
+    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 6vw, 4rem);
     margin-bottom: 15px;
 }
 
 .page-hero-content p {
     font-size: 1.1rem;
-    font-family: 'Noto Serif JP', serif;
+    font-family: var(--font-body);
 }
 
 /* ===== LISTA DE MODALIDADES ===== */
@@ -43,7 +43,7 @@
     display: flex;
     flex-direction: column;
     gap: 60px;
-    background-color: #fff;
+    background-color: var(--color-beige);
 }
 
 .modalidade-card {
@@ -51,15 +51,16 @@
     gap: 30px;
     align-items: center;
     flex-wrap: wrap;
-    background: #f9f9f9;
+    background: var(--color-light-green);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .modalidade-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .modalidade-card img {
@@ -76,58 +77,27 @@
 }
 
 .modalidade-info h2 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: var(--font-heading);
     font-size: 2rem;
-    color: #4B5320;
+    color: var(--color-dark-green);
     margin-bottom: 15px;
 }
 
 .modalidade-info p {
     font-size: 1rem;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--color-dark-green);
     line-height: 1.5;
 }
 
-.modalidade-info .btn-cta {
-    background-color: #B22222;
-    color: #fff;
-    padding: 10px 20px;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: background 0.3s;
+/* Alternar a ordem da imagem e do texto para um layout mais dinâmico */
+.modalidade-card:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
-.modalidade-info .btn-cta:hover {
-    background-color: #4B5320;
-}
-
-/* ===== CTA FINAL ===== */
-.cta-final {
-    background-color: #0C0C0C;
-    color: #fff;
-    text-align: center;
-    padding: 80px 10%;
-}
-
-.cta-final h2 {
-    font-family: 'Yuji Syuku', cursive;
-    margin-bottom: 20px;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-}
-
-.btn-cta-big {
-    background-color: #B22222;
-    color: #fff;
-    padding: 15px 30px;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: background 0.3s;
-}
-
-.btn-cta-big:hover {
-    background-color: #4B5320;
-}
+/* SUGESTÃO DE ORGANIZAÇÃO: As regras para .btn-cta e .btn-cta-big foram removidas
+   deste arquivo, pois já são cobertas pela classe global .btn em style.css,
+   promovendo a reutilização de código e evitando redundância. */
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 900px) {
@@ -143,5 +113,10 @@
 
     .modalidade-info {
         padding: 15px;
+    }
+
+    /* Resetar a ordem para mobile, para que a imagem sempre venha primeiro */
+    .modalidade-card:nth-child(even) {
+        flex-direction: column;
     }
 }

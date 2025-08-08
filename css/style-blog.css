@@ -16,7 +16,7 @@
 .blog-header h1 {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    color: #0C0C0C;
+    color: var(--color-dark-text);
     font-weight: 300;
 }
 
@@ -57,7 +57,7 @@
 .post-category {
     display: inline-block;
     align-self: flex-start;
-    background-color: #4B5320;
+    background-color: var(--color-secondary);
     color: #fff;
     padding: 4px 10px;
     border-radius: 4px;
@@ -71,13 +71,13 @@
 .post-content h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
-    color: #0C0C0C;
+    color: var(--color-dark-text);
     margin-bottom: 10px;
 }
 
 .post-content p {
     font-size: 1rem;
-    color: #333;
+    color: var(--color-gray-text);
     line-height: 1.6;
     flex-grow: 1; /* Faz o parágrafo ocupar o espaço disponível */
     margin-bottom: 20px;
@@ -85,7 +85,7 @@
 
 .read-more-btn {
     font-family: 'Noto Sans JP', sans-serif;
-    color: #B22222;
+    color: var(--color-primary);
     font-weight: 700;
     text-decoration: none;
     transition: color 0.3s;
@@ -93,7 +93,7 @@
 }
 
 .read-more-btn:hover {
-    color: #4B5320;
+    color: var(--color-secondary);
 }
 
 /* ===== FILTROS DO BLOG ===== */
@@ -105,6 +105,9 @@
     flex-wrap: wrap;
 }
 
+/* SUGESTÃO DE ORGANIZAÇÃO: A classe .filter-btn foi mantida, mas as classes .filtro-btn
+   de style.css foram removidas para evitar duplicidade. Ambas podem ser unificadas
+   em uma única classe de botão reutilizável no futuro. */
 .filter-btn {
     background: transparent;
     border: 1px solid #ccc;
@@ -119,14 +122,14 @@
 
 .filter-btn:hover {
     background-color: #f5f5f5;
-    border-color: #4B5320;
-    color: #0C0C0C;
+    border-color: var(--color-secondary);
+    color: var(--color-dark-text);
 }
 
 .filter-btn.active {
-    background-color: #B22222;
+    background-color: var(--color-primary);
     color: #fff;
-    border-color: #B22222;
+    border-color: var(--color-primary);
     font-weight: 700;
 }
 

@@ -6,38 +6,38 @@
 /* 1. TEMA GERAL E FUNDO */
 .hero-modality-v2.jiu-jitsu-hero {
     /* Azul royal como cor principal, representando estratégia e calma. */
-    --hero-accent-color: #4169E1; 
+    --hero-accent-color: var(--color-dark-green); 
 
     /* Fundo com a imagem da modalidade e um gradiente escuro para legibilidade. */
     background-image: 
-        linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.85)),
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
         url('../../assets/modalidades/jiu_jitsu.png'); /* Imagem específica do Jiu-Jitsu */
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
-    color: #fff; /* Texto claro para contraste no fundo escuro. */
+    color: var(--color-white); /* Texto claro para contraste no fundo escuro. */
 }
 
 /* 2. TIPOGRAFIA */
 .hero-modality-v2.jiu-jitsu-hero .hero-text-content h1 {
-    font-family: 'Noto Serif JP', serif; /* Fonte serifada para um toque de elegância. */
-    font-weight: 500;
-    color: #0C0C0C;
+    font-family: var(--font-heading); /* Usando a fonte padrão para headings */
+    font-weight: 700;
+    color: var(--color-red); /* Usando a cor principal de destaque */
 }
 
 .hero-modality-v2.jiu-jitsu-hero .hero-text-content p {
-    color: #333; /* Cor de texto um pouco mais suave. */
+    color: var(--color-beige); /* Cor de texto mais suave, alinhada à paleta */
 }
 
 /* 3. ELEMENTOS DE DESTAQUE (TAG E BOTÃO) */
 .hero-modality-v2.jiu-jitsu-hero .hero-text-content .modality-tag {
     background-color: var(--hero-accent-color);
-    color: #fff;
+    color: var(--color-white);
 }
 
 .hero-modality-v2.jiu-jitsu-hero .btn-hero {
     background-color: var(--hero-accent-color);
-    color: #fff;
+    color: var(--color-white);
     border: 2px solid transparent;
 }
 
@@ -51,5 +51,5 @@
 .hero-modality-v2.jiu-jitsu-hero .hero-media-content {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px var(--color-dark-green);
 }

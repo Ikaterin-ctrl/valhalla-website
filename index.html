@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Valhalla Academia em Campinas. Mais de 20 anos forjando caráter com Jiu Jitsu, Muay Thai, Boxe e Sanda. Junte-se à nossa comunidade.">
-    <title>Valhalla - Forjando Caráter</title>
+    <meta name="description" content="Valhalla Academia em Campinas. 20 anos forjando caráter com Jiu Jitsu, MMA, Boxe e mais. Agende sua aula experimental gratuita.">
+    <title>Valhalla Fight Center - 20 Anos Forjando Caráter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,7 +23,6 @@
                 <li><a href="modalidades.html">Modalidades</a></li>
                 <li><a href="academia.html">Sobre Nós</a></li>
                 <li><a href="blog.html">Blog</a></li>
-               <!-- <li><a href="loja.html">Loja</a></li>-->
                 <li><a href="contato-horarios.html">Contato</a></li>
             </ul>
         </nav>
@@ -35,45 +37,44 @@
     <main>
         <!-- HERO -->
         <section class="hero">
-            <div class="hero-visual">
-                <img src="assets/hero.png" alt="Lutador de Boxe da Valhalla com guarda alta em preto e branco">
-            </div>
             <div class="hero-content">
-                <h1>VALHALLA FIGHT CENTER <br><span>ONDE OS BRAVOS TREINAM</span></h1>
+                <p class="hero-slogan">MAIS DE 20 ANOS FORJANDO CARÁTER</p>
+                <h1>Valhalla Fight Center</h1>                
+                <p class="hero-subtitle">onde os bravos <span>treinam</span></p>
+                <a href="contato-horarios.html" class="btn btn-cta-big">Agende uma Aula Experimental Gratuita</a>
             </div>
-            <a href="#historia" class="scroll-down-arrow" aria-label="Rolar para a próxima seção">
+            <div class="hero-visual">
+                <img src="assets/hero.png" alt="Atleta de artes marciais em posição de luta">
+            </div>
+            <a href="#missao" class="scroll-down-arrow" aria-label="Rolar para a próxima seção">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
             </a>
         </section>
 
-        <!-- HISTÓRIA -->
-        <section id="historia" class="historia">
-            <h2>UM LEGADO FORJADO HÁ MAIS DE 2 DÉCADAS</h2>
-            <p>Nossa jornada não começou com um tatame, mas com uma convicção: a de que a arte marcial é a mais poderosa ferramenta para transformar não apenas o corpo, mas o caráter.</p>
-            <p>Há mais de duas décadas, o Mestre Marcelo Ferreira iniciou essa missão. O objetivo nunca foi apenas ensinar a lutar, mas a viver com mais disciplina, confiança e respeito.</p>
-            <p>Começamos com poucos, mas com a certeza de que estávamos construindo algo maior: uma comunidade, um clube, uma família.</p>
-            <p>Hoje, no coração do Taquaral, nosso espaço é o reflexo desse legado. Um ponto de encontro entre técnica, energia do combate e acolhimento único.</p>
-            <strong>Bem-vindo ao próximo capítulo da nossa história.<br>Bem-vindo ao seu próximo nível.</strong>
+        <!-- NOSSA MISSÃO -->
+        <section id="missao" class="historia">
+            <h2>Nossa Missão</h2>
+            <p>Acreditamos que a arte marcial é a mais poderosa ferramenta para transformar não apenas o corpo, mas o caráter. Nossa missão é forjar disciplina, confiança e respeito em cada um de nossos alunos, criando uma comunidade forte e unida.</p>
         </section>
 
         <!-- MODALIDADES -->
         <section class="modalidades-home">
-            <h2>ENCONTRE A SUA LUTA</h2>
+            <h2>Modalidades</h2>
             <div class="cards">
                 <article class="card"><img src="assets/modalidades/jiu_jitsu.png" alt="Dois atletas praticando Jiu Jitsu no tatame"><h4>Jiu Jitsu</h4></article>
-                <article class="card"><img src="assets/modalidades/muay_thai.png" alt="Dois atletas em posição de luta de Muay Thai"><h4>Muay Thai</h4></article>
+                <article class="card"><img src="assets/modalidades/muay_thai.png" alt="Dois atletas em posição de luta de Muay Thai"><h4>MMA</h4></article>
                 <article class="card"><img src="assets/modalidades/boxe.png" alt="Lutador de Boxe com luvas vermelhas em posição de combate"><h4>Boxe</h4></article>
-                <article class="card"><img src="assets/modalidades/sanda.png" alt="Dois atletas de Sanda (Boxe Chinês) em um confronto"><h4>Sanda</h4></article>
+                <article class="card"><img src="assets/modalidades/sanda.png" alt="Dois atletas de Sanda (Boxe Chinês) em um confronto"><h4>Kickboxing</h4></article>
             </div>
-            <a href="modalidades.html" class="btn btn-ver-mais">Ver todas</a>
+            <a href="modalidades.html" class="btn">Ver todas as modalidades</a>
         </section>
 
         <!-- DEPOIMENTOS -->
         <section class="depoimentos">
-            <h2>O QUE DIZEM SOBRE NÓS NO GOOGLE</h2>
+            <h2>Comunidade</h2>
             <div class="carrossel-wrapper">
                 <div class="carrossel-depoimentos">
-                    <!-- Depoimentos Originais -->
+                    <!-- Depoimentos -->
                     <article class="depoimento">
                         <div class="depoimento-header">
                             <span class="reviewer-name">Lucas M.</span>
@@ -95,38 +96,15 @@
                         </div>
                         <p>"Excelente academia, ambiente familiar e acolhedor, mestre Marcelo é uma pessoa fantástica, super atencioso e com uma didática incrível."</p>
                     </article>
-                    <article class="depoimento">
-                        <div class="depoimento-header">
-                            <span class="reviewer-name">Vinicius F.</span>
-                            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-                        </div>
-                        <p>"Melhor academia de jiu-jitsu de Campinas, ambiente familiar e acolhedor, treinos de alto nível, com certeza o melhor lugar para quem quer iniciar."</p>
-                    </article>
-
-                    <!-- Cópia dos Depoimentos para o Loop Infinito -->
-                    <article class="depoimento" aria-hidden="true">
-                        <div class="depoimento-header">
-                            <span class="reviewer-name">Lucas M.</span>
-                            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-                        </div>
-                        <p>"Academia com ambiente familiar e treinos de altíssimo nível. O Mestre Marcelo é uma lenda, super atencioso com todos os alunos."</p>
-                    </article>
-                    <article class="depoimento" aria-hidden="true">
-                        <div class="depoimento-header">
-                            <span class="reviewer-name">Fernanda P.</span>
-                            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-                        </div>
-                        <p>"O melhor lugar para treinar em Campinas. Acolhedor, respeitoso e com uma energia incrível. Recomendo de olhos fechados!"</p>
-                    </article>
                 </div>
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=Valhalla+Academia+Campinas" target="_blank" class="btn btn-ver-mais">Ver todas as avaliações</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Valhalla+Academia+Campinas" target="_blank" class="btn">Ver todas as avaliações</a>
         </section>
 
         <!-- CTA FINAL -->
         <section class="cta-final">
-            <h2>PRONTO PARA COMEÇAR SUA JORNADA?</h2>
-            <a href="contato-horarios.html" class="btn btn-cta-big">Agende sua Aula Experimental</a>
+            <h2>Consulte Nossos Planos e Condições</h2>
+            <a href="contato-horarios.html" class="btn btn-cta-big">Entre em Contato</a>
         </section>
     </main>
 
@@ -139,19 +117,14 @@
     <footer class="site-footer">
     <hr>
     <div class="footer-content">
-        <!-- Redes sociais à esquerda -->
         <div class="social-links">
             <a href="https://instagram.com/valhalla" target="_blank" aria-label="Visite nosso Instagram"><img src="assets/instagram-removebg-preview.png" alt="Ícone do Instagram"></a>
             <a href="https://facebook.com/valhalla" target="_blank" aria-label="Visite nosso Facebook"><img src="assets/facebook-removebg-preview.png" alt="Ícone do Facebook"></a>
             <a href="https://tiktok.com/@valhalla" target="_blank" aria-label="Visite nosso TikTok"><img src="assets/tikotk-removebg-preview.png" alt="Ícone do TikTok"></a>
         </div>
-
-        <!-- Logo/Tubarão central -->
         <div class="footer-logo">
             <img src="assets/logos/tubarao.png" alt="Logo secundário da Valhalla com um tubarão">
         </div>
-
-        <!-- Links do site à direita -->
         <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="modalidades.html">Modalidades</a>
@@ -159,27 +132,16 @@
             <a href="contato-horarios.html">Contato</a>
         </div>
     </div>
-
     <div class="footer-bottom">
         <p>© 2025 Valhalla Academia | Forjando caráter há mais de 20 anos</p>
     </div>
 </footer>
 
-
     <!-- Scripts -->
-    <!-- SUGESTÃO: Os arquivos JS não foram fornecidos para revisão. 
-         É uma boa prática garantir que o código dentro deles aguarde o evento DOMContentLoaded 
-         ou seja carregado com o atributo 'defer' para evitar erros de execução. -->
-
-    <!-- GSAP Core & ScrollTrigger Plugin -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
-    <!-- Lenis for Smooth Scrolling -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-    <!-- Custom Scripts -->
-    <script src="js/script.js"></script>
-    <script src="js/animations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/animations.js" defer></script>
 </body>
 </html>

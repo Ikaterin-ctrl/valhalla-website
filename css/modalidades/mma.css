@@ -57,3 +57,5 @@
     overflow: hidden;
     box-shadow: 0 10px 30px var(--color-dark-green);
 }
+
+/* All colors are already using variables or are intentionally set. No further changes needed for color consistency. */

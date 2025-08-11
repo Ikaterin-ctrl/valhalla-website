@@ -203,17 +203,60 @@ a {text-decoration: none; color: inherit;}
 .historia p {margin-bottom: 15px; color: var(--color-black);}
 
 /* MODALIDADES */
-.modalidades-home {padding: 100px 10%; text-align: center; background: var(--color-light-green);}
-.modalidades-home h2 {font-family: var(--font-heading); color: var(--color-red); margin-bottom: 40px; font-weight: 700; text-transform: uppercase;}
-.cards {display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;}
+.modalidades-home {
+    padding: 100px 10%; 
+    text-align: center; 
+    background: var(--color-secondary);
+}
+.modalidades-home h2 {
+    font-family: var(--font-heading); 
+    color: var(--color-light-text); 
+    margin-bottom: 40px; 
+    font-weight: 700; 
+    text-transform: uppercase;
+}
+.cards {
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-bottom: 40px;
+}
 .card {
     background: var(--color-beige);
-    border: 1px solid #ddd;
+    border: 2px solid #000;
     border-radius: 6px;
     width: 220px;
     overflow: hidden; 
     transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1); 
     cursor: pointer;
+}
+
+.cards .card.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.cards .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cards .card:nth-child(1) {
+    transition-delay: 100ms;
+}
+
+.cards .card:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.cards .card:nth-child(3) {
+    transition-delay: 300ms;
+}
+
+.cards .card:nth-child(4) {
+    transition-delay: 400ms;
 }
 
 .card img {
@@ -566,3 +609,32 @@ a {text-decoration: none; color: inherit;}
   transform: translateY(0);
 }
 
+.status-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    margin-bottom: 30px; /* Espaço antes da grade de horários */
+}
+
+.status-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ccc; /* Cor padrão enquanto carrega */
+    transition: background-color 0.5s ease;
+}
+
+.status-text {
+    font-family: var(--font-sans);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#horarios-grid .dia-card li.hidden {
+    display: none;
+}

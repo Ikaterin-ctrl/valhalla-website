@@ -43,3 +43,4 @@ document.addEventListener('DOMContentLoaded', () => {
   const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
   elementsToAnimate.forEach(el => observer.observe(el));
 });
+

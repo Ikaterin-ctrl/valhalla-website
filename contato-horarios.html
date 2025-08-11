@@ -33,9 +33,10 @@
   </header>
 
   <!-- STATUS DE FUNCIONAMENTO -->
-  <section class="status-section">
-    <p id="status-aula" class="status-aula">Verificando status...</p>
-  </section>
+  <div id="status-academia" class="status-wrapper">
+    <span class="status-dot"></span>
+    <span class="status-text">Carregando...</span>
+  </div>
 
   <main class="contato-page-wrapper">
     <!-- Seção da Grade de Horários -->
@@ -54,40 +55,50 @@
 
     <hr class="section-divider">
 
-    <!-- Seção de Contato -->
-    <section class="contato-section">
-      <div class="contato-header">
-        <h1>Fale com a Valhalla</h1>
-        <p>Tem alguma dúvida? Mande uma mensagem ou venha nos fazer uma visita.</p>
-      </div>
+    <section class="fale-comigo">
+        <div class="container">
+            <h2>Fale com Valhalla</h2>
+            <div class="contato-wrapper">
+                <div class="contato-info">
+                    <div class="info-item">
+                        <img src="assets/icons/endereco-icon.svg" alt="Endereço" class="info-icon">
+                        <div>
+                            <strong>Endereço</strong>
+                            <p>Rua Exemplo, 123, Taquaral<br>Campinas - SP, 13075-000</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <img src="assets/icons/telefone-icon.svg" alt="Telefone" class="info-icon">
+                        <div>
+                            <strong>Telefone / WhatsApp</strong>
+                            <p>(19) 99184-4414</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <img src="assets/icons/email-icon.svg" alt="Email" class="info-icon">
+                        <div>
+                            <strong>Email</strong>
+                            <p>contato@valhalla.com</p>
+                        </div>
+                    </div>
+                </div>
 
-      <ul class="contato-info-lista">
-        <li class="info-item">
-          <div class="info-icon"><img src="assets/pin.png" alt="Ícone de localização no mapa"></div>
-          <div class="info-text">
-            <h3>Nosso Endereço</h3>
-            <p>R. Roberto Símonsen, 619 - Taquaral<br>Campinas - SP, 13076-416</p>
-          </div>
-        </li>
-        <li class="info-item">
-          <div class="info-icon"><img src="assets/logos/whatsapp_logo.png" alt="Ícone de telefone"></div>
-          <div class="info-text">
-            <h3>Telefone</h3>
-            <p><a href="tel:+5519991844414">(19) 99184-4414</a></p>
-          </div>
-        </li>
-        <li class="info-item">
-          <div class="info-icon"><img src="assets/icons/email.png" alt="Ícone de e-mail"></div>
-          <div class="info-text">
-            <h3>E-mail</h3>
-            <p><a href="mailto:contato@valhalla.com">contato@valhalla.com</a></p>
-          </div>
-        </li>
-      </ul>
+                <div class="contato-form">
+                    <form action="#" method="POST">
+                        <label for="nome">Seu Nome</label>
+                        <input type="text" id="nome" name="nome" required>
 
-      <div class="contato-actions">
-        <button id="open-form-btn" class="btn">Enviar uma Mensagem</button>
-      </div>
+                        <label for="email">Seu Email</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="mensagem">Sua Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+                        <button type="submit" class="btn-cta">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
   </main>
 
@@ -154,7 +165,8 @@
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
   <script src="js/script.js" defer></script>
-  <script src="js/contato.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/horarios.js" defer></script>
   <script src="js/animations.js" defer></script>
 
 </body>

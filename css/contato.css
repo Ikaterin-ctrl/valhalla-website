@@ -53,66 +53,84 @@
 }
 
 /* SEÇÃO DE CONTATO (PÓS-HORÁRIOS) */
-.contato-section {
-    text-align: center;
-}
-.contato-section .contato-header {
-    margin-bottom: 40px;
+.fale-comigo {
+    padding: 80px 5%;
+    background-color: #f9f9f9;
 }
 
-/* LISTA DE INFORMAÇÕES DE CONTATO */
-.contato-info-lista {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+.fale-comigo h2 {
+    text-align: center;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+.contato-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: flex-start;
 }
 
 .info-item {
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    min-width: 300px;
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .info-icon {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    background-color: var(--color-light-green);
-    border: 1px solid var(--color-dark-green);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 28px;
+    margin-top: 5px;
 }
 
-.info-icon img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1); /* Ícones brancos */
+.info-item strong {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    color: var(--color-dark-text);
 }
 
-.info-item h3 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    color: var(--color-dark-green);
+.info-item p {
+    color: var(--color-gray-text);
+    margin: 0;
 }
 
-.info-item p, .info-item a {
-    font-size: 1rem;
-    color: var(--color-black);
-    line-height: 1.5;
-    text-decoration: none;
+/* Estilos do formulário que você já tem podem ser adaptados */
+.contato-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-dark-text);
+}
+.contato-form input, .contato-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.contato-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-red);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
 }
 
-.info-item a:hover {
-    color: var(--color-red);
+.contato-form button:hover {
+    background-color: #c0392b;
 }
 
-.contato-actions {
-    margin-top: 40px;
+/* Responsividade para a seção de contato */
+@media (max-width: 768px) {
+    .contato-wrapper {
+        grid-template-columns: 1fr; /* Colunas empilham no mobile */
+    }
 }
 
 /* DIVISOR DE SEÇÃO */

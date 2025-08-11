@@ -2,6 +2,11 @@
    ESTILOS PARA A PÁGINA DO BLOG
    ========================================================================== */
 
+body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-text);
+}
+
 .main-container {
     padding: 120px 5% 60px; /* Espaço para o header fixo e respiro inferior */
     max-width: 900px;
@@ -16,7 +21,7 @@
 .blog-header h1 {
     font-family: 'Noto Sans JP', sans-serif;
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    color: var(--color-dark-text);
+    color: var(--color-light-text);
     font-weight: 300;
 }
 
@@ -128,7 +133,7 @@
 
 .filter-btn.active {
     background-color: var(--color-primary);
-    color: #fff;
+    color: var(--color-dark-text);
     border-color: var(--color-primary);
     font-weight: 700;
 }

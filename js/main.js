@@ -134,9 +134,32 @@ function setupContactModal() {
     });
 }
 
+function setupTabs() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.dataset.tab;
+
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            tabContents.forEach(content => {
+                if (content.id === `${targetTab}-tab-content`) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     criarGradeHorarios();
     setupContactModal();
+    setupTabs(); // Call the new tabs setup function
 
     // --- INÍCIO DO SCRIPT DE FILTRO DE HORÁRIOS ---
     const filtroButtons = document.querySelectorAll('#horarios-filtros .filtro-btn');

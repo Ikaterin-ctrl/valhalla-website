@@ -2,68 +2,126 @@
    ESTILOS PARA A PÁGINA DE CONTATO E HORÁRIOS
    ========================================================================== */
 
-/* SUGGESTION: Headings throughout this file (h1, h2, h3) consistently use `font-family: var(--font-heading); font-weight: 700; text-transform: uppercase;`. Consider creating a utility class in `style.css` (e.g., `.section-title`) and applying it to these elements in the HTML to reduce repetition and improve maintainability. */
-
 /* STATUS DE FUNCIONAMENTO */
-.status-section {
+.status-wrapper {
     padding: 15px 5%;
     text-align: center;
     font-family: var(--font-body);
     font-weight: 500;
     margin-top: 81px; /* Altura do navbar */
     border-bottom: 1px solid #eee;
+    background-color: var(--color-beige); /* Fundo para o status */
+    color: var(--color-black);
 }
 
-.status-aula.open {
-    background-color: #e8f5e9; /* Verde claro */
-    color: #2e7d32; /* Verde escuro */
+.status-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    max-width: 300px; /* Limita a largura do box de status */
+    margin: 0 auto; /* Centraliza o box */
 }
 
-.status-aula.closed {
-    background-color: #fff3e0; /* Laranja claro */
-    color: #e65100; /* Laranja escuro */
+.status-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #ccc; /* Cor padrão enquanto carrega */
+    transition: background-color 0.5s ease;
+}
+
+.status-aula.open .status-dot {
+    background-color: #2e7d32; /* Verde escuro */
+}
+
+.status-aula.closed .status-dot {
+    background-color: #e65100; /* Laranja escuro */
+}
+
+.status-text {
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 /* CONTAINER PRINCIPAL DA PÁGINA */
 .contato-page-wrapper {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 80px 5%;
+    padding: 40px 5%; /* Reduz o padding superior para ficar mais próximo do status */
 }
 
-/* CABEÇALHO DA SEÇÃO */
-.contato-header {
-    text-align: center;
-    margin-bottom: 60px;
+/* NAVEGAÇÃO POR ABAS */
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--color-light-green);
 }
 
-.contato-header h1 {
+.tab-button {
+    background-color: transparent;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: 1.2rem;
+    color: var(--color-black);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    top: 2px; /* Ajuste para a borda inferior */
+}
+
+.tab-button:hover {
+    color: var(--color-red);
+}
+
+.tab-button.active {
+    color: var(--color-red);
+    border-bottom: 2px solid var(--color-red);
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* CABEÇALHO DA SEÇÃO (dentro das abas) */
+.horarios-section h2, .fale-comigo h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: var(--color-dark-green);
     font-weight: 700;
     margin-bottom: 10px;
-}
-
-.contato-header p {
-    font-size: 1.1rem;
-    color: var(--color-black);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* SEÇÃO DE CONTATO (PÓS-HORÁRIOS) */
-.fale-comigo {
-    padding: 80px 5%;
-    background-color: #f9f9f9;
-}
-
-.fale-comigo h2 {
     text-align: center;
-    font-family: var(--font-sans);
-    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.horarios-section p {
+    color: var(--color-black);
     margin-bottom: 40px;
-    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* SEÇÃO DE CONTATO */
+.fale-comigo {
+    padding: 40px 0;
+    background-color: transparent; /* Removido o fundo cinza */
+}
+
+.fale-comigo .container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contato-wrapper {
@@ -73,93 +131,55 @@
     align-items: flex-start;
 }
 
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
 .info-item {
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    margin-bottom: 25px;
 }
 
 .info-icon {
     width: 28px;
     margin-top: 5px;
+    flex-shrink: 0; /* Evita que o ícone encolha */
 }
 
 .info-item strong {
-    font-family: var(--font-sans);
+    font-family: var(--font-heading);
     font-size: 1.2rem;
-    color: var(--color-dark-text);
+    color: var(--color-dark-green);
 }
 
 .info-item p {
-    color: var(--color-gray-text);
+    color: var(--color-black);
     margin: 0;
 }
 
-/* Estilos do formulário que você já tem podem ser adaptados */
-.contato-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--color-dark-text);
+.contato-form-placeholder {
+    background-color: var(--color-beige);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
-.contato-form input, .contato-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+.contato-form-placeholder p {
     margin-bottom: 20px;
-}
-.contato-form button {
-    width: 100%;
-    padding: 15px;
-    background-color: var(--color-red);
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
     font-size: 1.1rem;
-    transition: background-color 0.3s;
+    color: var(--color-black);
 }
 
-.contato-form button:hover {
-    background-color: #c0392b;
-}
-
-/* Responsividade para a seção de contato */
-@media (max-width: 768px) {
-    .contato-wrapper {
-        grid-template-columns: 1fr; /* Colunas empilham no mobile */
-    }
-}
-
-/* DIVISOR DE SEÇÃO */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-    margin: 80px auto;
-    width: 80%;
+.contato-form-placeholder .btn-cta {
+    width: auto;
+    padding: 12px 25px;
 }
 
 /* SEÇÃO DE HORÁRIOS */
-.horarios-section {
-    text-align: center;
-}
-
-.horarios-header h2 {
-    font-family: var(--font-heading);
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    color: var(--color-dark-green);
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.horarios-header p {
-    color: var(--color-black);
-    margin-bottom: 40px;
-}
-
 .horarios-filtros {
     display: flex;
     justify-content: center;
@@ -250,9 +270,9 @@
 
 /* SEÇÃO DO MAPA */
 .mapa-section {
-    padding: 0 5%; /* Adiciona espaçamento lateral para telas menores */
-    margin-top: 80px;
-    margin-bottom: 80px; /* Adiciona espaço antes do rodapé */
+    padding: 40px 0; /* Ajusta padding para dentro da aba */
+    margin-top: 40px; /* Reduz margem superior */
+    margin-bottom: 0; /* Remove margem inferior, já que está dentro da aba */
 }
 
 .mapa-section iframe {
@@ -362,10 +382,25 @@
 
 @media (max-width: 768px) {
     .contato-page-wrapper {
-        padding: 60px 5%;
+        padding: 30px 5%; /* Ajusta padding para mobile */
     }
-    .info-item {
+    .tabs-nav {
         flex-direction: column;
         align-items: center;
+    }
+    .tab-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .contato-wrapper {
+        grid-template-columns: 1fr; /* Colunas empilham no mobile */
+    }
+    .info-item {
+        flex-direction: row; /* Mantém ícone e texto na mesma linha */
+        align-items: flex-start;
+        text-align: left;
+    }
+    .info-item div {
+        flex: 1;
     }
 }

@@ -197,24 +197,43 @@ a {text-decoration: none; color: inherit;}
     }
 }
 
+/* TÍTULOS DE SEÇÃO GERAIS */
+h2 {
+    font-family: var(--font-heading);
+    color: var(--color-dark-green);
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center; /* Centraliza todos os títulos de seção */
+}
+
 /* HISTÓRIA */
 .historia {padding: 100px 10%; background: var(--color-beige);}
-.historia h2 {font-family: var(--font-heading); color: var(--color-dark-green); margin-bottom: 20px; font-weight: 700; text-transform: uppercase;}
 .historia p {margin-bottom: 15px; color: var(--color-black);}
 
 /* MODALIDADES */
 .modalidades-home {
     padding: 100px 10%; 
     text-align: center; 
-    background: var(--color-secondary);
+    background: var(--color-beige); /* Usando beige para consistência */
 }
-.modalidades-home h2 {
-    font-family: var(--font-heading); 
-    color: var(--color-light-text); 
-    margin-bottom: 40px; 
-    font-weight: 700; 
-    text-transform: uppercase;
+
+/* IMAGENS COM FADE-IN */
+img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
 }
+
+img.loaded {
+    opacity: 1;
+}
+
+/* FOOTER INTERATIVIDADE */
+.footer-links a:hover {
+    color: var(--color-red);
+    transform: scale(1.05); /* Leve zoom */
+}
+
 .cards {
     display: flex; 
     gap: 20px; 

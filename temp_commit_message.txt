@@ -1,0 +1,14 @@
+feat: Implement new "Sobre Nós" page and enhance UI/UX
+
+This commit introduces a new "Sobre Nós" page and significant UI/UX improvements across the website.
+
+Key changes include:
+- **New "Sobre Nós" page:** Added `sobre-nos.html` and `css/sobre-nos.css` to introduce a dedicated "Sobre Nós" section, with updated navigation links across all main HTML pages.
+- **Enhanced Contact & Schedule page:** Implemented a new tabbed interface for "Horários" and "Contato" in `contato-horarios.html`, and integrated the contact form into a modal for a cleaner user experience.
+- **Styling improvements:**
+    - Updated `css/contato.css`, `css/style-modalidades.css`, and `css/style.css` to support the new tabbed interface and modal.
+    - Standardized `h2` titles to be centered and uppercase for better visual consistency.
+    - Overhauled styling for modality pages to improve their appearance and readability.
+- **Animations and interactivity:**
+    - Added image fade-in animations to various sections, enhancing visual appeal.
+    - Implemented new JavaScript functions in `js/animations.js` and `js/main.js` to manage image fade-in effects and the logic for the new tabbed navigation.

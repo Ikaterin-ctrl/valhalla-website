@@ -1,0 +1,63 @@
+{
+    "domingo": [],
+    "segunda": [
+        { "hora": "06:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] },
+        { "hora": "09:00", "aula": "Sanda", "tags": ["sanda"] },
+        { "hora": "10:00", "aula": "MMA Grappling", "tags": ["mma", "grappling"] },
+        { "hora": "11:00", "aula": "Jiu-Jitsu Agendado", "tags": ["jiu-jitsu"] },
+        { "hora": "16:50", "aula": "Jiu-Jitsu Kids", "tags": ["jiu-jitsu", "kids"] },
+        { "hora": "17:30", "aula": "Sanda Kids", "tags": ["sanda", "kids"] },
+        { "hora": "18:00", "aula": "Boxe Fem / Kickboxing / Grappling", "tags": ["boxe", "kickboxing", "grappling", "feminino"] },
+        { "hora": "19:00", "aula": "Boxe", "tags": ["boxe"] },
+        { "hora": "20:00", "aula": "Jiu-Jitsu Avançado/Competição", "tags": ["jiu-jitsu"] },
+        { "hora": "21:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] }
+    ],
+    "terça": [
+        { "hora": "06:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] },
+        { "hora": "09:00", "aula": "MMA", "tags": ["mma"] },
+        { "hora": "10:00", "aula": "Grappling / Jiu-Jitsu", "tags": ["grappling", "jiu-jitsu"] },
+        { "hora": "11:00", "aula": "Jiu-Jitsu Agendado", "tags": ["jiu-jitsu"] },
+        { "hora": "16:50", "aula": "Muay-Thai Kids", "tags": ["muay-thai", "kids"] },
+        { "hora": "17:30", "aula": "Sanda Kids", "tags": ["sanda", "kids"] },
+        { "hora": "18:00", "aula": "Boxe Fem / Kickboxing / Grappling", "tags": ["boxe", "kickboxing", "grappling", "feminino"] },
+        { "hora": "19:00", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] },
+        { "hora": "20:00", "aula": "Jiu-Jitsu Fem/Kids / MMA", "tags": ["jiu-jitsu", "feminino", "kids", "mma"] },
+        { "hora": "21:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] }
+    ],
+    "quarta": [
+        { "hora": "06:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] },
+        { "hora": "09:00", "aula": "Sanda", "tags": ["sanda"] },
+        { "hora": "10:00", "aula": "MMA Grappling", "tags": ["mma", "grappling"] },
+        { "hora": "11:00", "aula": "Jiu-Jitsu Agendado", "tags": ["jiu-jitsu"] },
+        { "hora": "16:50", "aula": "Jiu-Jitsu Kids", "tags": ["jiu-jitsu", "kids"] },
+        { "hora": "18:00", "aula": "Boxe Fem / Kickboxing / Grappling", "tags": ["boxe", "kickboxing", "grappling", "feminino"] },
+        { "hora": "19:00", "aula": "Boxe", "tags": ["boxe"] },
+        { "hora": "20:00", "aula": "Jiu-Jitsu Avançado/Competição", "tags": ["jiu-jitsu"] },
+        { "hora": "21:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] }
+    ],
+    "quinta": [
+        { "hora": "06:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] },
+        { "hora": "09:00", "aula": "MMA", "tags": ["mma"] },
+        { "hora": "10:00", "aula": "Jiu-Jitsu / MMA", "tags": ["jiu-jitsu", "mma"] },
+        { "hora": "11:00", "aula": "MMA Sparring", "tags": ["mma", "sparring"] },
+        { "hora": "16:50", "aula": "Muay-Thai Kids", "tags": ["muay-thai", "kids"] },
+        { "hora": "17:30", "aula": "Sanda Kids", "tags": ["sanda", "kids"] },
+        { "hora": "18:00", "aula": "Jiu-Jitsu Comp / Graduação", "tags": ["jiu-jitsu"] },
+        { "hora": "19:00", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] },
+        { "hora": "20:00", "aula": "Jiu-Jitsu Fem/Kids / MMA", "tags": ["jiu-jitsu", "feminino", "kids", "mma"] },
+        { "hora": "21:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] }
+    ],
+    "sexta": [
+        { "hora": "06:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] },
+        { "hora": "09:00", "aula": "MMA Fem", "tags": ["mma", "feminino"] },
+        { "hora": "10:00", "aula": "Grappling / Jiu-Jitsu", "tags": ["grappling", "jiu-jitsu"] },
+        { "hora": "16:50", "aula": "Muay-Thai Kids", "tags": ["muay-thai", "kids"] },
+        { "hora": "18:00", "aula": "Jiu-Jitsu Comp / Graduação", "tags": ["jiu-jitsu"] },
+        { "hora": "19:00", "aula": "MMA Fem", "tags": ["mma", "feminino"] },
+        { "hora": "20:00", "aula": "Jiu-Jitsu Fem/Kids / MMA", "tags": ["jiu-jitsu", "feminino", "kids", "mma"] },
+        { "hora": "21:30", "aula": "Jiu-Jitsu", "tags": ["jiu-jitsu"] }
+    ],
+    "sábado": [
+        { "hora": "10:00", "aula": "Sparring", "tags": ["sparring"] }
+    ]
+}

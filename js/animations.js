@@ -1,17 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Função para animar a sequência do Herói
   function animateHero() {
-    const pretitle = document.querySelector('.hero-pretitle');
     const title = document.querySelector('.hero-content h1');
     const subtitle = document.querySelector('.hero-subtitle');
-    const button = document.querySelector('.btn-hero');
 
     // Ordem da animação com delay (atraso) em milissegundos
     const sequence = [
-      { element: pretitle, delay: 200 },
       { element: title, delay: 400 },
-      { element: subtitle, delay: 600 },
-      { element: button, delay: 800 }
+      { element: subtitle, delay: 600 }
     ];
 
     sequence.forEach(item => {

@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 // controle a transição de visibilidade (fade-in/out) e mantém a separação
                 // de preocupações entre JS (lógica) e CSS (apresentação).
                 if (filter === 'all' || category === filter) {
-                    card.style.display = 'flex'; // Mostra o card (mantido flex para o layout original)
+                    card.classList.remove('hidden-post'); // Show the card
                 } else {
-                    card.style.display = 'none'; // Esconde o card
+                    card.classList.add('hidden-post'); // Hide the card
                 }
             });
         });

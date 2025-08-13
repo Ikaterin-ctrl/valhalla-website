@@ -19,10 +19,8 @@ body {
 }
 
 .blog-header h1 {
-    font-family: 'Noto Sans JP', sans-serif;
     font-size: clamp(2.2rem, 5vw, 3.5rem);
     color: var(--color-light-text);
-    font-weight: 300;
 }
 
 .post-card {
@@ -118,11 +116,9 @@ body {
     border: 1px solid #ccc;
     padding: 8px 18px;
     border-radius: 20px;
-    cursor: pointer;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-body);
     font-size: 0.9rem;
     color: #555;
-    transition: all 0.3s;
 }
 
 .filter-btn:hover {
@@ -151,4 +147,8 @@ body {
     .post-content h2 {
         font-size: 1.5rem;
     }
+}
+
+.hidden-post {
+    display: none; /* Consider using opacity and height for animated transitions */
 }

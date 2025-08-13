@@ -61,17 +61,20 @@ a {text-decoration: none; color: inherit;}
    BOTÕES
    ========================================================================== */
 
+.base-btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
 .btn {
     display: inline-block;
     padding: 12px 28px;
     border-radius: 4px;
     color: var(--color-white);
     background: var(--color-red);
-    transition: .3s;
     border: none;
-    cursor: pointer;
     font-family: var(--font-heading);
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
@@ -198,13 +201,16 @@ a {text-decoration: none; color: inherit;}
 }
 
 /* TÍTULOS DE SEÇÃO GERAIS */
-h2 {
+.section-title {
     font-family: var(--font-heading);
-    color: var(--color-dark-green);
-    margin-bottom: 20px;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center; /* Centraliza todos os títulos de seção */
+}
+
+h2 {
+    color: var(--color-dark-green);
+    margin-bottom: 20px;
 }
 
 /* HISTÓRIA */

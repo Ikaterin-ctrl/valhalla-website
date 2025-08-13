@@ -73,14 +73,14 @@ function criarGradeHorarios() {
 
     // --- Cria os botões de filtro ---
     const btnTodos = document.createElement('button');
-    btnTodos.className = 'filtro-btn active';
+    btnTodos.className = 'filtro-btn active base-btn';
     btnTodos.textContent = 'Ver Todos';
     btnTodos.dataset.filter = 'todos';
     filtrosContainer.appendChild(btnTodos);
 
     filtrosPrincipais.forEach(filtro => {
         const btn = document.createElement('button');
-        btn.className = 'filtro-btn';
+        btn.className = 'filtro-btn base-btn';
         btn.textContent = filtro;
         btn.dataset.filter = filtro.toLowerCase().replace(/ /g, '-');
         filtrosContainer.appendChild(btn);

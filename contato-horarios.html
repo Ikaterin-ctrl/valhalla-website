@@ -10,27 +10,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="navbar">
-    <div class="logo">
-      <a href="index.html"><img src="assets/logos/logo_valhalla.png" alt="Logo da Valhalla Fight Center"></a>
-    </div>
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="modalidades.html">Modalidades</a></li>
-        <li><a href="sobre-nos.html">Sobre Nós</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contato-horarios.html" class="active">Contato</a></li>
-      </ul>
-    </nav>
-    <button class="menu-toggle" aria-label="Abrir menu">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-    </button>
-    <a href="contato-horarios.html" class="btn btn-header">Agende uma Aula</a>
-  </header>
+  <div id="header-placeholder"></div>
 
   <!-- STATUS DE FUNCIONAMENTO -->
   <div id="status-academia" class="status-wrapper">
@@ -42,15 +22,15 @@
 
   <main class="contato-page-wrapper">
     <div class="tabs-nav">
-      <button class="tab-button active" data-tab="horarios">Horários</button>
-      <button class="tab-button" data-tab="contato">Contato</button>
+      <button class="tab-button active base-btn" data-tab="horarios">Horários</button>
+      <button class="tab-button base-btn" data-tab="contato">Contato</button>
     </div>
 
     <div id="horarios-tab-content" class="tab-content active">
       <!-- Seção da Grade de Horários -->
       <section class="horarios-section">
         <div class="horarios-header">
-          <h2>Nossa Grade de Horários</h2>
+          <h2 class="section-title">Nossa Grade de Horários</h2>
           <p>Filtre pela sua modalidade de interesse para ver os horários disponíveis.</p>
         </div>
         <div id="horarios-filtros" class="horarios-filtros">
@@ -65,7 +45,7 @@
     <div id="contato-tab-content" class="tab-content">
       <section class="fale-comigo">
           <div class="container">
-              <h2>Fale com Valhalla</h2>
+              <h2 class="section-title">Fale com Valhalla</h2>
               <div class="contato-wrapper">
                   <div class="contato-info">
                       <div class="info-item">
@@ -110,7 +90,7 @@
   <div id="contact-form-modal" class="modal-overlay">
     <div class="modal-content">
       <button id="close-form-btn" class="modal-close" aria-label="Fechar formulário">&times;</button>
-      <h2>Envie sua Mensagem</h2>
+      <h2 class="section-title">Envie sua Mensagem</h2>
       <p>Retornaremos o mais breve possível.</p>
       <form class="modal-form" action="#" method="POST">
         <label for="nome">Nome Completo</label>
@@ -127,42 +107,14 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
-    <footer class="site-footer">
-    <hr>
-    <div class="footer-content">
-        <!-- Redes sociais à esquerda -->
-        <div class="social-links">
-            <a href="https://instagram.com/valhalla" target="_blank" aria-label="Visite nosso Instagram"><img src="assets/instagram-removebg-preview.png" alt="Ícone do Instagram"></a>
-            <a href="https://facebook.com/valhalla" target="_blank" aria-label="Visite nosso Facebook"><img src="assets/facebook-removebg-preview.png" alt="Ícone do Facebook"></a>
-            <a href="https://tiktok.com/@valhalla" target="_blank" aria-label="Visite nosso TikTok"><img src="assets/tikotk-removebg-preview.png" alt="Ícone do TikTok"></a>
-        </div>
-
-        <!-- Logo/Tubarão central -->
-        <div class="footer-logo">
-            <img src="assets/logos/tubarao.png" alt="Logo secundário da Valhalla com um tubarão">
-        </div>
-
-        <!-- Links do site à direita -->
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="modalidades.html">Modalidades</a>
-            <a href="blog.html">Blog</a>
-            <a href="contato-horarios.html">Contato</a>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2025 Valhalla Academia | Forjando caráter há mais de 20 anos</p>
-    </div>
-</footer>
+  <div id="footer-placeholder"></div>
 
   <!-- SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
-  <script src="js/script.js" defer></script>
+  <script src="js/loader.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/horarios.js" defer></script>
   <script src="js/animations.js" defer></script>

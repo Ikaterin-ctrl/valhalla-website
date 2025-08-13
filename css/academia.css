@@ -32,12 +32,9 @@
 }
 
 .hero-sobre-content h1 {
-    font-family: var(--font-heading);
     font-size: clamp(2.8rem, 6vw, 4.5rem); /* Ajuste para maior impacto */
-    font-weight: 700;
     margin-bottom: 15px;
     color: var(--color-red); /* Destaque o título com a cor principal */
-    text-transform: uppercase;
 }
 
 .hero-sobre-content p {
@@ -80,12 +77,9 @@
 }
 
 .historia-valhalla h2, .valores h2, .legado-valhalla h2, .estrutura-equipe h2 {
-    font-family: var(--font-heading);
     font-size: clamp(2rem, 4vw, 3rem); /* Ajuste para maior impacto */
-    font-weight: 700;
     margin-bottom: 40px;
     color: var(--color-dark-green);
-    text-transform: uppercase;
 }
 
 .historia-valhalla p, .legado-valhalla p {
@@ -119,11 +113,9 @@
 }
 
 .valor h3 {
-    font-family: var(--font-heading);
     font-size: 1.8rem;
     color: var(--color-red);
     margin-bottom: 15px;
-    text-transform: uppercase;
 }
 
 .valor p {
@@ -163,10 +155,8 @@
 }
 
 .membro-equipe h3 {
-    font-family: var(--font-heading);
     color: var(--color-dark-green);
     margin-bottom: 10px;
-    text-transform: uppercase;
 }
 
 .membro-equipe p {
@@ -189,10 +179,8 @@
 }
 
 .espaco-academia h3 {
-    font-family: var(--font-heading);
     color: var(--color-dark-green);
     margin-bottom: 20px;
-    text-transform: uppercase;
 }
 
 .espaco-academia img {

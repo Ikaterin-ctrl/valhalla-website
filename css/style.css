@@ -120,12 +120,14 @@ a {text-decoration: none; color: inherit;}
     max-width: 100%;
     max-height: 80vh;
     object-fit: contain;
+    margin: 0 5%;
 }
 
 .hero-content {
     flex: 1; 
     text-align: left;
     z-index: 2; 
+    margin-left: 50px;
 }
 
 .hero-content h1 {
@@ -136,6 +138,7 @@ a {text-decoration: none; color: inherit;}
     text-transform: uppercase;
     color: var(--color-white); /* Ensure text is white */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
+    text-align: left;
 }
 
 .hero-slogan {
@@ -569,7 +572,6 @@ img.loaded {
         text-align: center;
         padding-top: 80px; 
     }
-    .hero-content { text-align: center; }
     .hero-content h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
 
     .footer-content {

@@ -296,8 +296,8 @@ img.loaded {
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.03); 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     border-color: var(--color-red);
 }
 

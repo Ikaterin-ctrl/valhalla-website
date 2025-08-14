@@ -3,11 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
+    const handleImageLoading = (container) => {
+        const images = container.querySelectorAll('img');
+        images.forEach(img => {
+            if (img.complete) {
+                img.classList.add('loaded');
+            } else {
+                img.addEventListener('load', () => {
+                    img.classList.add('loaded');
+                });
+            }
+        });
+    };
+
     if (headerPlaceholder) {
         fetch('header.html')
             .then(response => response.text())
             .then(data => {
                 headerPlaceholder.innerHTML = data;
+                handleImageLoading(headerPlaceholder);
                 // Set active link
                 const navLinks = document.querySelectorAll('.menu a');
                 navLinks.forEach(link => {
@@ -42,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.text())
             .then(data => {
                 footerPlaceholder.innerHTML = data;
+                handleImageLoading(footerPlaceholder);
             });
     }
 });

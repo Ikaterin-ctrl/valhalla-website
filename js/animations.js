@@ -19,25 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Função para lidar com o carregamento de imagens
-  function handleImageLoading() {
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-      if (img.complete) {
-        img.classList.add('loaded');
-      } else {
-        img.addEventListener('load', () => {
-          img.classList.add('loaded');
-        });
-      }
-    });
-  }
+  
 
   // Inicia a animação do herói assim que a página carrega
   animateHero();
 
-  // Lida com o carregamento de imagens
-  handleImageLoading();
+  
 
   // Configuração do Intersection Observer para o resto da página
   const observer = new IntersectionObserver((entries) => {

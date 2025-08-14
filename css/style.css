@@ -324,7 +324,7 @@ img.loaded {
     font-weight: 700;
     text-transform: uppercase;
 }
-.swiper-container {
+.swiper {
     width: 100%;
     padding: 0 50px; /* Add some padding for navigation buttons */
 }
@@ -597,7 +597,7 @@ img.loaded {
         text-align: center;
         padding-top: 80px; 
     }
-    .hero-content h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+    .hero-content h1 { margin-top: 8em; font-size: clamp(2.2rem, 8vw, 3rem); }
 
     .footer-content {
         flex-direction: column; 

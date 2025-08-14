@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const swiper = new Swiper('.swiper-container', {
+  const swiper = new Swiper('.swiper', {
     // Optional parameters
     loop: true,
     slidesPerView: 1,

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -56,31 +57,42 @@ Se você busca um treinamento sério e está pronto para se comprometer com sua 
         <!-- DEPOIMENTOS -->
         <section class="depoimentos animate-on-scroll">
             <h2 class="section-title">Comunidade</h2>
-            <div class="carrossel-wrapper">
-                <div class="carrossel-depoimentos">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
                     <!-- Depoimentos -->
-                    <article class="depoimento">
-                        <div class="depoimento-header">
-                            <span class="reviewer-name">Lucas M.</span>
-                            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-                        </div>
-                        <p>"Academia com ambiente familiar e treinos de altíssimo nível. O Mestre Marcelo é uma lenda, super atencioso com todos os alunos."</p>
-                    </article>
-                    <article class="depoimento">
-                        <div class="depoimento-header">
-                            <span class="reviewer-name">Fernanda P.</span>
-                            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-                        </div>
-                        <p>"O melhor lugar para treinar em Campinas. Acolhedor, respeitoso e com uma energia incrível. Recomendo de olhos fechados!"</p>
-                    </article>
-                    <article class="depoimento">
-                        <div class="depoimento-header">
-                            <span class="reviewer-name">Guilherme H.</span>
-                            <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
-                        </div>
-                        <p>"Excelente academia, ambiente familiar e acolhedor, mestre Marcelo é uma pessoa fantástica, super atencioso e com uma didática incrível."</p>
-                    </article>
+                    <div class="swiper-slide">
+                        <article class="depoimento">
+                            <div class="depoimento-header">
+                                <span class="reviewer-name">Lucas M.</span>
+                                <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                            </div>
+                            <p>"Academia com ambiente familiar e treinos de altíssimo nível. O Mestre Marcelo é uma lenda, super atencioso com todos os alunos."</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="depoimento">
+                            <div class="depoimento-header">
+                                <span class="reviewer-name">Fernanda P.</span>
+                                <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                            </div>
+                            <p>"O melhor lugar para treinar em Campinas. Acolhedor, respeitoso e com uma energia incrível. Recomendo de olhos fechados!"</p>
+                        </article>
+                    </div>
+                    <div class="swiper-slide">
+                        <article class="depoimento">
+                            <div class="depoimento-header">
+                                <span class="reviewer-name">Guilherme H.</span>
+                                <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+                            </div>
+                            <p>"Excelente academia, ambiente familiar e acolhedor, mestre Marcelo é uma pessoa fantástica, super atencioso e com uma didática incrível."</p>
+                        </article>
+                    </div>
                 </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
             <a href="https://www.google.com/maps/search/?api=1&query=Valhalla+Academia+Campinas" target="_blank" class="btn base-btn">Ver todas as avaliações</a>
         </section>
@@ -95,7 +107,9 @@ Se você busca um treinamento sério e está pronto para se comprometer com sua 
     <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/loader.js" defer></script>
     <script src="js/animations.js" defer></script>
+    <script src="js/carousel.js" defer></script>
 </body>
 </html>

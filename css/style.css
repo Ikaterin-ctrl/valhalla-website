@@ -310,39 +310,64 @@ img.loaded {
 }
 
 /* DEPOIMENTOS */
-.depoimentos {background: var(--color-beige); padding: 100px 0; text-align: center; overflow: hidden;}
-.depoimentos h2 {color: var(--color-dark-green); margin-bottom: 40px; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase;}
-.carrossel-wrapper {width: 100%;}
-.carrossel-depoimentos {
-    display: flex;
-    width: fit-content; 
-    gap: 20px;
-    animation: scroll 40s linear infinite;
+.depoimentos {
+    background: var(--color-beige);
+    padding: 100px 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative; /* For navigation buttons positioning */
 }
-.carrossel-wrapper:hover .carrossel-depoimentos {
-    animation-play-state: paused; 
+.depoimentos h2 {
+    color: var(--color-dark-green);
+    margin-bottom: 40px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.swiper-container {
+    width: 100%;
+    padding: 0 50px; /* Add some padding for navigation buttons */
 }
 .depoimento {
     background: var(--color-light-green);
     padding: 25px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    flex: 0 0 320px; 
     text-align: left;
+    height: auto; /* Ensure slides have proper height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.depoimento-header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
-.reviewer-name {font-weight: bold; font-family: var(--font-heading);}
-.stars {color: #f0c14b; font-size: 1.2rem;}
-.depoimento p {font-size: 0.95rem; color: var(--color-black); line-height: 1.5;}
-.depoimentos .btn-ver-mais {margin-top: 40px;}
+.depoimento-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.reviewer-name {
+    font-weight: bold;
+    font-family: var(--font-heading);
+}
+.stars {
+    color: #f0c14b;
+    font-size: 1.2rem;
+}
+.depoimento p {
+    font-size: 0.95rem;
+    color: var(--color-black);
+    line-height: 1.5;
+}
+.depoimentos .btn {
+    margin-top: 40px;
+}
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%); 
-    }
+/* Swiper Navigation */
+.swiper-button-next, .swiper-button-prev {
+    color: var(--color-red);
+}
+.swiper-pagination-bullet-active {
+    background: var(--color-red);
 }
 
 /* CTA FINAL */

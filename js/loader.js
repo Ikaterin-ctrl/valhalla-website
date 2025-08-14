@@ -59,4 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 handleImageLoading(footerPlaceholder);
             });
     }
+
+    // Handle images in the main content
+    handleImageLoading(document.body);
 });

@@ -2,6 +2,15 @@
     --font-serif: 'Cormorant Garamond', serif;
 }
 
+body.sobre-nos-page {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    /* Adicionar imagem de textura sutil aqui, exemplo: */
+    /* background-image: url('../assets/textures/subtle-texture.png'); */
+    /* background-blend-mode: multiply; */
+    /* opacity: 0.1; */
+}
+
 .page-header-padding {
     padding-top: 120px; /* Ajuste para o header fixo */
 }
@@ -13,12 +22,12 @@
 }
 
 /* ESTRUTURA DAS SEÇÕES */
-#perfil-mestre, #historia-academia, #nossa-filosofia {
-    padding: 40px 0;
+.perfil-mestre, .legado-academia {
+    padding: 100px 10%; /* Consistent with index.html sections */
     border-bottom: 2px solid #444; /* Borda 'bruta' */
 }
 
-#nossa-filosofia {
+.legado-academia {
     border-bottom: none;
 }
 
@@ -30,80 +39,51 @@ h2 {
     letter-spacing: 1px;
     font-size: 2.5rem;
     margin-bottom: 20px;
+    text-align: center; /* Consistent with .section-title */
+}
+
+/* PARÁGRAFOS */
+p {
+    font-family: var(--font-body);
+    line-height: 1.7; /* Consistent with .historia p */
 }
 
 /* PERFIL DO MESTRE */
-#perfil-mestre {
+.perfil-mestre {
     display: flex;
     gap: 40px;
     align-items: flex-start;
 }
 
-.perfil-coluna-img {
+.mestre-foto {
     flex: 1;
     max-width: 300px;
 }
 
-.perfil-coluna-img img {
+.mestre-foto img {
     width: 100%;
     height: auto;
-    filter: grayscale(100%) contrast(120%);
-    border: 2px solid #555;
+    filter: grayscale(100%) contrast(110%);
+    border: 3px solid var(--color-red); /* Using --color-red from style.css */
 }
 
-.perfil-coluna-texto {
+.mestre-texto {
     flex: 2;
 }
 
-.perfil-coluna-texto p {
+.mestre-texto p {
     margin-bottom: 15px;
-    line-height: 1.7;
 }
-
-/* CITAÇÃO */
-blockquote {
-    margin-top: 20px;
-    padding-left: 20px;
-    border-left: 4px solid var(--color-red);
-    font-style: italic;
-    font-size: 1.1rem;
-    color: #ccc;
-}
-
-/* NOSSA FILOSOFIA */
-#nossa-filosofia ul {
-    list-style: none;
-    padding: 0;
-}
-
-#nossa-filosofia li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-#nossa-filosofia li strong {
-    color: var(--color-red);
-    font-family: var(--font-heading);
-}
-
-#missao p {
-    line-height: 1.7;
-    margin-bottom: 20px;
-    max-width: 70ch;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-    #perfil-mestre {
+    .perfil-mestre {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .perfil-coluna-img {
+    .mestre-foto {
         max-width: 250px;
         margin-bottom: 20px;
     }

@@ -30,6 +30,7 @@
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 6vw, 4rem);
     margin-bottom: 15px;
+    margin-left: 10rem;
 }
 
 .page-hero-content p {

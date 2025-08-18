@@ -1,136 +1,140 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- INÍCIO DO NOVO SCRIPT DE STATUS DA ACADEMIA ---
-    const statusDot = document.querySelector('#status-academia .status-dot');
-    const statusText = document.querySelector('#status-academia .status-text');
+    const gradeCompleta = [];
 
-    // Estrutura de dados com a grade de horários completa.
-    // Dia: 0 = Domingo, 1 = Segunda, ..., 6 = Sábado
-    const gradeCompleta = [
-        { dia: 1, hora: 7, aula: 'Jiu-Jitsu' },
-        { dia: 2, hora: 8, aula: 'Muay Thai' },
-        { dia: 3, hora: 7, aula: 'Jiu-Jitsu' },
-        { dia: 4, hora: 8, aula: 'Sanda' },
-        { dia: 5, hora: 7, aula: 'Boxe' },
-        { dia: 1, hora: 9, aula: 'Jiu-Jitsu' },
-        { dia: 2, hora: 10, aula: 'Muay Thai' },
-        { dia: 3, hora: 9, aula: 'Jiu-Jitsu' },
-        { dia: 4, hora: 10, aula: 'Muay Thai' },
-        { dia: 5, hora: 9, aula: 'Jiu-Jitsu (Sem Kimono)' },
-        { dia: 6, hora: 10, aula: 'Jiu-Jitsu (Aulão)' },
-        { dia: 1, hora: 11, aula: 'MMA' },
-        { dia: 2, hora: 12, aula: 'Boxe' },
-        { dia: 3, hora: 11, aula: 'MMA' },
-        { dia: 4, hora: 12, aula: 'Boxe' },
-        { dia: 5, hora: 11, aula: 'MMA' },
-        { dia: 1, hora: 15, aula: 'Boxe Chinês (Sanda)' },
-        { dia: 3, hora: 15, aula: 'Defesa Pessoal (Krav Maga)' },
-        { dia: 5, hora: 15, aula: 'Boxe Chinês (Sanda)' },
-        { dia: 2, hora: 16, aula: 'Jiu-Jitsu' },
-        { dia: 4, hora: 16, aula: 'Jiu-Jitsu' },
-        { dia: 1, hora: 17, aula: 'Muay Thai' },
-        { dia: 3, hora: 17, aula: 'Muay Thai' },
-        { dia: 5, hora: 17, aula: 'Muay Thai' },
-        { dia: 2, hora: 18, aula: 'Boxe' },
-        { dia: 4, hora: 18, aula: 'Boxe' },
-        { dia: 1, hora: 19, aula: 'Jiu-Jitsu' },
-        { dia: 3, hora: 19, aula: 'Jiu-Jitsu' },
-        { dia: 5, hora: 19, aula: 'Jiu-Jitsu' },
-        { dia: 1, hora: 20, aula: 'Funcional Fight' },
-        { dia: 2, hora: 20, aula: 'Muay Thai' },
-        { dia: 3, hora: 20, aula: 'Funcional Fight' },
-        { dia: 4, hora: 20, aula: 'Muay Thai' },
-        { dia: 1, hora: 21, aula: 'Boxe Chinês (Sanda)' },
-        { dia: 2, hora: 21, aula: 'MMA' },
-        { dia: 3, hora: 21, aula: 'Boxe Chinês (Sanda)' },
-        { dia: 4, hora: 21, aula: 'MMA' }
-    ];
+    // Função para buscar e processar os horários
+    async function carregarHorarios() {
+        try {
+            const response = await fetch('../data/horarios.json');
+            const horariosJSON = await response.json();
+            gradeCompleta.push(...horariosJSON);
+            
+            // Depois que os dados são carregados, construa a grade e configure o status
+            construirGradeHorarios(gradeCompleta);
+            atualizarStatus(gradeCompleta);
+            configurarFiltros();
 
-    function getStatusAcademia() {
+        } catch (error) {
+            console.error('Erro ao carregar o arquivo de horários:', error);
+            const tabelaBody = document.querySelector('#grade-horarios tbody');
+            if (tabelaBody) {
+                tabelaBody.innerHTML = '<tr><td colspan="7">Não foi possível carregar os horários. Tente novamente mais tarde.</td></tr>';
+            }
+        }
+    }
+
+    // Função para construir a tabela de horários dinamicamente
+    function construirGradeHorarios(horarios) {
+        const tabelaBody = document.querySelector('#grade-horarios tbody');
+        if (!tabelaBody) return;
+
+        tabelaBody.innerHTML = ''; // Limpa a tabela antes de preencher
+
+        // Agrupa os horários por hora
+        const horariosAgrupados = horarios.reduce((acc, aula) => {
+            const hora = `${String(aula.hora).padStart(2, '0')}:00`;
+            if (!acc[hora]) {
+                acc[hora] = { segunda: '', terca: '', quarta: '', quinta: '', sexta: '', sabado: '' };
+            }
+            const dias = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
+            const diaStr = dias[aula.dia];
+            acc[hora][diaStr] = `<td class="${aula.classe}">${aula.aula}</td>`;
+            return acc;
+        }, {});
+
+        // Ordena as horas
+        const horasOrdenadas = Object.keys(horariosAgrupados).sort();
+
+        // Cria as linhas da tabela
+        horasOrdenadas.forEach(hora => {
+            const linha = document.createElement('tr');
+            linha.innerHTML = `<td>${hora}</td>` + 
+                              `${horariosAgrupados[hora].segunda || '<td></td>'}` +
+                              `${horariosAgrupados[hora].terca || '<td></td>'}` +
+                              `${horariosAgrupados[hora].quarta || '<td></td>'}` +
+                              `${horariosAgrupados[hora].quinta || '<td></td>'}` +
+                              `${horariosAgrupados[hora].sexta || '<td></td>'}` +
+                              `${horariosAgrupados[hora].sabado || '<td></td>'}`;
+            tabelaBody.appendChild(linha);
+        });
+    }
+
+    // Função para configurar os filtros de modalidades
+    function configurarFiltros() {
+        const filtroButtons = document.querySelectorAll('#horarios-filtros .filtro-btn');
+        const tabelaBody = document.querySelector('#grade-horarios tbody');
+
+        if (filtroButtons.length > 0 && tabelaBody) {
+            filtroButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filtroButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filtro = this.dataset.filter;
+                    const todasAsCelulas = tabelaBody.querySelectorAll('td');
+
+                    todasAsCelulas.forEach(td => {
+                        if (filtro === 'all' || td.classList.contains(filtro)) {
+                            td.style.opacity = '1';
+                            td.style.visibility = 'visible';
+                        } else if (td.cellIndex !== 0) { // Não oculta a célula da hora
+                            td.style.opacity = '0';
+                            td.style.visibility = 'hidden';
+                        }
+                    });
+                });
+            });
+        }
+    }
+
+    // Função para atualizar o status da academia (Aberto/Fechado)
+    function atualizarStatus(horarios) {
+        const statusDot = document.querySelector('#status-academia .status-dot');
+        const statusText = document.querySelector('#status-academia .status-text');
+        if (!statusDot || !statusText) return;
+
         const agora = new Date();
-        const diaSemana = agora.getDay();
+        const diaSemana = agora.getDay(); // 0 = Domingo, 1 = Segunda, ...
         const horaAtual = agora.getHours();
 
-        // Horários de funcionamento (para a mensagem Aberto/Fechado)
-        const horariosGerais = {
-            1: { abre: 7, fecha: 22 }, 2: { abre: 8, fecha: 22 }, 3: { abre: 7, fecha: 22 },
-            4: { abre: 8, fecha: 22 }, 5: { abre: 7, fecha: 22 }, 6: { abre: 10, fecha: 11 },
-            0: { abre: null, fecha: null }
-        };
+        // Encontra os horários de abertura e fechamento do dia
+        const aulasDoDia = horarios.filter(aula => aula.dia === diaSemana);
+        let abre = 24, fecha = 0;
+        if (aulasDoDia.length > 0) {
+            abre = Math.min(...aulasDoDia.map(a => a.hora));
+            fecha = Math.max(...aulasDoDia.map(a => a.hora)) + 1; // Considera 1h de duração
+        }
 
-        const hojeInfo = horariosGerais[diaSemana];
-        const estaAberto = hojeInfo.abre !== null && horaAtual >= hojeInfo.abre && horaAtual < hojeInfo.fecha;
+        const estaAberto = horaAtual >= abre && horaAtual < fecha;
 
         // Encontrar a próxima aula
-        let proximaAula = null;
-        // Procura aulas hoje, mais tarde
-        proximaAula = gradeCompleta.find(aula => aula.dia === diaSemana && aula.hora > horaAtual);
-
-        // Se não achar aula hoje, procura no dia seguinte (e nos próximos)
+        let proximaAula = horarios.find(aula => aula.dia === diaSemana && aula.hora > horaAtual);
         if (!proximaAula) {
             for (let i = 1; i <= 7; i++) {
                 const proximoDia = (diaSemana + i) % 7;
-                proximaAula = gradeCompleta.find(aula => aula.dia === proximoDia);
+                proximaAula = horarios.find(aula => aula.dia === proximoDia);
                 if (proximaAula) {
-                    proximaAula.diferencaDias = i; // Guarda se a aula é amanhã ou depois
+                    proximaAula.diferencaDias = i;
                     break;
                 }
             }
         }
 
-        return { estaAberto, proximaAula };
-    }
-
-    function atualizarStatus() {
-        const { estaAberto, proximaAula } = getStatusAcademia();
-
         if (estaAberto) {
             statusDot.style.backgroundColor = '#7CFC00'; // Verde
-            statusText.innerHTML = `Estamos ABERTOS te esperando!<br><small>Próxima aula: ${proximaAula.aula} às ${proximaAula.hora}:00</small>`;
+            statusText.innerHTML = `Estamos ABERTOS!`;
+            if(proximaAula && proximaAula.dia === diaSemana) {
+                 statusText.innerHTML += `<br><small>Próxima aula: ${proximaAula.aula} às ${proximaAula.hora}:00</small>`;
+            }
         } else {
             statusDot.style.backgroundColor = '#B22222'; // Vermelho
+            statusText.innerHTML = 'Estamos FECHADOS.';
             if (proximaAula) {
-                if (proximaAula.diferencaDias > 1) { // Se a próxima aula for depois de amanhã
-                     statusText.innerHTML = `Já encerramos por hoje.<br><small>Nosso próximo treino será em breve. Bom descanso!</small>`;
-                } else if (proximaAula.diferencaDias === 1) { // Se a próxima aula for amanhã
-                    statusText.innerHTML = `Já encerramos por hoje.<br><small>Nosso próximo treino é ${proximaAula.aula} amanhã às ${proximaAula.hora}:00. Bom descanso!</small>`;
-                } else { // Se a próxima aula for ainda hoje
-                    statusText.innerHTML = `Estamos FECHADOS agora.<br><small>Mas fica tranquilo, a próxima aula é ${proximaAula.aula} às ${proximaAula.hora}:00!</small>`;
-                }
-            } else { // Fallback
-                 statusText.textContent = 'Estamos FECHADOS';
+                const diaProxAula = proximaAula.diferencaDias === 1 ? 'amanhã' : 'em breve';
+                statusText.innerHTML += `<br><small>Próximo treino: ${proximaAula.aula} ${diaProxAula} às ${proximaAula.hora}:00</small>`;
             }
         }
     }
 
-    if (statusDot && statusText) {
-        atualizarStatus();
-    }
-    // --- FIM DO NOVO SCRIPT DE STATUS DA ACADEMIA ---
-
-
-    // --- INÍCIO DO SCRIPT DE FILTRO DE HORÁRIOS ---
-    const filtroButtons = document.querySelectorAll('#horarios-filtros .filtro-btn');
-    const todasAsAulas = document.querySelectorAll('#grade-horarios td[class]'); // Seleciona apenas as <td> que têm classes de aula
-
-    if (filtroButtons.length > 0 && todasAsAulas.length > 0) {
-        filtroButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Gerencia a classe 'active' nos botões
-                filtroButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-
-                const filtro = this.dataset.filter;
-
-                todasAsAulas.forEach(aulaTd => {
-                    // Se o filtro for 'all' ou a célula da aula contiver a classe do filtro
-                    if (filtro === 'all' || aulaTd.classList.contains(filtro)) {
-                        aulaTd.classList.remove('is-hidden'); // Mostra a célula
-                    } else {
-                        aulaTd.classList.add('is-hidden'); // Esconde a célula
-                    }
-                });
-            });
-        });
-    }
-    // --- FIM DO SCRIPT DE FILTRO DE HORÁRIOS ---
+    // Inicia o processo
+    carregarHorarios();
 });

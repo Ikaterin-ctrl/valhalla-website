@@ -1,0 +1,74 @@
+/* ====================================================== */
+/* CSS BASE PARA A FUTURA LOJA AVANÇADA - INÍCIO DO COMENTÁRIO */
+/* ====================================================== */
+
+/*
+.store-hero {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-text);
+    text-align: center;
+    padding: 100px 5%;
+}
+.store-hero h1 { font-family: var(--font-serif); font-size: 3.5rem; text-transform: uppercase; }
+.store-hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+.store-categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 5%;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+.category-link { font-family: var(--font-sans); font-weight: bold; padding: 10px 20px; border-radius: 20px; transition: all 0.3s; }
+.category-link.active, .category-link:hover { background-color: var(--color-primary); color: var(--color-light-text); }
+
+.product-grid-container { padding: 80px 5%; }
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card { text-align: center; }
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+.product-card img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.4s ease-in-out;
+}
+.product-card .product-img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+.product-card:hover .product-img-hover { opacity: 1; }
+
+.product-actions {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.product-card:hover .product-actions { opacity: 1; }
+.action-btn { background: var(--color-light-bg); color: var(--color-dark-text); padding: 10px 15px; border-radius: 4px; font-size: 0.9rem; font-weight: bold; }
+
+.product-info { padding-top: 15px; }
+.product-category { font-size: 0.8rem; color: #777; }
+.product-title { font-family: var(--font-serif); font-size: 1.3rem; margin: 5px 0; }
+.product-price { font-weight: bold; font-size: 1.2rem; }
+*/
+
+/* ==================================================== */
+/* CSS BASE PARA A FUTURA LOJA AVANÇADA - FIM DO COMENTÁRIO */
+/* ==================================================== */

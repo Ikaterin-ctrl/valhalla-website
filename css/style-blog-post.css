@@ -1,0 +1,125 @@
+/*------------------------------------------------------------------
+[Estilos para a Página de Artigo do Blog]
+
+1. Body e Layout Principal
+2. Container do Artigo
+3. Cabeçalho do Artigo (Título, Meta)
+4. Imagem de Destaque
+5. Conteúdo do Artigo (Parágrafos, Títulos)
+6. Link de Voltar
+7. Responsividade
+-------------------------------------------------------------------*/
+
+/* 1. Body e Layout Principal */
+body.article-page {
+    background-color: #1a1a1a; /* Fundo escuro, usando um valor fallback */
+    background-color: var(--color-dark-bg, #1a1a1a);
+    color: #f0f0f0; /* Texto claro, usando um valor fallback */
+    color: var(--color-light-text, #f0f0f0);
+}
+
+/* 2. Container do Artigo */
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 5% 80px 5%; /* Padding superior maior para afastar do header */
+}
+
+/* 3. Cabeçalho do Artigo */
+.article-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.article-header h1 {
+    font-family: var(--font-serif, 'Cormorant Garamond', serif);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--color-white, #ffffff);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.article-meta {
+    font-family: var(--font-body, 'Roboto', sans-serif);
+    font-size: 0.9rem;
+    color: #a0a0a0; /* Cor sutil para os metadados */
+}
+
+.article-meta a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.article-meta a:hover {
+    color: var(--color-primary, #B22222);
+}
+
+/* 4. Imagem de Destaque */
+.article-featured-image {
+    margin-bottom: 40px;
+}
+
+.article-featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* 5. Conteúdo do Artigo */
+.article-content {
+    font-family: var(--font-body, 'Roboto', sans-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.article-content p {
+    margin-bottom: 1.5em;
+}
+
+.article-content h2, 
+.article-content h3 {
+    font-family: var(--font-serif, 'Cormorant Garamond', serif);
+    color: var(--color-white, #ffffff);
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.article-content a {
+    color: var(--color-primary, #B22222);
+    text-decoration: underline;
+}
+
+.article-content blockquote {
+    border-left: 3px solid var(--color-primary, #B22222);
+    padding-left: 20px;
+    margin: 2em 0;
+    font-style: italic;
+    color: #c0c0c0;
+}
+
+/* 6. Link de Voltar */
+.back-to-blog {
+    display: inline-block;
+    margin-top: 40px;
+    font-family: var(--font-body, 'Roboto', sans-serif);
+    color: var(--color-primary, #B22222);
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.back-to-blog:hover {
+    transform: translateX(-5px);
+}
+
+/* 7. Responsividade */
+@media (max-width: 768px) {
+    .article-container {
+        padding-top: 100px;
+    }
+
+    .article-header h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+}

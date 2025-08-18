@@ -6,8 +6,7 @@
     <meta name="description" content="Aprenda Jiu-Jitsu na Valhalla Taquaral. Aulas para iniciantes, mulheres e crianças com foco em técnica, disciplina e autoconfiança.">
     <title>Jiu-Jitsu - Valhalla Fight Center</title>
 
-    <link rel="stylesheet" href="../css/style.css"> <!-- Estilos Gerais -->
-    <link rel="stylesheet" href="../css/style-modalidades.css"> <!-- Estilo Base das Modalidades -->
+   
     <link rel="stylesheet" href="../css/modalidades/jiu-jitsu.css"> <!-- Estilo Específico do Jiu-Jitsu -->
 </head>
 <body>
@@ -34,86 +33,117 @@
     </header>
 
     <main>
-        <!-- HERO COMPONENT - JIU-JITSU -->
-        <section class="hero-modality-v2 jiu-jitsu-hero">
-            <div class="hero-content-wrapper">
-                <div class="hero-text-content">
-                    <span class="modality-tag">Jiu-Jitsu</span>
-                    <h1>O Xadrez Humano</h1>
-                    <p>Domine a técnica, desenvolva a disciplina e transforme seu corpo e mente no tatame da Valhalla.</p>
-                    <a href="../contato-horarios.html" class="btn-hero">Comece a sua Jornada</a>
-                </div>
-                <div class="hero-media-content">
-                    <!-- Sugestão: Use um vídeo em loop de um treino técnico ou uma rolagem fluida -->
-                    <video src="../assets/videos/jiujitsu-loop.mp4" autoplay loop muted playsinline poster="../assets/modalidades/jiujitsu-poster.jpg"></video>
-                </div>
+        <section class="hero-modality" style="background-image: url('../assets/hero/hero-jiujitsu.jpg');">
+            <div class="hero-overlay">
+                <h1>Jiu-Jitsu</h1>
+                <p>A Arte Suave que Forja o Caráter</p>
             </div>
         </section>
 
-        <section class="modality-intro container">
-            <h2>O que é o Jiu-Jitsu?</h2>
-            <p>Conhecido como "xadrez humano", o Jiu-Jitsu é uma arte marcial focada em técnicas de alavanca e estrangulamento que permitem que uma pessoa menor e mais fraca se defenda de um oponente maior. Na Valhalla, ensinamos a arte em sua forma mais pura, valorizando a técnica, o respeito e a estratégia.</p>
+        <section class="modality-section container">
+            <h2 class="section-title">A Herança da Arte Suave</h2>
+            <p class="intro-text">Na Valhalla, o Jiu-Jitsu é mais que um esporte; é um legado. Ensinamos a arte suave como ela nos foi passada: uma ferramenta de disciplina, respeito e superação, onde a técnica sempre prevalece sobre a força bruta.</p>
         </section>
 
-        <section class="benefits-section">
-            <div class="container">
-                <h2>Benefícios que Vão Além do Tatame</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-confianca.svg" alt="Ícone de Confiança">
-                        <h3>Autoconfiança</h3>
-                        <p>Supere seus limites e desenvolva uma confiança inabalável.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-corpo.svg" alt="Ícone de Condicionamento">
-                        <h3>Condicionamento Físico</h3>
-                        <p>Um treino completo que melhora sua força, flexibilidade e resistência.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-disciplina.svg" alt="Ícone de Disciplina">
-                        <h3>Disciplina e Foco</h3>
-                        <p>Aprenda a se concentrar e a manter a calma sob pressão.</p>
-                    </div>
+        <section class="modality-section instructor-section">
+            <h2 class="section-title">Seu Guia no Tatame</h2>
+            <div class="instructor-profile container">
+                <img src="assets/instrutores/professor-jiujitsu.jpg" alt="Professor de Jiu-Jitsu da Valhalla" class="instructor-photo">
+                <div class="instructor-bio">
+                    <h3>[Nome do Professor]</h3>
+                    <span>Faixa Preta Xº Grau</span>
+                    <p>Com mais de XX anos de tatame, o Professor [Nome] é um guardião da filosofia do Mestre Marcelo Ferreira. Sua didática foca nos fundamentos e na aplicação inteligente da técnica, garantindo um aprendizado seguro e eficaz para todos os níveis.</p>
+                    <blockquote>"No meu tatame, a técnica vence a força, o respeito vence o ego e a disciplina vence qualquer obstáculo."</blockquote>
                 </div>
             </div>
         </section>
 
-        <section class="target-audience-section container">
-            <h2>O Jiu-Jitsu na Valhalla é Para Todos</h2>
-            <div class="audience-tabs">
-                <article class="audience-profile">
-                    <h3>Para Iniciantes</h3>
-                    <p>Nunca pisou em um tatame? Perfeito. Nossas turmas para iniciantes são projetadas para te ensinar a base da arte marcial em um ambiente seguro e acolhedor, respeitando seu ritmo.</p>
-                </article>
-                <article class="audience-profile">
-                    <h3>Para Mulheres</h3>
-                    <p>Oferecemos um ambiente seguro e empoderador para mulheres que desejam aprender defesa pessoal, ganhar confiança e fazer parte de uma comunidade forte.</p>
-                </article>
-                 <article class="audience-profile">
-                    <h3>Para Crianças</h3>
-                    <p>Com uma metodologia lúdica e focada em disciplina, o Jiu-Jitsu Kids ajuda no desenvolvimento motor, na socialização e no ensino de valores como respeito e hierarquia.</p>
-                </article>
-            </div>
+        <section class="modality-section schedule-section container">
+            <h2 class="section-title">Horários das Aulas de Jiu-Jitsu</h2>
+            <table id="grade-horarios-jiujitsu">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Manhã</th>
+                        <th>Tarde</th>
+                        <th>Noite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Segunda-feira</td>
+                        <td>07:00 - 08:30</td>
+                        <td>16:00 - 17:30</td>
+                        <td>19:00 - 20:30</td>
+                    </tr>
+                    <tr>
+                        <td>Quarta-feira</td>
+                        <td>07:00 - 08:30</td>
+                        <td>16:00 - 17:30</td>
+                        <td>19:00 - 20:30</td>
+                    </tr>
+                    <tr>
+                        <td>Sexta-feira</td>
+                        <td>07:00 - 08:30</td>
+                        <td>-</td>
+                        <td>19:00 - 20:30 (Avançado)</td>
+                    </tr>
+                     <tr>
+                        <td>Sábado</td>
+                        <td>10:00 - 11:30 (Aulão)</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <section class="gallery-modality container">
-             <h2>Nossas Aulas na Prática</h2>
-             <div class="gallery-grid">
-                <img src="../assets/modalidades/jiujitsu-img1.jpg" alt="Aula de Jiu-Jitsu na Valhalla">
-                <img src="../assets/modalidades/jiujitsu-img2.jpg" alt="Alunos de Jiu-Jitsu treinando">
-                <img src="../assets/modalidades/jiujitsu-img3.jpg" alt="Detalhe de uma posição de Jiu-Jitsu">
+         <section class="modality-section gallery-section">
+            <h2 class="section-title">A Vibe do Tatame</h2>
+            <div class="gallery-grid container">
+                <img src="assets/galeria/jiujitsu-foto1.jpg" alt="Alunos de Jiu-Jitsu treinando na Valhalla em preto e branco">
+                <img src="assets/galeria/jiujitsu-foto2.jpg" alt="Momento de concentração no treino de Jiu-Jitsu">
+                <img src="../assets/galeria/jiujitsu-foto3.jpg" alt="Respeito e comunidade no tatame da Valhalla">
              </div>
+        </section>
+
+        <section class="modality-section testimonials-specific container">
+            <h2 class="section-title">O Que Nossos Alunos Dizem</h2>
+            <div class="testimonial-card">
+                <blockquote>
+                    <p>"Melhor academia de jiu-jitsu de Campinas, ambiente familiar e acolhedor, treinos de alto nível, com certeza o melhor lugar para quem quer iniciar."</p>
+                </blockquote>
+                <cite>- Vinicius F.</cite>
+            </div>
+        </section>
+
+        <section class="modality-section faq-section">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container container">
+                <div class="faq-item">
+                    <h3>Preciso ter um quimono para a aula experimental?</h3>
+                    <p>Não se preocupe! Para sua primeira aula, uma roupa de ginástica confortável (sem zíperes ou botões) é suficiente. Nós temos quimonos para emprestar caso seja necessário.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Não tenho nenhuma experiência, posso participar?</h3>
+                    <p>Com certeza. Nossas turmas são preparadas para receber alunos de todos os níveis. Nossos professores darão atenção especial aos seus primeiros passos, ensinando a base de forma segura.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>As aulas de jiu-jitsu são mistas?</h3>
+                    <p>Sim, nossas aulas são mistas e o ambiente é de máximo respeito entre todos os alunos e alunas. Acreditamos que a diversidade no tatame enriquece o aprendizado de todos.</p>
+                </div>
+            </div>
         </section>
 
         <section class="final-cta-section">
             <div class="container">
-                <h2>Pronto para Começar?</h2>
-                <p>Sua jornada na arte suave começa com o primeiro passo. Agende sua aula experimental gratuita e sinta na pele os benefícios do Jiu-Jitsu.</p>
-                <a href="../contato-horarios.html" class="btn-cta">Agende Sua Aula Agora</a>
+                <h2>O Tatame Está Esperando por Você.</h2>
+                <p>Dê o primeiro passo na sua jornada na arte suave. A primeira aula é por nossa conta.</p>
+                <a href="contato-horarios.html" class="btn-cta">Agende Sua Aula Experimental</a>
             </div>
         </section>
-
     </main>
+
 
     <footer class="site-footer">
         <hr>

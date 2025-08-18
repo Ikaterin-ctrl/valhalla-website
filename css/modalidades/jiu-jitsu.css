@@ -1,55 +1,49 @@
-/* ==========================================================================
-   ESTILOS ESPECÍFICOS PARA O HERO DE JIU-JITSU
-   Identidade: Estratégico, Elegante, Sóbrio, "Xadrez Humano".
-   ========================================================================== */
-
-/* 1. TEMA GERAL E FUNDO */
-.hero-modality-v2.jiu-jitsu-hero {
-    /* Azul royal como cor principal, representando estratégia e calma. */
-    --hero-accent-color: var(--color-dark-green); 
-
-    /* Fundo com a imagem da modalidade e um gradiente escuro para legibilidade. */
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
-        url('../../assets/modalidades/jiu_jitsu.png'); /* Imagem específica do Jiu-Jitsu */
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-    color: var(--color-white); /* Texto claro para contraste no fundo escuro. */
+/* HERO CORRIGIDO */
+.hero-modality {
+    background-color: black;
+    height: 100vh;
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-bg);
+    display: flex;
+    align-items: center; /* <<< ESSENCIAL para o alinhamento vertical */
+    justify-content: space-between; /* Distribui o espaço entre as colunas */
+    padding: 0 5%; /* Adiciona respiro nas laterais */
+    gap: 2rem;
 }
 
-/* 2. TIPOGRAFIA */
-.hero-modality-v2.jiu-jitsu-hero .hero-text-content h1 {
-    font-family: var(--font-heading); /* Usando a fonte padrão para headings */
-    font-weight: 700;
-    color: var(--color-red); /* Usando a cor principal de destaque */
+/* COLUNA DA IMAGEM (ESQUERDA) */
+.hero-visual {
+    flex: 1 1 50%; /* Ocupa 50% da largura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-modality-v2.jiu-jitsu-hero .hero-text-content p {
-    color: var(--color-beige); /* Cor de texto mais suave, alinhada à paleta */
+.hero-visual img {
+    max-width: 100%;
+    height: auto; /* Garante a proporção da imagem */
+    max-height: 85vh; /* Limita a altura máxima da imagem */
+    object-fit: contain;
 }
 
-/* 3. ELEMENTOS DE DESTAQUE (TAG E BOTÃO) */
-.hero-modality-v2.jiu-jitsu-hero .hero-text-content .modality-tag {
-    background-color: var(--hero-accent-color);
-    color: var(--color-white);
+/* COLUNA DO TEXTO (DIREITA) */
+.hero-content {
+    flex: 1 1 50%; /* Ocupa os outros 50% da largura */
+    text-align: left; /* Alinha o texto à esquerda para um look profissional */
 }
 
-.hero-modality-v2.jiu-jitsu-hero .btn-hero {
-    background-color: var(--hero-accent-color);
-    color: var(--color-white);
-    border: 2px solid transparent;
+.hero-content h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700; /* Aumenta o peso para mais impacto */
+    text-transform: uppercase;
+    line-height: 1.1;
 }
 
-.hero-modality-v2.jiu-jitsu-hero .btn-hero:hover {
-    background-color: transparent;
-    color: var(--hero-accent-color);
-    border-color: var(--hero-accent-color);
-}
-
-/* 4. MÍDIA (VÍDEO/IMAGEM) */
-.hero-modality-v2.jiu-jitsu-hero .hero-media-content {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px var(--color-dark-green);
+.hero-content h1 span {
+    font-weight: 300; /* Deixa o subtítulo mais leve */
+    font-size: 0.8em; /* Ajusta o tamanho do subtítulo em relação ao título */
+    color: var(--color-primary);
+    display: block; /* Garante que o span fique na linha de baixo */
+    margin-top: 10px;
 }

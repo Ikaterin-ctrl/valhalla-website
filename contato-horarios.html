@@ -33,12 +33,149 @@
           <h2 class="section-title">Nossa Grade de Horários</h2>
           <p>Filtre pela sua modalidade de interesse para ver os horários disponíveis.</p>
         </div>
-        <div id="horarios-filtros" class="horarios-filtros">
-          <!-- Botões de filtro serão inseridos aqui pelo JS -->
-        </div>
-        <div id="horarios-grid" class="horarios-grid">
-          <!-- A grade de horários será inserida aqui pelo JS -->
-        </div>
+        <div id="horarios-filtros">
+    <button class="filtro-btn active" data-filter="all">Ver Tudo</button>
+    <button class="filtro-btn" data-filter="jiujitsu">Jiu Jitsu</button>
+    <button class="filtro-btn" data-filter="boxe">Boxe</button>
+    <button class="filtro-btn" data-filter="muaythai">Muay Thai</button>
+    <button class="filtro-btn" data-filter="sanda">Sanda</button>
+    <button class="filtro-btn" data-filter="mma">MMA</button>
+    <button class="filtro-btn" data-filter="defesapessoal">Defesa Pessoal</button>
+    <button class="filtro-btn" data-filter="funcionalfight">Funcional Fight</button>
+</div>
+
+<table id="grade-horarios">
+    <thead>
+        <tr>
+            <th>Horário</th>
+            <th>Segunda</th>
+            <th>Terça</th>
+            <th>Quarta</th>
+            <th>Quinta</th>
+            <th>Sexta</th>
+            <th>Sábado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="aula jiujitsu boxe">
+            <td>07:00</td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+            <td class="boxe">Boxe</td>
+            <td></td>
+        </tr>
+        <tr class="aula muaythai sanda">
+            <td>08:00</td>
+            <td></td>
+            <td class="muaythai">Muay Thai</td>
+            <td></td>
+            <td class="sanda">Sanda</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="aula jiujitsu">
+             <td>09:00</td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+            <td class="jiujitsu">Jiu-Jitsu (Sem Kimono)</td>
+            <td></td>
+        </tr>
+        <tr class="aula jiujitsu muaythai">
+            <td>10:00</td>
+            <td></td>
+            <td class="muaythai">Muay Thai</td>
+            <td></td>
+            <td class="muaythai">Muay Thai</td>
+            <td></td>
+            <td class="jiujitsu">Jiu-Jitsu (Aulão)</td>
+        </tr>
+        <tr class="aula mma">
+            <td>11:00</td>
+            <td class="mma">MMA</td>
+            <td></td>
+            <td class="mma">MMA</td>
+            <td></td>
+            <td class="mma">MMA</td>
+            <td></td>
+        </tr>
+        <tr class="aula boxe">
+            <td>12:00</td>
+            <td></td>
+            <td class="boxe">Boxe</td>
+            <td></td>
+            <td class="boxe">Boxe</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="aula sanda defesapessoal">
+            <td>15:00</td>
+            <td class="sanda">Boxe Chinês (Sanda)</td>
+            <td></td>
+            <td class="defesapessoal">Defesa Pessoal (Krav Maga)</td>
+            <td></td>
+            <td class="sanda">Boxe Chinês (Sanda)</td>
+            <td></td>
+        </tr>
+        <tr class="aula jiujitsu">
+            <td>16:00</td>
+            <td></td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="aula muaythai">
+            <td>17:00</td>
+            <td class="muaythai">Muay Thai</td>
+            <td></td>
+            <td class="muaythai">Muay Thai</td>
+            <td></td>
+            <td class="muaythai">Muay Thai</td>
+            <td></td>
+        </tr>
+        <tr class="aula boxe">
+            <td>18:00</td>
+            <td></td>
+            <td class="boxe">Boxe</td>
+            <td></td>
+            <td class="boxe">Boxe</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="aula jiujitsu">
+            <td>19:00</td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+            <td class="jiujitsu">Jiu-Jitsu</td>
+            <td></td>
+        </tr>
+        <tr class="aula muaythai funcionalfight">
+            <td>20:00</td>
+            <td class="funcionalfight">Funcional Fight</td>
+            <td class="muaythai">Muay Thai</td>
+            <td class="funcionalfight">Funcional Fight</td>
+            <td class="muaythai">Muay Thai</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="aula mma sanda">
+            <td>21:00</td>
+            <td class="sanda">Boxe Chinês (Sanda)</td>
+            <td class="mma">MMA</td>
+            <td class="sanda">Boxe Chinês (Sanda)</td>
+            <td class="mma">MMA</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
       </section>
     </div>
 

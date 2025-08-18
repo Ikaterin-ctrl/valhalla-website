@@ -711,3 +711,63 @@ img.loaded {
 #horarios-grid .dia-card li.hidden {
     display: none;
 }
+
+/* Estilos para a Seção de Parcerias */
+.partnerships-section {
+    padding: 60px 5%;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
+
+.partnerships-section .section-title {
+     font-size: 2.5rem; /* Ajuste o tamanho do título se necessário */
+}
+
+.pass-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.pass-logos img {
+    max-height: 60px;
+    /* Se a página de contato for de tema claro, remova o filtro abaixo */
+    /* filter: grayscale(100%) brightness(3); */
+}
+
+/* Estilos para a Seção de CTA para Atletas */
+.cta-atletas {
+    background-color: var(--color-dark-bg); /* Fundo escuro para destaque */
+    color: var(--color-light-text);
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.cta-atletas .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-atletas h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--color-red); /* Destaque em vermelho */
+    margin-bottom: 15px;
+}
+
+.cta-atletas p {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Reutiliza o estilo do botão de CTA que já temos */
+.cta-atletas .btn-cta {
+    display: inline-block;
+}

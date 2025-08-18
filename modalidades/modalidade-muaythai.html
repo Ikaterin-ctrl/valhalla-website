@@ -3,150 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubra o poder do Muay Thai na Valhalla. Aulas que combinam condicionamento físico intenso, técnica de golpes e autoconfiança.">
+    <meta name="description" content="Descubra o Muay Thai na Valhalla Taquaral. Aulas para todos os níveis com foco em condicionamento físico, perda de peso e autoconfiança.">
     <title>Muay Thai - Valhalla Fight Center</title>
 
-    <link rel="stylesheet" href="../css/style.css"> <!-- Estilos Gerais -->
-    <link rel="stylesheet" href="../css/style-modalidades.css"> <!-- Estilo Base das Modalidades -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/modalidades/muay-thai.css"> <!-- Estilo Específico do Muay Thai -->
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/logos/logo_valhalla.png" alt="Valhalla"></a>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="../modalidades.html" class="active">Modalidades</a></li>
-                <li><a href="../academia.html">Sobre Nós</a></li>
-                <li><a href="../blog.html">Blog</a></li>
-                <li><a href="../contato-horarios.html">Contato</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
-        <a href="../contato-horarios.html" class="btn-header">Agende uma Aula</a>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
-        <!-- HERO COMPONENT - MUAY THAI -->
-        <section class="hero-modality-v2 muay-thai-hero">
-            <div class="hero-content-wrapper">
-                <div class="hero-text-content">
-                    <span class="modality-tag">Muay Thai</span>
-                    <h1>A Arte das Oito Armas</h1>
-                    <p>Desenvolva um condicionamento físico superior, força explosiva e a confiança de um verdadeiro guerreiro.</p>
-                    <a href="../contato-horarios.html" class="btn-hero">Honre a Tradição</a>
-                </div>
-                <div class="hero-media-content">
-                    <!-- Sugestão: Use um vídeo em loop de um treino de manopla ou saco de pancadas -->
-                    <video src="../assets/videos/muaythai-loop.mp4" autoplay loop muted playsinline poster="../assets/modalidades/muaythai-poster.jpg"></video>
-                </div>
+        <!-- HERO -->
+        <section class="hero-modality" style="background-image: url('../assets/hero/hero-muaythai.jpg');">
+            <div class="hero-overlay">
+                <h1>Muay Thai</h1>
+                <p>A Arte das Oito Armas</p>
             </div>
         </section>
 
-        <section class="modality-intro container">
-            <h2>O que é o Muay Thai?</h2>
-            <p>O Muay Thai, ou Boxe Tailandês, é uma arte marcial conhecida por sua eficiência e uso combinado de punhos, cotovelos, joelhos e canelas. Na Valhalla, nossos treinos são intensos e focados em desenvolver seu condicionamento, força e técnica de combate em um ambiente seguro e respeitoso.</p>
+        <!-- INTRODUÇÃO -->
+        <section class="modality-section container">
+            <h2 class="section-title">A Arte das Oito Armas</h2>
+            <p class="intro-text">O Muay Thai, conhecido como a "arte das oito armas", é uma jornada de poder, disciplina e superação. Na Valhalla, ensinamos não apenas as técnicas de socos, chutes, cotovelos e joelhos, mas também a mentalidade de um guerreiro. É o treino ideal para quem busca um condicionamento físico extremo, queimar calorias e construir uma mente forte e resiliente.</p>
         </section>
 
-        <section class="benefits-section">
-            <div class="container">
-                <h2>Benefícios que Vão Além do Ringue</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-corpo.svg" alt="Ícone de Condicionamento">
-                        <h3>Condicionamento Superior</h3>
-                        <p>Queime calorias e melhore sua resistência cardiovascular como nunca.</p>
+        <!-- PROFESSORES -->
+        <section class="modality-section instructor-section">
+            <h2 class="section-title">Seus Mestres no Ringue</h2>
+            <div class="instructors-grid container">
+                <div class="instructor-profile">
+                    <img src="../assets/instrutores/patricia.jpg" alt="Professora Patrícia" class="instructor-photo">
+                    <div class="instructor-bio">
+                        <h3>Patrícia</h3>
+                        <span>Especialista em Técnica</span>
+                        <p>Especialista em técnica e precisão, Professora Patrícia é a prova de que o Muay Thai é para todos. Sua didática acolhedora é um convite especial para o público feminino que busca força, autoconfiança e uma comunidade de apoio.</p>
                     </div>
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-forca.svg" alt="Ícone de Força">
-                        <h3>Força e Potência</h3>
-                        <p>Desenvolva força explosiva em seus golpes e chutes.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-confianca.svg" alt="Ícone de Confiança">
-                        <h3>Autoconfiança</h3>
-                        <p>Aprenda uma defesa pessoal eficaz e sinta-se mais seguro no dia a dia.</p>
+                </div>
+                <div class="instructor-profile">
+                    <img src="../assets/instrutores/guilherme-carcaca.jpg" alt="Professor Guilherme Carcaça" class="instructor-photo">
+                    <div class="instructor-bio">
+                        <h3>Guilherme "Carcaça"</h3>
+                        <span>Especialista em Alta Intensidade</span>
+                        <p>Com vasta experiência em treinos de alta intensidade, Professor Carcaça eleva o nível dos nossos alunos. Ele foca na potência, na resistência e na estratégia, preparando você para qualquer desafio.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="target-audience-section container">
-            <h2>O Muay Thai na Valhalla é Para Todos</h2>
-            <div class="audience-tabs">
-                <article class="audience-profile">
-                    <h3>Para Quem Busca Fitness</h3>
-                    <p>Procurando um treino dinâmico e desafiador para sair da rotina da musculação? O Muay Thai é a escolha perfeita para um treino de corpo inteiro.</p>
-                </article>
-                <article class="audience-profile">
-                    <h3>Para Quem Quer Lutar</h3>
-                    <p>Nossa equipe tem experiência em preparar atletas para competições, com treinos técnicos e estratégicos para te levar ao próximo nível.</p>
-                </article>
-                 <article class="audience-profile">
-                    <h3>Para Aliviar o Estresse</h3>
-                    <p>Nada como uma aula intensa de Muay Thai para canalizar a energia, aliviar as tensões do dia e focar sua mente.</p>
-                </article>
+        <!-- PARA QUEM É? -->
+        <section class="modality-section for-whom-section container">
+            <h2 class="section-title">Para Quem é o Muay Thai na Valhalla?</h2>
+            <div class="for-whom-grid">
+                <div class="for-whom-item">
+                    <h3>Busca Alta Intensidade</h3>
+                    <p>Se você quer suar de verdade e levar seu corpo ao limite, o Muay Thai é o seu treino. Nossas aulas são dinâmicas, desafiadoras e garantem resultados visíveis.</p>
+                </div>
+                <div class="for-whom-item">
+                    <h3>Perda de Peso</h3>
+                    <p>Procurando uma forma eficiente e motivadora de emagrecer? O alto gasto calórico do Muay Thai acelera o metabolismo e transforma seu corpo, aula após aula.</p>
+                </div>
+                <div class="for-whom-item">
+                    <h3>Autoconfiança</h3>
+                    <p>Aprenda a se defender, ganhe consciência corporal e construa uma autoconfiança inabalável. O Muay Thai empodera você para se sentir mais seguro(a) em qualquer situação.</p>
+                </div>
             </div>
         </section>
 
-        <section class="gallery-modality container">
-             <h2>Nossas Aulas na Prática</h2>
-             <div class="gallery-grid">
-                <img src="../assets/modalidades/muaythai-img1.jpg" alt="Aula de Muay Thai na Valhalla">
-                <img src="../assets/modalidades/muaythai-img2.jpg" alt="Alunos de Muay Thai treinando">
-                <img src="../assets/modalidades/muaythai-img3.jpg" alt="Detalhe de um chute de Muay Thai">
-             </div>
+        <!-- BENEFÍCIOS -->
+        <section class="modality-section benefits-section">
+            <h2 class="section-title">Benefícios do Muay Thai</h2>
+            <div class="benefits-grid container">
+                <div class="benefit-card">
+                    <h3>Condicionamento Extremo</h3>
+                    <p>Aumente sua força, resistência cardiovascular e agilidade com treinos que trabalham o corpo de forma completa.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Autoconfiança e Empoderamento</h3>
+                    <p>Domine técnicas de defesa pessoal eficazes e sinta o poder de superar seus próprios limites a cada treino.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Alívio de Estresse</h3>
+                    <p>Canalize sua energia e alivie as tensões do dia a dia. Cada soco e chute é uma forma de liberar o estresse e focar no presente.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Queima Calórica Elevada</h3>
+                    <p>Um dos treinos mais eficazes para a perda de peso, o Muay Thai acelera seu metabolismo e queima centenas de calorias por aula.</p>
+                </div>
+            </div>
         </section>
 
+        <!-- HORÁRIOS -->
+        <section class="modality-section schedule-section container">
+            <h2 class="section-title">Horários das Aulas de Muay Thai</h2>
+            <table class="muaythai-schedule-table">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Manhã</th>
+                        <th>Tarde</th>
+                        <th>Noite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Segunda-feira</td>
+                        <td>-</td>
+                        <td>17:00 - 18:00</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Terça-feira</td>
+                        <td>08:00 - 09:00 & 10:00 - 11:00</td>
+                        <td>-</td>
+                        <td>20:00 - 21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Quarta-feira</td>
+                        <td>-</td>
+                        <td>17:00 - 18:00</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Quinta-feira</td>
+                        <td>10:00 - 11:00</td>
+                        <td>17:00 - 18:00</td>
+                        <td>20:00 - 21:00</td>
+                    </tr>
+                    <tr>
+                        <td>Sexta-feira</td>
+                        <td>-</td>
+                        <td>17:00 - 18:00</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- GALERIA -->
+        <section class="modality-section gallery-section">
+            <h2 class="section-title">A Energia do Ringue</h2>
+            <div class="gallery-grid container">
+                <img src="../assets/galeria/muaythai-foto1.jpg" alt="Alunos de Muay Thai treinando na Valhalla">
+                <img src="../assets/galeria/muaythai-foto2.jpg" alt="Foco no treino de Muay Thai">
+                <img src="../assets/galeria/muaythai-foto3.jpg" alt="Comunidade e respeito no treino de Muay Thai">
+                <img src="../assets/galeria/muaythai-foto4.jpg" alt="Intensidade no treino de Muay Thai na Valhalla">
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="modality-section faq-section">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container container">
+                <div class="faq-item">
+                    <h3>Preciso de equipamento para a primeira aula?</h3>
+                    <p>Para a aula experimental, venha com uma roupa de ginástica confortável. Nós temos luvas e caneleiras para emprestar, então você não precisa se preocupar com nada.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>O treino é muito pesado para um iniciante?</h3>
+                    <p>De forma alguma. Nossas aulas são adaptadas para todos os níveis. Os professores guiarão você nos movimentos básicos, respeitando seu ritmo e garantindo uma evolução segura e motivadora.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>As aulas de Muay Thai são só para quem quer lutar?</h3>
+                    <p>Não! A grande maioria dos nossos alunos treina pelos incríveis benefícios à saúde, como condicionamento físico, perda de peso e alívio de estresse. O ambiente é de aprendizado e superação pessoal, não de competição.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
         <section class="final-cta-section">
             <div class="container">
-                <h2>Pronto para o Desafio?</h2>
-                <p>Sua jornada na arte das oito armas começa aqui. Agende sua aula experimental gratuita e sinta a energia do Muay Thai.</p>
-                <a href="../contato-horarios.html" class="btn-cta">Agende Sua Aula Agora</a>
+                <h2>O Ringue Está Esperando por Você.</h2>
+                <p>Dê o primeiro passo na arte das oito armas. A primeira aula é por nossa conta.</p>
+                <a href="../contato-horarios.html" class="btn-cta">Agende Sua Aula Experimental</a>
             </div>
         </section>
-
     </main>
 
-    <footer class="site-footer">
-        <hr>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://instagram.com/valhalla" target="_blank"><img src="../assets/icons/instagram.svg" alt="Instagram"></a>
-                <a href="https://facebook.com/valhalla" target="_blank"><img src="../assets/icons/facebook.svg" alt="Facebook"></a>
-                <a href="https://tiktok.com/@valhalla" target="_blank"><img src="../assets/icons/tiktok.svg" alt="TikTok"></a>
-            </div>
-            <div class="footer-logo">
-                <img src="../assets/logos/tubarao.png" alt="Valhalla Logo">
-            </div>
-            <div class="footer-links">
-                <a href="../index.html">Home</a>
-                <a href="../modalidades.html">Modalidades</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../contato-horarios.html">Contato</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Valhalla Academia | Forjando caráter há mais de 20 anos</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
-    <script src="../js/script.js" defer></script>
-    <script src="../js/gsap-animations.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            modalityPageDetailsAnimation();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="../js/loader.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
 </body>
 </html>

@@ -3,150 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore o Sanda (Boxe Chinês) na Valhalla. Uma arte marcial completa que combina socos, chutes e quedas para um treino dinâmico e desafiador.">
+    <meta name="description" content="Aprenda Sanda (Boxe Chinês) na Valhalla Taquaral. Uma arte marcial completa que une socos, chutes e quedas.">
     <title>Sanda (Boxe Chinês) - Valhalla Fight Center</title>
 
-    <link rel="stylesheet" href="../css/style.css"> <!-- Estilos Gerais -->
-    <link rel="stylesheet" href="../css/style-modalidades.css"> <!-- Estilo Base das Modalidades -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/modalidades/sanda.css"> <!-- Estilo Específico do Sanda -->
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/logos/logo_valhalla.png" alt="Valhalla"></a>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="../modalidades.html" class="active">Modalidades</a></li>
-                <li><a href="../academia.html">Sobre Nós</a></li>
-                <li><a href="../blog.html">Blog</a></li>
-                <li><a href="../contato-horarios.html">Contato</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
-        <a href="../contato-horarios.html" class="btn-header">Agende uma Aula</a>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
-        <!-- HERO COMPONENT - SANDA -->
-        <section class="hero-modality-v2 sanda-hero">
-            <div class="hero-content-wrapper">
-                <div class="hero-text-content">
-                    <span class="modality-tag">Sanda</span>
-                    <h1>O Combate Completo</h1>
-                    <p>Combine a potência dos socos e chutes com a técnica das quedas. O Sanda é a arte marcial para quem não se contenta com apenas uma dimensão da luta.</p>
-                    <a href="../contato-horarios.html" class="btn-hero">Descubra o Sanda</a>
-                </div>
-                <div class="hero-media-content">
-                    <!-- Sugestão: Vídeo dinâmico mostrando a transição entre trocação e uma queda -->
-                    <video src="../assets/videos/sanda-loop.mp4" autoplay loop muted playsinline poster="../assets/modalidades/sanda-poster.jpg"></video>
-                </div>
+        <!-- HERO -->
+        <section class="hero-modality" style="background-image: url('../assets/hero/hero-sanda.jpg');">
+            <div class="hero-overlay">
+                <h1>Sanda (Boxe Chinês)</h1>
+                <p>A Agilidade do Boxe, a Força das Quedas</p>
             </div>
         </section>
 
-        <section class="modality-intro container">
-            <h2>O que é o Sanda?</h2>
-            <p>O Sanda, também conhecido como Boxe Chinês, é a vertente de combate do Kung Fu. Ele combina a trocação do kickboxing com as projeções e quedas do judô e wrestling, tornando-se uma das artes marciais mais completas e dinâmicas. Na Valhalla, você aprende a lutar em todas as distâncias.</p>
+        <!-- INTRODUÇÃO -->
+        <section class="modality-section container">
+            <h2 class="section-title">Boxe Chinês: Trocação e Quedas</h2>
+            <p class="intro-text">O Sanda, também conhecido como Boxe Chinês, é uma arte marcial incrivelmente completa e dinâmica. Ele combina o melhor de dois mundos: a trocação veloz de socos e chutes, similar ao Kickboxing, com a força e a técnica das quedas do wrestling. Na Valhalla, você aprende a lutar em pé e a dominar o clinch, tornando-se um atleta versátil e preparado para qualquer situação.</p>
         </section>
 
-        <section class="benefits-section">
-            <div class="container">
-                <h2>Benefícios de um Treino Integrado</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-versatilidade.svg" alt="Ícone de Versatilidade">
-                        <h3>Versatilidade</h3>
-                        <p>Aprenda a lutar em pé e a controlar o oponente com quedas e projeções.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-corpo.svg" alt="Ícone de Condicionamento">
-                        <h3>Coordenação Total</h3>
-                        <p>Desenvolva um controle corporal completo e dinâmico para o combate.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-forca.svg" alt="Ícone de Força">
-                        <h3>Treino Funcional</h3>
-                        <p>Um exercício que trabalha todos os grupos musculares de forma integrada.</p>
+        <!-- PROFESSOR -->
+        <section class="modality-section instructor-section">
+            <h2 class="section-title">Seu Guia no Sanda</h2>
+            <div class="instructors-grid container">
+                <div class="instructor-profile">
+                    <img src="../assets/instrutores/vinicius-morelli.jpg" alt="Professor Vinicius Morelli" class="instructor-photo">
+                    <div class="instructor-bio">
+                        <h3>Vinicius Morelli</h3>
+                        <span>Especialista em Sanda</span>
+                        <p>Com sua vasta experiência em diversas artes marciais, Professor Vinicius Morelli traz uma abordagem técnica e estratégica para o Sanda. Ele foca na combinação inteligente de golpes e quedas, garantindo que os alunos desenvolvam agilidade, força e um profundo entendimento do combate.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="target-audience-section container">
-            <h2>O Sanda na Valhalla é Para Todos</h2>
-            <div class="audience-tabs">
-                <article class="audience-profile">
-                    <h3>Para Praticantes de Outras Lutas</h3>
-                    <p>Já treina Jiu-Jitsu ou Muay Thai? O Sanda é perfeito para complementar seu jogo, adicionando a dimensão das quedas à sua trocação.</p>
-                </article>
-                <article class="audience-profile">
-                    <h3>Para Quem Busca Algo Novo</h3>
-                    <p>Cansado do convencional? O Sanda oferece um treino variado e estratégico que desafia o corpo e a mente de maneiras diferentes.</p>
-                </article>
-                 <article class="audience-profile">
-                    <h3>Para Defesa Pessoal</h3>
-                    <p>Por ser uma arte marcial completa, o Sanda oferece um repertório vasto de técnicas para situações de defesa pessoal em diferentes cenários.</p>
-                </article>
+        <!-- PARA QUEM É? -->
+        <section class="modality-section for-whom-section container">
+            <h2 class="section-title">Para Quem é o Sanda na Valhalla?</h2>
+            <div class="for-whom-grid">
+                <div class="for-whom-item">
+                    <h3>Lutadores Versáteis</h3>
+                    <p>Se você não quer escolher entre lutar em pé ou no chão, o Sanda é para você. Desenvolva um jogo completo que une o melhor dos dois universos.</p>
+                </div>
+                <div class="for-whom-item">
+                    <h3>Fãs de Agilidade</h3>
+                    <p>Gosta de um combate dinâmico e inteligente? O Sanda foca em movimentação, reflexos rápidos e na capacidade de adaptar sua estratégia instantaneamente.</p>
+                </div>
+                <div class="for-whom-item">
+                    <h3>Busca um Desafio</h3>
+                    <p>Prepare-se para treinos que exigem corpo e mente. O Sanda desenvolve sua coordenação, resistência e capacidade de pensar sob pressão.</p>
+                </div>
             </div>
         </section>
 
-        <section class="gallery-modality container">
-             <h2>Nossas Aulas na Prática</h2>
-             <div class="gallery-grid">
-                <img src="../assets/modalidades/sanda-img1.jpg" alt="Aula de Sanda na Valhalla">
-                <img src="../assets/modalidades/sanda-img2.jpg" alt="Alunos de Sanda treinando">
-                <img src="../assets/modalidades/sanda-img3.jpg" alt="Detalhe de uma queda de Sanda">
-             </div>
+        <!-- BENEFÍCIOS -->
+        <section class="modality-section benefits-section">
+            <h2 class="section-title">Benefícios do Sanda</h2>
+            <div class="benefits-grid container">
+                <div class="benefit-card">
+                    <h3>Versatilidade no Combate</h3>
+                    <p>Aprenda a se sentir confortável tanto na trocação de longa distância quanto no clinch, usando socos, chutes e quedas de forma integrada.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Agilidade e Reflexos</h3>
+                    <p>Desenvolva uma movimentação corporal rápida e reflexos apurados para se esquivar, contra-atacar e projetar seu oponente.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Coordenação Motora</h3>
+                    <p>A combinação de golpes com as pernas, braços e movimentos de queda aprimora drasticamente sua coordenação e consciência corporal.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Força Funcional</h3>
+                    <p>As técnicas de queda e o trabalho no clinch constroem uma força real e funcional, útil para o esporte e para a vida.</p>
+                </div>
+            </div>
         </section>
 
+        <!-- HORÁRIOS -->
+        <section class="modality-section schedule-section container">
+            <h2 class="section-title">Horários das Aulas de Sanda</h2>
+            <table class="sanda-schedule-table">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Tarde</th>
+                        <th>Noite</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Segunda-feira</td>
+                        <td>15:00 - 16:00</td>
+                        <td>21:00 - 22:00</td>
+                    </tr>
+                    <tr>
+                        <td>Quarta-feira</td>
+                        <td>-</td>
+                        <td>21:00 - 22:00</td>
+                    </tr>
+                    <tr>
+                        <td>Sexta-feira</td>
+                        <td>15:00 - 16:00</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- GALERIA -->
+        <section class="modality-section gallery-section">
+            <h2 class="section-title">A Dinâmica do Combate</h2>
+            <div class="gallery-grid container">
+                <img src="../assets/galeria/sanda-foto1.jpg" alt="Atletas de Sanda treinando na Valhalla">
+                <img src="../assets/galeria/sanda-foto2.jpg" alt="Técnica de queda no Sanda">
+                <img src="../assets/galeria/sanda-foto3.jpg" alt="Trocação e agilidade no Sanda">
+                <img src="../assets/galeria/sanda-foto4.jpg" alt="Treino de Sanda na Valhalla Fight Center">
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="modality-section faq-section">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container container">
+                <div class="faq-item">
+                    <h3>Qual a diferença entre Sanda e Muay Thai?</h3>
+                    <p>Embora ambos usem socos e chutes, o Sanda se diferencia por incluir uma grande variedade de técnicas de queda (projeções), que são uma parte fundamental da pontuação em competições.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Preciso de alguma experiência prévia?</h3>
+                    <p>Não. Nossas aulas são abertas a todos. O Professor Vinicius guiará você desde os fundamentos da postura e dos golpes básicos até as quedas mais complexas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Qual equipamento é necessário?</h3>
+                    <p>Para começar, apenas roupa de ginástica confortável. Com o tempo, luvas de boxe e protetor bucal são recomendados. Nós temos equipamentos para emprestar nas primeiras aulas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
         <section class="final-cta-section">
             <div class="container">
-                <h2>Pronto para o Combate Completo?</h2>
-                <p>Descubra uma das artes marciais mais dinâmicas do mundo. Agende sua aula experimental gratuita e conheça o Sanda.</p>
-                <a href="../contato-horarios.html" class="btn-cta">Agende Sua Aula Agora</a>
+                <h2>Domine a Luta em Pé e as Quedas.</h2>
+                <p>Descubra a versatilidade do Sanda. A primeira aula é por nossa conta.</p>
+                <a href="../contato-horarios.html" class="btn-cta">Agende Sua Aula Experimental</a>
             </div>
         </section>
-
     </main>
 
-    <footer class="site-footer">
-        <hr>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://instagram.com/valhalla" target="_blank"><img src="../assets/icons/instagram.svg" alt="Instagram"></a>
-                <a href="https://facebook.com/valhalla" target="_blank"><img src="../assets/icons/facebook.svg" alt="Facebook"></a>
-                <a href="https://tiktok.com/@valhalla" target="_blank"><img src="../assets/icons/tiktok.svg" alt="TikTok"></a>
-            </div>
-            <div class="footer-logo">
-                <img src="../assets/logos/tubarao.png" alt="Valhalla Logo">
-            </div>
-            <div class="footer-links">
-                <a href="../index.html">Home</a>
-                <a href="../modalidades.html">Modalidades</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../contato-horarios.html">Contato</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Valhalla Academia | Forjando caráter há mais de 20 anos</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
-    <script src="../js/script.js" defer></script>
-    <script src="../js/gsap-animations.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            modalityPageDetailsAnimation();
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="../js/loader.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
 </body>
 </html>

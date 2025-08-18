@@ -1,57 +1,47 @@
-/* ==========================================================================
-   ESTILOS ESPECÍFICOS PARA O HERO DE SANDA
-   Identidade: Dinâmico, Energético, Fluido, Moderno.
-   ========================================================================== */
+/* Estilos Específicos para a Página de Sanda */
 
-/* 1. TEMA GERAL E FUNDO */
-.hero-modality-v2.sanda-hero {
-    /* Laranja vibrante para energia */
-    --hero-accent-color: var(--color-dark-green); 
+/* O layout geral herda os estilos das outras páginas de modalidade para consistência. */
 
-    /* Fundo com a imagem da modalidade e um gradiente escuro para legibilidade. */
-    background-image: 
-        linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.85)),
-        url('../../assets/modalidades/sanda.png'); /* Imagem específica do Sanda */
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-}
-
-/* 2. TIPOGRAFIA */
-.hero-modality-v2.sanda-hero .hero-text-content h1 {
-    font-weight: 400;
-    /* Leve inclinação para sugerir movimento e dinamismo */
-    transform: skewX(-8deg);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.hero-modality-v2.sanda-hero .hero-text-content p {
-    color: #e0e0e0;
-}
-
-/* 3. ELEMENTOS DE DESTAQUE (TAG E BOTÃO) */
-.hero-modality-v2.sanda-hero .hero-text-content .modality-tag {
-    background-color: var(--hero-accent-color);
-    color: #0C0C0C; /* Texto escuro para contraste no laranja */
-    font-weight: 700;
-}
-
-.hero-modality-v2.sanda-hero .btn-hero {
-    background-color: var(--hero-accent-color);
-    color: #0C0C0C;
-    font-weight: 700;
-    box-shadow: 0 0 25px -5px rgba(255, 140, 0, 0.5); /* Efeito de brilho sutil */
-}
-
-.hero-modality-v2.sanda-hero .btn-hero:hover {
-    transform: translateY(-3px) scale(1.05); /* Efeito de pulo mais pronunciado */
-    box-shadow: 0 0 35px -2px rgba(255, 140, 0, 0.7);
-}
-
-/* 4. MÍDIA (VÍDEO/IMAGEM) */
-.hero-modality-v2.sanda-hero .hero-media-content {
-    /* Efeito de brilho (glow) para destacar o vídeo */
-    box-shadow: 0 0 40px -10px var(--color-dark-green);
+/* Horários - Tabela específica do Sanda */
+.sanda-schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
+}
+
+.sanda-schedule-table th,
+.sanda-schedule-table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-black);
+}
+
+.sanda-schedule-table th {
+    background-color: var(--color-dark-green);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.sanda-schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.sanda-schedule-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Responsividade para a tabela */
+@media (max-width: 768px) {
+    .sanda-schedule-table th,
+    .sanda-schedule-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
 }

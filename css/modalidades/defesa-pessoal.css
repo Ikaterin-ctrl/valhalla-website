@@ -1,59 +1,48 @@
-/* ==========================================================================
-   ESTILOS PARA A PÁGINA DE MODALIDADE: DEFESA PESSOAL
-   Identidade: Segurança, Consciência, Empoderamento.
-   ========================================================================== */
+/* Estilos Específicos para a Página de Defesa Pessoal */
 
-/* 1. TEMA GERAL E FUNDO */
-.hero-modality-v2.defesa-pessoal-hero {
-    --hero-accent-color: var(--color-dark-green); 
+/* O layout geral herda os estilos das outras páginas de modalidade para consistência. */
 
-    background-image: 
-        linear-gradient(rgba(12, 12, 12, 0.7), rgba(12, 12, 12, 0.85)),
-        url('../../assets/modalidades/defesa-pessoal-hero.jpg'); /* Placeholder image */
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-    color: var(--color-white);
-}
-
-/* 2. TIPOGRAFIA */
-.hero-modality-v2.defesa-pessoal-hero .hero-text-content h1 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-red);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.hero-modality-v2.defesa-pessoal-hero .hero-text-content p {
-    color: var(--color-beige);
-}
-
-/* 3. ELEMENTOS DE DESTAQUE (TAG E BOTÃO) */
-.hero-modality-v2.defesa-pessoal-hero .hero-text-content .modality-tag {
-    background-color: var(--hero-accent-color);
-    color: var(--color-white);
-    font-weight: 700;
-}
-
-.hero-modality-v2.defesa-pessoal-hero .btn-hero {
-    background-color: var(--hero-accent-color);
-    color: var(--color-white);
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 2px solid transparent;
-}
-
-.hero-modality-v2.defesa-pessoal-hero .btn-hero:hover {
-    background-color: transparent;
-    color: var(--hero-accent-color);
-    border-color: var(--hero-accent-color);
-}
-
-/* 4. MÍDIA (VÍDEO/IMAGEM) */
-.hero-modality-v2.defesa-pessoal-hero .hero-media-content {
+/* Horários - Tabela específica de Defesa Pessoal */
+.defesapessoal-schedule-table {
+    width: 100%;
+    max-width: 500px; /* Tabela menor, já que tem poucos horários */
+    margin: 50px auto 0 auto; /* Centralizada */
+    border-collapse: collapse;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px var(--color-dark-green);
+}
+
+.defesapessoal-schedule-table th,
+.defesapessoal-schedule-table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--color-black);
+}
+
+.defesapessoal-schedule-table th {
+    background-color: var(--color-dark-green);
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.defesapessoal-schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.defesapessoal-schedule-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Responsividade para a tabela */
+@media (max-width: 768px) {
+    .defesapessoal-schedule-table th,
+    .defesapessoal-schedule-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
 }

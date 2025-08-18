@@ -3,147 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aprenda técnicas eficazes de Defesa Pessoal na Valhalla Fight Center. Desenvolva consciência situacional, confiança e habilidades para se proteger em qualquer situação.">
-    <title>Defesa Pessoal | Valhalla Fight Center</title>
+    <meta name="description" content="Aprenda defesa pessoal na Valhalla Taquaral. Aulas práticas e acolhedoras para iniciantes, focadas em segurança e autoconfiança.">
+    <title>Defesa Pessoal - Valhalla Fight Center</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/style-modalidades.css">
-    <link rel="stylesheet" href="../css/modalidades/defesa-pessoal.css">
+    <link rel="stylesheet" href="../css/modalidades/defesa-pessoal.css"> <!-- Estilo Específico da Defesa Pessoal -->
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/logos/logo_valhalla.png" alt="Valhalla"></a>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="../index.html">Início</a></li>
-                <li><a href="../modalidades.html" class="active">Modalidades</a></li>
-                <li><a href="../academia.html">Sobre Nós</a></li>
-                <li><a href="../blog.html">Blog</a></li>
-                <li><a href="../contato-horarios.html">Contato</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Abrir menu">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </button>
-        <a href="../contato-horarios.html" class="btn-header">Agende uma Aula</a>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
-        <!-- HERO COMPONENT - DEFESA PESSOAL -->
-        <section class="hero-modality-v2 defesa-pessoal-hero">
-            <div class="hero-content-wrapper">
-                <div class="hero-text-content">
-                    <span class="modality-tag">Defesa Pessoal</span>
-                    <h1>Sua Segurança em Primeiro Lugar</h1>
-                    <p>Desenvolva a confiança e as habilidades necessárias para se proteger e reagir em situações de risco. Aprenda técnicas eficazes e aplicáveis no dia a dia.</p>
-                    <a href="../contato-horarios.html" class="btn-hero">Comece a se Proteger</a>
-                </div>
-                <div class="hero-media-content">
-                    <!-- SUGGESTION: Add a video demonstrating basic self-defense techniques or situational awareness. -->
-                    <video src="https://via.placeholder.com/600x400?text=Video+Defesa+Pessoal" autoplay loop muted playsinline poster="https://via.placeholder.com/600x400?text=Defesa+Pessoal+Poster"></video>
-                </div>
+        <!-- HERO -->
+        <section class="hero-modality" style="background-image: url('../assets/hero/hero-defesa-pessoal.jpg');">
+            <div class="hero-overlay">
+                <h1>Defesa Pessoal</h1>
+                <p>A Confiança para o Dia a Dia</p>
             </div>
         </section>
 
-        <section class="modality-intro container">
-            <h2>O que é a Defesa Pessoal?</h2>
-            <p>A Defesa Pessoal na Valhalla vai além de técnicas de luta. Ensinamos a identificar e evitar situações de perigo, a reagir de forma eficaz quando necessário e a desenvolver uma mentalidade de autoproteção. Nossas aulas são práticas, focadas em cenários reais e adaptadas para todos os níveis de condicionamento físico.</p>
+        <!-- INTRODUÇÃO -->
+        <section class="modality-section container">
+            <h2 class="section-title">Sinta-se Mais Seguro(a), Todos os Dias</h2>
+            <p class="intro-text">Bem-vindo(a) ao nosso programa de Defesa Pessoal. Aqui, o foco não é a competição ou a agressividade, mas sim o seu bem-estar e segurança. Nossas aulas são um ambiente acolhedor, projetado para ensinar técnicas práticas e realistas, baseadas no Krav Maga, para que qualquer pessoa, independentemente de sua força, gênero ou tamanho, possa aprender a se proteger e a navegar pelo mundo com mais confiança.</p>
         </section>
 
-        <section class="benefits-section">
-            <div class="container">
-                <h2>Benefícios Essenciais para o Dia a Dia</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-confianca.svg" alt="Ícone de Confiança">
-                        <h3>Aumento da Confiança</h3>
-                        <p>Sinta-se mais seguro(a) e preparado(a) para lidar com imprevistos.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-consciencia.svg" alt="Ícone de Consciência">
-                        <h3>Consciência Situacional</h3>
-                        <p>Aprenda a observar o ambiente e antecipar possíveis ameaças.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <img src="../assets/icons/icon-tecnica.svg" alt="Ícone de Técnica">
-                        <h3>Técnicas Eficazes</h3>
-                        <p>Domine movimentos simples e poderosos para se defender em diversas situações.</p>
+        <!-- PROFESSOR -->
+        <section class="modality-section instructor-section">
+            <h2 class="section-title">Sua Referência em Segurança</h2>
+            <div class="instructors-grid container">
+                <div class="instructor-profile">
+                    <img src="../assets/instrutores/especialista-defesa.jpg" alt="Especialista em Defesa Pessoal" class="instructor-photo">
+                    <div class="instructor-bio">
+                        <h3>Nossos Especialistas em Defesa Pessoal</h3>
+                        <span>Foco em Técnica e Realidade</span>
+                        <p>Nossa equipe é formada por instrutores com ampla experiência em técnicas de defesa pessoal realistas. O foco é 100% na sua segurança e aprendizado, com uma didática paciente e focada em cenários do cotidiano, garantindo que você se sinta confortável e confiante para aprender.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="target-audience-section container">
-            <h2>Para Quem é a Defesa Pessoal?</h2>
-            <div class="audience-tabs">
-                <article class="audience-profile">
-                    <h3>Para Todos</h3>
-                    <p>Homens e mulheres de todas as idades que buscam mais segurança e autoconfiança no dia a dia.</p>
-                </article>
-                <article class="audience-profile">
-                    <h3>Para Profissionais</h3>
-                    <p>Ideal para quem trabalha em ambientes de risco ou precisa de habilidades extras para sua profissão.</p>
-                </article>
-                 <article class="audience-profile">
-                    <h3>Para Famílias</h3>
-                    <p>Aprenda a proteger a si mesmo e seus entes queridos com conhecimentos práticos e preventivos.</p>
-                </article>
+        <!-- PARA QUEM É? -->
+        <section class="modality-section for-whom-section container">
+            <h2 class="section-title">Para Quem é a Defesa Pessoal?</h2>
+            <div class="for-whom-grid">
+                <div class="for-whom-item">
+                    <h3>Para Você, Mulher</h3>
+                    <p>Quer se sentir mais segura e confiante em qualquer ambiente? Nossas aulas te dão ferramentas práticas para identificar e neutralizar ameaças, em um espaço de respeito e empoderamento.</p>
+                </div>
+                <div class="for-whom-item">
+                    <h3>Para Você, Homem</h3>
+                    <p>Aprenda a proteger a si mesmo e a quem você ama. O treino foca em técnica e inteligência, não em força bruta, para resolver situações de risco com eficiência.</p>
+                </div>
+                <div class="for-whom-item">
+                    <h3>Para Iniciantes (de verdade!)</h3>
+                    <p>Nunca praticou uma arte marcial? Ótimo! Nosso método foi feito para você. Começamos do zero, ensinando os princípios básicos de postura, movimentação e, o mais importante, a como evitar o confronto.</p>
+                </div>
             </div>
         </section>
 
-        <section class="gallery-modality container">
-             <h2>Aulas Práticas e Realistas</h2>
-             <div class="gallery-grid">
-                <!-- SUGGESTION: Replace placeholder images with actual photos of self-defense classes. -->
-                <img src="https://via.placeholder.com/300x200?text=Defesa+Pessoal+1" alt="Aula de Defesa Pessoal na Valhalla">
-                <img src="https://via.placeholder.com/300x200?text=Defesa+Pessoal+2" alt="Alunos praticando técnicas de defesa">
-                <img src="https://via.placeholder.com/300x200?text=Defesa+Pessoal+3" alt="Instrutor demonstrando técnica">
-             </div>
+        <!-- BENEFÍCIOS -->
+        <section class="modality-section benefits-section">
+            <h2 class="section-title">Benefícios da Defesa Pessoal</h2>
+            <div class="benefits-grid container">
+                <div class="benefit-card">
+                    <h3>Segurança e Consciência Situacional</h3>
+                    <p>Aprenda a reconhecer e evitar potenciais perigos antes que eles aconteçam, sua maior ferramenta de defesa.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Fortalecimento da Autoconfiança</h3>
+                    <p>A confiança que você ganha ao saber que pode se defender se reflete em todas as áreas da sua vida.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Técnicas Práticas e Eficientes</h3>
+                    <p>Foco em movimentos simples e eficazes, baseados nos reflexos naturais do corpo, para serem usados sob pressão.</p>
+                </div>
+                 <div class="benefit-card">
+                    <h3>Controle Emocional</h3>
+                    <p>Treine sua mente para manter a calma e tomar decisões mais claras em situações de estresse.</p>
+                </div>
+            </div>
         </section>
 
+        <!-- HORÁRIOS -->
+        <section class="modality-section schedule-section container">
+            <h2 class="section-title">Horários das Aulas de Defesa Pessoal</h2>
+            <table class="defesapessoal-schedule-table">
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Tarde</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Quarta-feira</td>
+                        <td>15:00 - 16:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- GALERIA -->
+        <section class="modality-section gallery-section">
+            <h2 class="section-title">Aprendizado Seguro e Controlado</h2>
+            <div class="gallery-grid container">
+                <img src="../assets/galeria/defesa-pessoal-foto1.jpg" alt="Ambiente de aprendizado seguro na aula de defesa pessoal">
+                <img src="../assets/galeria/defesa-pessoal-foto2.jpg" alt="Técnica de defesa pessoal sendo ensinada">
+                <img src="../assets/galeria/defesa-pessoal-foto3.jpg" alt="Alunos praticando defesa pessoal na Valhalla">
+                <img src="../assets/galeria/defesa-pessoal-foto4.jpg" alt="Foco e concentração na aula de defesa pessoal">
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="modality-section faq-section">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container container">
+                <div class="faq-item">
+                    <h3>Preciso ser forte ou ter bom preparo físico para aprender?</h3>
+                    <p>De forma alguma. O princípio da defesa pessoal é usar a técnica e a inteligência para superar a força. O condicionamento físico você adquire com o tempo, no seu ritmo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>As aulas são muito agressivas?</h3>
+                    <p>Não. Nosso ambiente é de aprendizado e cooperação. Os treinos são controlados e seguros, focados em repetir as técnicas para que se tornem instintivas, sem o objetivo de machucar os colegas.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Em quanto tempo eu aprendo a me defender?</h3>
+                    <p>Desde a primeira aula você já aprende conceitos importantes de postura e consciência. A confiança e a habilidade vêm com a prática contínua, mas cada aula adiciona uma nova ferramenta à sua segurança.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
         <section class="final-cta-section">
             <div class="container">
-                <h2>Pronto para Fortalecer sua Segurança?</h2>
-                <p>Invista em você e na sua tranquilidade. Agende sua aula experimental gratuita de Defesa Pessoal e comece a se sentir mais seguro(a).</p>
-                <a href="../contato-horarios.html" class="btn-cta">Agende Sua Aula Agora</a>
+                <h2>Sua Segurança em Suas Mãos.</h2>
+                <p>Dê o primeiro passo para uma vida com mais confiança. A primeira aula é por nossa conta.</p>
+                <a href="../contato-horarios.html" class="btn-cta">Agende Sua Aula Experimental</a>
             </div>
         </section>
-
     </main>
 
-    <footer class="site-footer">
-        <hr>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="https://instagram.com/valhalla" target="_blank" aria-label="Visite nosso Instagram"><img src="../assets/instagram-removebg-preview.png" alt="Instagram"></a>
-                <a href="https://facebook.com/valhalla" target="_blank" aria-label="Visite nosso Facebook"><img src="../assets/facebook-removebg-preview.png" alt="Facebook"></a>
-                <a href="https://tiktok.com/@valhalla" target="_blank" aria-label="Visite nosso TikTok"><img src="../assets/tikotk-removebg-preview.png" alt="TikTok"></a>
-            </div>
-            <div class="footer-logo">
-                <img src="../assets/logos/tubarao.png" alt="Valhalla Logo">
-            </div>
-            <div class="footer-links">
-                <a href="../index.html">Home</a>
-                <a href="../modalidades.html">Modalidades</a>
-                <a href="../blog.html">Blog</a>
-                <a href="../contato-horarios.html">Contato</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Valhalla Academia | Forjando caráter há mais de 20 anos</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
-    <script src="../js/script.js" defer></script>
+    <!-- Scripts -->
+    <script src="../js/loader.js" defer></script>
+    <script src="../js/main.js" defer></script>
     <script src="../js/animations.js" defer></script>
-
 </body>
 </html>

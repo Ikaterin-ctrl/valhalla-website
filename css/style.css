@@ -4,7 +4,7 @@
 :root {
     --color-black: #000000;
     --color-red: #BE2828;
-    --color-dark-green: #556B2F;
+    --color-dark-green: #4A5C2A;
     --color-light-green: #96A082;
     --color-beige: #EBE1D2;
     --color-white: #FFFFFF;
@@ -20,6 +20,7 @@
 
 body {
     background: var(--color-beige); 
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"><circle fill="%23000" cx="2" cy="2" r="0.5" opacity="0.08"/></svg>');
     color: var(--color-dark-green); 
     font-family: var(--font-body); 
     line-height: 1.6;
@@ -34,6 +35,12 @@ body.fade-out {
 }
 
 a {text-decoration: none; color: inherit;}
+
+p { line-height: 1.8; }
+
+h1, h2 {
+    font-weight: 700;
+}
 
 /* NAVBAR */
 .navbar {
@@ -54,8 +61,8 @@ a {text-decoration: none; color: inherit;}
     display: block; 
 }
 .menu {list-style: none; display: flex; gap: 20px;}
-.menu li a {font-family: var(--font-heading); font-size: 1.1rem; transition: color .3s; color: var(--color-white);}
-.menu li a:hover, .menu li a.active {color: var(--color-red);}
+.menu li a {font-family: var(--font-heading); font-size: 1.1rem; transition: color .3s, transform .3s, box-shadow .3s; color: var(--color-white);}
+.menu li a:hover, .menu li a.active {color: var(--color-red); transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);}
 
 /* ==========================================================================
    BOTÕES
@@ -63,7 +70,7 @@ a {text-decoration: none; color: inherit;}
 
 .base-btn {
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     text-transform: uppercase;
 }
 
@@ -80,6 +87,8 @@ a {text-decoration: none; color: inherit;}
 
 .btn:hover {
     background: var(--color-dark-green);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -88,6 +97,8 @@ a {text-decoration: none; color: inherit;}
 
 .btn-secondary:hover {
     background: var(--color-light-green);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-cta-big {
@@ -211,21 +222,32 @@ a {text-decoration: none; color: inherit;}
     text-align: center; /* Centraliza todos os títulos de seção */
 }
 
+.section-title--left {
+    text-align: left;
+    border-bottom: 2px solid var(--color-red); /* Using --color-red as primary */
+    padding-bottom: 10px;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
 h2 {
     color: var(--color-dark-green);
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 /* HISTÓRIA */
 .historia {padding: 100px 10%; background: var(--color-beige);}
 .historia p {
+    text-align: center;
     color: var(--color-black);
-    line-height: 1.7;
+    line-height: 1.8;
     margin-bottom: 20px;
     max-width: 70ch;
     margin-left: auto;
     margin-right: auto;
 }
+
+
 
 /* MODALIDADES */
 .modalidades-home {
@@ -265,6 +287,7 @@ img.loaded {
     overflow: hidden; 
     transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1); 
     cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cards .card.hidden {
@@ -314,6 +337,7 @@ img.loaded {
 
 .card h4 {
     color: var(--color-dark-green);
+    font-weight: 500;
 }
 
 /* DEPOIMENTOS */
@@ -345,6 +369,7 @@ img.loaded {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .depoimento-header {
     display: flex;
@@ -547,6 +572,7 @@ img.loaded {
     margin-bottom: 10px;
     color: #fff;
     font-family: var(--font-heading);
+    font-weight: 500;
 }
 
 /* ==========================================================================
@@ -770,4 +796,8 @@ img.loaded {
 /* Reutiliza o estilo do botão de CTA que já temos */
 .cta-atletas .btn-cta {
     display: inline-block;
+}
+
+:target {
+  scroll-margin-top: 100px; /* Use a altura aproximada do seu header */
 }

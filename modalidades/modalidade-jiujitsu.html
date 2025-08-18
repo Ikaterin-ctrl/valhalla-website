@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/modalidades/jiu-jitsu.css"> <!-- Estilo Específico do Jiu-Jitsu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+    <!-- SUGGESTION: Minify CSS files (style.css, jiu-jitsu.css, baguetteBox.min.css) for production. -->
 </head>
 <body>
 
@@ -18,6 +20,7 @@
 
     <main>
         <!-- HERO -->
+        <!-- SUGGESTION: Compress this image (../assets/hero/hero-jiujitsu.jpg) for faster loading. -->
         <section class="hero-modality" style="background-image: url('../assets/hero/hero-jiujitsu.jpg');">
             <div class="hero-overlay">
                 <h1>Jiu-Jitsu</h1>
@@ -131,11 +134,23 @@
         <!-- GALERIA -->
         <section class="modality-section gallery-section">
             <h2 class="section-title">A Vibe do Tatame</h2>
-            <div class="gallery-grid container">
-                <img src="../assets/galeria/jiujitsu-foto1.jpg" alt="Alunos de Jiu-Jitsu treinando na Valhalla em preto e branco">
-                <img src="../assets/galeria/jiujitsu-foto2.jpg" alt="Momento de concentração no treino de Jiu-Jitsu">
-                <img src="../assets/galeria/jiujitsu-foto3.jpg" alt="Respeito e comunidade no tatame da Valhalla">
-                <img src="../assets/galeria/jiujitsu-foto4.jpg" alt="Treino intenso de Jiu-Jitsu na Valhalla">
+            <div class="gallery-grid container gallery-lightbox">
+                <a href="../assets/galeria/jiujitsu-foto1.jpg">
+                    <!-- SUGGESTION: Compress this image (../assets/galeria/jiujitsu-foto1.jpg) for faster loading. -->
+                    <img src="../assets/galeria/jiujitsu-foto1.jpg" alt="Alunos de Jiu-Jitsu treinando na Valhalla em preto e branco">
+                </a>
+                <a href="../assets/galeria/jiujitsu-foto2.jpg">
+                    <!-- SUGGESTION: Compress this image (../assets/galeria/jiujitsu-foto2.jpg) for faster loading. -->
+                    <img src="../assets/galeria/jiujitsu-foto2.jpg" alt="Momento de concentração no treino de Jiu-Jitsu">
+                </a>
+                <a href="../assets/galeria/jiujitsu-foto3.jpg">
+                    <!-- SUGGESTION: Compress this image (../assets/galeria/jiujitsu-foto3.jpg) for faster loading. -->
+                    <img src="../assets/galeria/jiujitsu-foto3.jpg" alt="Respeito e comunidade no tatame da Valhalla">
+                </a>
+                <a href="../assets/galeria/jiujitsu-foto4.jpg">
+                    <!-- SUGGESTION: Compress this image (../assets/galeria/jiujitsu-foto4.jpg) for faster loading. -->
+                    <img src="../assets/galeria/jiujitsu-foto4.jpg" alt="Treino intenso de Jiu-Jitsu na Valhalla">
+                </a>
             </div>
         </section>
 
@@ -186,6 +201,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             modalityPageDetailsAnimation();
         });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
+    <script>
+        // Inicializa o lightbox na nossa galeria
+        baguetteBox.run('.gallery-lightbox');
     </script>
 </body>
 </html>

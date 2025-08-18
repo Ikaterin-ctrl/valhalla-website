@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- SUGGESTION: Minify CSS files (style.css, sobre-nos.css, animations.css) for production. -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sobre-nos.css">
     <link rel="stylesheet" href="css/animations.css">
@@ -25,6 +26,7 @@
                 <p class="hero-subtitle hidden">onde os bravos <span>treinam</span></p>                
             </div>
             <div class="hero-visual">
+                <!-- SUGGESTION: Compress this image (assets/hero.png) for faster loading. -->
                 <img src="assets/hero.png" alt="Atleta de artes marciais em posição de luta">
             </div>
             <a href="#missao" class="scroll-down-arrow" aria-label="Rolar para a próxima seção">
@@ -109,7 +111,7 @@
     <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="js/loader.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/carousel.js" defer></script>

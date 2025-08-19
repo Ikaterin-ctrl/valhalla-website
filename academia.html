@@ -79,16 +79,16 @@
     </div>
 
     <div class="media-grid gallery-lightbox">
-        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-13 à(s) 18.33.57_4a418882.jpg" class="media-card">
+        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-13 à(s) 18.33.57_4a418882.jpg" class="media-card animate-on-scroll">
             <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-13 à(s) 18.33.57_4a418882.jpg" alt="Treino de Jiu Jitsu na Valhalla">
         </a>
-        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-14 à(s) 20.49.48_cf4d36c7.jpg" class="media-card">
+        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-14 à(s) 20.49.48_cf4d36c7.jpg" class="media-card animate-on-scroll">
             <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-14 à(s) 20.49.48_cf4d36c7.jpg" alt="Alunos de Muay Thai na Valhalla">
         </a>
-        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-15 à(s) 17.43.38_5e3c732e.jpg" class="media-card">
+        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-15 à(s) 17.43.38_5e3c732e.jpg" class="media-card animate-on-scroll">
             <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-15 à(s) 17.43.38_5e3c732e.jpg" alt="Aula de Boxe na Valhalla">
         </a>
-        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-18 à(s) 16.44.21_294a8907.jpg" class="media-card">
+        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-18 à(s) 16.44.21_294a8907.jpg" class="media-card animate-on-scroll">
             <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-18 à(s) 16.44.21_294a8907.jpg" alt="Comunidade reunida no tatame da Valhalla">
         </a>
         </div>
@@ -96,8 +96,8 @@
 
 <section class="cta-atletas">
     <div class="container">
-        <h2 class="heading-style">O Legado nos Pódios</h2>
-        <p>A mesma filosofia que forma o caráter no dia a dia, também forja campeões. Conheça alguns dos atletas que levam o nome e a honra da Valhalla para as maiores competições.</p>
+        <h2 id="atletas-titulo"" class="heading-style">O Legado nos Pódios</h2>
+         <p id="atletas-paragrafo" >A mesma filosofia que forma o caráter no dia a dia, também forja campeões. Conheça alguns dos atletas que levam o nome e a honra da Valhalla para as maiores competições.</p>
     </div>
 
     <div class="atletas-carrossel">
@@ -162,5 +162,14 @@
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
   <script src="js/loader.js" defer></script>
   <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+  <!-- Lightbox HTML -->
+  <div id="lightbox-overlay" class="lightbox-overlay">
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightbox-image">
+      <span class="lightbox-close">&times;</span>
+    </div>
+  </div>
 </body>
 </html>

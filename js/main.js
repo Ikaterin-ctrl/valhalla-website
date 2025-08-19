@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupContactModal();
     setupTabs();
     setupFaqAccordion();
+    setupLightbox();
+    setupScrollAnimations(); // Call the new function
 });
 
 function setupContactModal() {
@@ -61,5 +63,54 @@ function setupFaqAccordion() {
             });
             question.closest('.faq-item').classList.toggle('active');
         });
+    });
+}
+
+function setupLightbox() {
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const mediaCards = document.querySelectorAll('.media-card');
+
+    if (!lightboxOverlay || !lightboxImage || !lightboxClose || mediaCards.length === 0) return;
+
+    mediaCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            const imageUrl = card.getAttribute('href');
+            const imageAlt = card.querySelector('img').getAttribute('alt');
+            lightboxImage.src = imageUrl;
+            lightboxImage.alt = imageAlt;
+            lightboxOverlay.classList.add('visible');
+        });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+        lightboxOverlay.classList.remove('visible');
+    });
+
+    lightboxOverlay.addEventListener('click', (e) => {
+        if (e.target === lightboxOverlay) {
+            lightboxOverlay.classList.remove('visible');
+        }
+    });
+}
+
+function setupScrollAnimations() {
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
+
+    animateElements.forEach(element => {
+        observer.observe(element);
     });
 }

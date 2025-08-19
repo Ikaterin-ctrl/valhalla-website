@@ -1,6 +1,6 @@
 /* ===== HERO DA PÁGINA ===== */
 .page-hero {
-    background: url('../assets/hero.png') center/cover no-repeat;
+    background: url('../assets/HEROE_MODALIDAES.png') center/cover no-repeat;
     min-height: 60vh;
     display: flex;
     padding-top: 80px; /* Espaço para o header fixo */
@@ -120,4 +120,220 @@
     .modalidade-card:nth-child(even) {
         flex-direction: column;
     }
+}
+/* ===== ANIMAÇÕES E INTERAÇÕES ===== */
+
+/* Fade-in para cards ao carregar com bounce extra */
+@keyframes fadeInUpBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.98);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.03);
+    }
+    80% {
+        transform: translateY(4px) scale(0.99);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modalidade-card {
+    opacity: 0;
+    animation: fadeInUpBounce 1s cubic-bezier(.77,.2,.21,1) forwards;
+    animation-delay: 0.2s;
+    will-change: transform, opacity;
+}
+
+.modalidades-lista .modalidade-card:nth-child(1) { animation-delay: 0.2s; }
+.modalidades-lista .modalidade-card:nth-child(2) { animation-delay: 0.4s; }
+.modalidades-lista .modalidade-card:nth-child(3) { animation-delay: 0.6s; }
+.modalidades-lista .modalidade-card:nth-child(4) { animation-delay: 0.8s; }
+.modalidades-lista .modalidade-card:nth-child(5) { animation-delay: 1s; }
+
+/* Imagem zoom suave ao passar mouse + tilt animado */
+@keyframes imgWobble {
+    0% { transform: scale(1.07) rotate(-2deg); }
+    50% { transform: scale(1.09) rotate(2deg); }
+    100% { transform: scale(1.07) rotate(-2deg); }
+}
+.modalidade-card img {
+    transition: transform 0.5s cubic-bezier(.77,.2,.21,1), box-shadow 0.3s;
+}
+.modalidade-card:hover img {
+    animation: imgWobble 0.7s;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+/* Título com animação de destaque ao passar mouse + glow */
+@keyframes titleGlow {
+    0% { text-shadow: 0 2px 12px var(--color-accent-light); }
+    50% { text-shadow: 0 4px 24px var(--color-accent); }
+    100% { text-shadow: 0 2px 12px var(--color-accent-light); }
+}
+.modalidade-info h2 {
+    transition: color 0.3s, letter-spacing 0.3s, text-shadow 0.3s;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--color-accent);
+    animation: typing 2s steps(20, end), blinkCaret 0.7s step-end infinite, titleBounce 1.2s cubic-bezier(.77,.2,.21,1);
+}
+
+/* TYPING ANIMATION FOR TITLES */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blinkCaret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--color-accent); }
+}
+/* Extra bounce for title while typing */
+@keyframes titleBounce {
+    0% { transform: scale(1.05) rotate(-2deg); }
+    30% { transform: scale(1.12) rotate(2deg); }
+    60% { transform: scale(0.98) rotate(-1deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+
+.modalidade-card:hover .modalidade-info h2 {
+    color: var(--color-accent);
+    letter-spacing: 2px;
+    animation: typing 2s steps(20, end), titleGlow 0.8s, blinkCaret 0.7s step-end infinite, titleBounce 1.2s cubic-bezier(.77,.2,.21,1);
+}
+
+/* ===== HERO ANIMAÇÕES ===== */
+
+/* Fade-in com zoom para hero */
+@keyframes heroFadeZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.96) translateY(40px);
+        filter: blur(8px);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.04) translateY(-8px);
+        filter: blur(0);
+    }
+    80% {
+        transform: scale(0.98) translateY(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+.page-hero-content {
+    animation: heroFadeZoom 1.2s cubic-bezier(.77,.2,.21,1) forwards;
+    opacity: 0;
+    will-change: transform, opacity, filter;
+}
+
+/* Hero background parallax animado */
+@keyframes heroBgMove {
+    0% { background-position: center 0; }
+    100% { background-position: center 40px; }
+}
+.page-hero {
+    animation: heroBgMove 8s ease-in-out infinite alternate;
+}
+
+/* Hero título typing + bounce + glow */
+@keyframes heroTitleTyping {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes heroTitleGlow {
+    0% { text-shadow: 0 2px 12px var(--color-accent-light); }
+    50% { text-shadow: 0 4px 24px var(--color-accent); }
+    100% { text-shadow: 0 2px 12px var(--color-accent-light); }
+}
+@keyframes heroTitleBounce {
+    0% { transform: scale(1.05) rotate(-2deg); }
+    30% { transform: scale(1.12) rotate(2deg); }
+    60% { transform: scale(0.98) rotate(-1deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+.page-hero-content h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--color-accent);
+    animation: heroTitleTyping 2.2s steps(30, end), heroTitleGlow 1.2s, blinkCaret 0.7s step-end infinite, heroTitleBounce 1.2s cubic-bezier(.77,.2,.21,1);
+}
+
+/* Hero parágrafo fade-in */
+@keyframes heroTextFade {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.page-hero-content p {
+    animation: heroTextFade 1.4s 0.8s cubic-bezier(.77,.2,.21,1) forwards;
+    opacity: 0;
+}
+
+/* ===== BODY ANIMAÇÃO ===== */
+body {
+    animation: bodyFadeIn 1.2s cubic-bezier(.77,.2,.21,1) forwards;
+    opacity: 0;
+}
+@keyframes bodyFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ===== SCROLL ANIMAÇÃO ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== GLOW AO PASSAR MOUSE EM LINKS ===== */
+a:hover, .btn:hover {
+    filter: brightness(1.1) drop-shadow(0 0 8px var(--color-accent-light));
+    transition: filter 0.3s;
+}
+/* ===== ANIMAÇÕES EXTRAS PARA MODALIDADE CARD ===== */
+
+/* Card balança levemente ao passar mouse */
+@keyframes cardSwing {
+    0% { transform: rotate(0deg) scale(1); }
+    20% { transform: rotate(-2deg) scale(1.04); }
+    40% { transform: rotate(2deg) scale(1.06); }
+    60% { transform: rotate(-1deg) scale(1.03); }
+    80% { transform: rotate(1deg) scale(1.02); }
+    100% { transform: rotate(0deg) scale(1.01); }
+}
+/* Removidas animações de hover/focus para o card.
+    As animações agora só acontecem ao abrir a página (fadeInUpBounce já faz isso).
+    O card permanece sempre visível, sem sumir em nenhuma interação.
+    Mantém animações de clique para feedback visual. */
+
+/* Card tilt animado ao clicar */
+@keyframes cardTilt {
+     0% { transform: scale(1) rotate(0deg); }
+     40% { transform: scale(0.98) rotate(-4deg); }
+     60% { transform: scale(1.04) rotate(4deg); }
+     100% { transform: scale(1) rotate(0deg); }
+}
+.modalidade-card:active {
+     animation: cardTilt 0.4s cubic-bezier(.77,.2,.21,1);
+}
+
+/* Card shake sutil ao passar mouse em mobile */
+@media (max-width: 900px) {
+     @keyframes cardShakeMobile {
+          0% { transform: translateX(0); }
+          25% { transform: translateX(-4px); }
+          50% { transform: translateX(4px); }
+          75% { transform: translateX(-2px); }
+          100% { transform: translateX(0); }
+     }
+     .modalidade-card:active {
+          animation: cardShakeMobile 0.5s;
+     }
 }

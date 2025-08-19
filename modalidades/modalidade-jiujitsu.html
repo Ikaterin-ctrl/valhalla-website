@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/modalidades/jiu-jitsu.css"> <!-- Estilo Específico do Jiu-Jitsu -->
+    <link rel="stylesheet" href="../css/faq.css"> <!-- Estilo do FAQ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
     <!-- SUGGESTION: Minify CSS files (style.css, jiu-jitsu.css, baguetteBox.min.css) for production. -->
 </head>
@@ -155,47 +156,161 @@
         </section>
 
         <!-- FAQ -->
-        <section class="modality-section faq-section">
-            <h2 class="section-title heading-style">Perguntas Frequentes</h2>
-            <div class="faq-container container">
+        <section class="faq-container" style="max-width: 600px; margin: 2rem auto;">
+            <h2 class="section-title" style="text-align: center;">PERGUNTAS FREQUENTES</h2>
+
+            <div class="faq-item">
+            <div class="faq-grid">
                 <div class="faq-item">
-                    <button class="faq-question-button">
-                        Preciso ter um quimono para a aula experimental?
-                        <span class="faq-icon"></span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Preciso ter um quimono para a aula experimental?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Não se preocupe! Para sua primeira aula, uma roupa de ginástica confortável (sem zíperes ou botões) é suficiente. Nós temos quimonos para emprestar caso seja necessário.</p>
+                        <div class="faq-answer-content">
+                            <p>
+                                Não se preocupe! Para sua primeira aula, uma roupa de ginástica confortável (sem zíperes ou botões) é suficiente. Nós temos quimonos para emprestar caso seja necessário.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question-button heading-style">
-                        Não tenho nenhuma experiência, posso participar?
-                        <span class="faq-icon"></span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Não tenho nenhuma experiência, posso participar?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Com certeza. Nossas turmas são preparadas para receber alunos de todos os níveis. Nossos professores darão atenção especial aos seus primeiros passos, ensinando a base de forma segura.</p>
+                        <div class="faq-answer-content">
+                            <p>
+                                Com certeza. Nossas turmas são preparadas para receber alunos de todos os níveis. Nossos professores darão atenção especial aos seus primeiros passos, ensinando a base de forma segura.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question-button heading-style">
-                        As aulas de jiu-jitsu são mistas?
-                        <span class="faq-icon"></span>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>As aulas de Jiu-Jitsu são mistas?</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Sim, nossas aulas são mistas e o ambiente é de máximo respeito entre todos os alunos e alunas. Acreditamos que a diversidade no tatame enriquece o aprendizado de todos.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question-button">
-                        Qual a idade mínima para começar no Jiu-Jitsu infantil?
-                        <span class="faq-icon"></span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Aceitamos crianças a partir dos 4 anos de idade. Nossas aulas são adaptadas para cada faixa etária, focando no desenvolvimento motor, disciplina e socialização.</p>
+                        <div class="faq-answer-content">
+                            <p>
+                                Sim, nossas aulas são mistas e o ambiente é de máximo respeito entre todos os alunos e alunas. Acreditamos que a diversidade no tatame enriquece o aprendizado de todos.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.faq-answer').forEach(answer => {
+        answer.style.maxHeight = '0';
+        answer.style.opacity = '0';
+        answer.style.pointerEvents = 'none';
+    });
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const answer = btn.nextElementSibling;
+            const arrow = btn.querySelector('.faq-arrow');
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+            document.querySelectorAll('.faq-question').forEach(b => {
+                b.setAttribute('aria-expanded', 'false');
+                const bArrow = b.querySelector('.faq-arrow');
+                if (bArrow) bArrow.style.transform = 'rotate(0deg)';
+                if (b.nextElementSibling) {
+                    b.nextElementSibling.style.maxHeight = '0';
+                    b.nextElementSibling.style.opacity = '0';
+                    b.nextElementSibling.style.pointerEvents = 'none';
+                }
+            });
+
+            if (!expanded) {
+                btn.setAttribute('aria-expanded', 'true');
+                if (arrow) arrow.style.transform = 'rotate(180deg)';
+                if (answer) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.opacity = '1';
+                    answer.style.pointerEvents = 'auto';
+                }
+            }
+        });
+    });
+});
+</script>
+
+<style>
+.faq-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    animation: fadeInUp 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes fadeInUp {
+    from { opacity:0; transform:translateY(40px);}
+    to { opacity:1; transform:translateY(0);}
+}
+.faq-item {
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #eee;
+    transition: box-shadow 0.3s;
+}
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s;
+}
+.faq-question:hover, .faq-question[aria-expanded="true"] {
+    background: #f7f7f7;
+}
+.faq-arrow {
+    transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), filter 0.3s;
+    filter: drop-shadow(0 0 6px #ff1744);
+}
+.pulse-red {
+    animation: pulseRed 1.1s infinite;
+}
+@keyframes pulseRed {
+    0% { filter: drop-shadow(0 0 6px #ff1744); }
+    50% { filter: drop-shadow(0 0 18px #ff1744); }
+    100% { filter: drop-shadow(0 0 6px #ff1744); }
+}
+.faq-answer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.4s;
+    background: #f7f7f7;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 0.5rem;
+    pointer-events: none;
+}
+.faq-question[aria-expanded="true"] + .faq-answer {
+    opacity: 1;
+    pointer-events: auto;
+}
+.faq-answer-content {
+    padding: 1rem;
+    color: #444;
+    animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+    from { opacity:0; transform:translateY(10px);}
+    to { opacity:1; transform:translateY(0);}
+}
+</style>
 
         <!-- CTA FINAL -->
         <section class="final-cta-section">
@@ -214,13 +329,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
+    
+
     <!-- Custom Scripts -->
     <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
     <script src="../js/loader.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
-    <script src="../js/animations.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Assuming modalityPageDetailsAnimation is defined in one of the loaded scripts
+            if (typeof modalityPageDetailsAnimation === 'function') {
+                modalityPageDetailsAnimation();
+            }
             // Initialize lightbox
             if (typeof baguetteBox !== 'undefined') {
                 baguetteBox.run('.gallery-lightbox');

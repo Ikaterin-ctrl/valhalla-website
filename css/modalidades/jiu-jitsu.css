@@ -340,69 +340,245 @@
     transform: scale(1.03);
 }
 
-/* FAQ */
-.faq-section {
-    background-color: var(--color-beige);
-}
-
+/* ======================================================= */
+/* ESTILOS DO FAQ INTERATIVO               */
+/* ======================================================= */
 .faq-container {
-    margin-top: 50px;
-    text-align: left;
+    max-width: 900px;
+    margin: 100px auto; /* Centraliza ao meio da tela */
+    padding: 0 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .faq-item {
-    background-color: var(--color-white);
-    padding: 35px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 22px;
+    border: none;
+    border-radius: 10px;
+    background: #f7f7f7;
+    box-shadow: 0 2px 12px rgba(34, 77, 54, 0.08);
+    transition: box-shadow 0.3s, background 0.3s;
+    display: block;
+    padding: 0;
 }
 
-.faq-item h3 {
-    font-family: var(--font-heading);
-    color: var(--color-dark-green);
-    margin-bottom: 10px;
-    cursor: pointer; /* Indica que é clicável para expandir/recolher */
+.faq-item.active {
+    box-shadow: 0 4px 24px rgba(255, 42, 42, 0.12);
+    background: #ffeaea;
 }
 
-.faq-item p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--color-black);
+.faq-question,
+.faq-answer {
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* CTA Final */
+@media (max-width: 900px) {
+    .faq-container {
+        max-width: 98vw;
+        margin: 60px auto;
+        padding: 0 16px;
+    }
+}
+.faq-container {
+  max-width: 800px;
+  margin: 50px auto; /* Centraliza e adiciona espaço */
+  padding: 0 20px;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Garante que o conteúdo não vaze das bordas arredondadas */
+}
+
+.faq-question {
+  /* Reset do botão */
+  background-color: #f7f7f7;
+  border: none;
+  
+  /* Layout */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+
+  /* Estilo do texto */
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: left;
+  color: #333;
+  
+  /* Interatividade */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #e9e9e9;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease-out;
+}
+
+.faq-answer {
+  background-color: #fff;
+  overflow: hidden;
+  max-height: 0; /* Começa fechado */
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.faq-answer p {
+  padding: 0 20px 20px 20px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* --- ESTADOS ATIVOS (QUANDO O JAVASCRIPT ADICIONA A CLASSE) --- */
+
+.faq-item.active .faq-question {
+  background-color: #e9e9e9;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg); /* Gira o '+' para formar um 'x' */
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px; /* Altura máxima para a animação. Ajuste se o texto for maior */
+  padding-top: 20px; /* Adiciona padding quando aberto */
+}
+
+/* CTA Final - Design Moderno, Simples e Interativo (Cores Suaves) */
 .final-cta-section {
-    background-color: var(--color-red);
-    color: var(--color-white);
-    padding: 80px 5%;
+    background: linear-gradient(120deg, #e6f4ea 60%, #ffeaea 100%);
+    color: #234d36;
+    padding: 64px 5%;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInCta 1s cubic-bezier(.77,0,.175,1) both;
+    max-width: 700px;
+    margin: 0 auto 64px auto; /* Centraliza e adiciona distância do footer */
+    box-shadow: 0 0 32px 8px rgba(255, 255, 180, 0.18), 0 0 64px 16px rgba(255, 180, 180, 0.12); /* Efeito de brilho suave */
+    border: 2px solid rgba(255,255,255,0.18);
+    animation: ctaGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes ctaGlow {
+    0% {
+        box-shadow: 0 0 32px 8px rgba(255, 255, 180, 0.18), 0 0 64px 16px rgba(255, 180, 180, 0.12);
+        border-color: rgba(255,255,255,0.18);
+    }
+    100% {
+        box-shadow: 0 0 48px 16px rgba(255, 255, 180, 0.32), 0 0 96px 32px rgba(255, 180, 180, 0.22);
+        border-color: rgba(255,255,255,0.32);
+    }
+}
+
+@keyframes fadeInCta {
+    from { opacity: 0; transform: translateY(30px);}
+    to   { opacity: 1; transform: translateY(0);}
 }
 
 .final-cta-section h2 {
-    color: var(--color-white);
+    color: #234d36;
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 20px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    animation: slideInTitle 0.8s cubic-bezier(.77,0,.175,1) both;
+    text-align: center;
+}
+
+@keyframes slideInTitle {
+    from { opacity: 0; transform: translateY(-20px);}
+    to   { opacity: 1; transform: translateY(0);}
 }
 
 .final-cta-section p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    max-width: 480px;
+    text-align: center;
+    color: #4a4a4a;
+    animation: fadeInCta 1.2s 0.1s cubic-bezier(.77,0,.175,1) both;
 }
 
 .final-cta-section .btn-cta {
-    background-color: var(--color-dark-green);
-    color: var(--color-white);
-    padding: 15px 30px;
-    border-radius: 5px;
+    background: linear-gradient(90deg, #2ae6a6 60%, #ffeaea 100%);
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 24px;
     text-transform: uppercase;
     font-family: var(--font-heading);
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
+    font-size: 0.95rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 0 0 4px #ff2a2a, 0 2px 12px rgba(0,0,0,0.08); /* brilho só na borda vermelha */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    animation: popBtn 1s 0.2s cubic-bezier(.77,0,.175,1) both;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    filter: none;
+    animation: btnBorderGlow 2s infinite alternate;
 }
 
-.final-cta-section .btn-cta:hover {
-    background-color: var(--color-black);
+@keyframes btnBorderGlow {
+    0% {
+        box-shadow: 0 0 0 4px #ff2a2a, 0 2px 12px rgba(0,0,0,0.08);
+    }
+    100% {
+        box-shadow: 0 0 0 10px #ff2a2a, 0 4px 18px rgba(0,0,0,0.12);
+    }
+}
+
+@keyframes popBtn {
+    0% { opacity: 0; transform: scale(0.9);}
+    80% { opacity: 1; transform: scale(1.04);}
+    100% { opacity: 1; transform: scale(1);}
+}
+
+.final-cta-section .btn-cta:hover,
+.final-cta-section .btn-cta:focus {
+    background: linear-gradient(90deg, #2ae6a6 60%, #ffeaea 100%);
+    color: #fff;
+    transform: translateY(-2px) scale(1.07);
+    box-shadow: 0 0 0 14px #ff2a2a, 0 4px 18px rgba(0,0,0,0.12);
+}
+
+.final-cta-section .btn-cta:active {
+    background: linear-gradient(90deg, #2ae6a6 60%, #ffeaea 100%);
+    color: #fff;
+    transform: scale(0.97);
+}
+
+.final-cta-section .btn-cta span {
+    position: relative;
+    z-index: 1;
+    transition: color 0.2s;
+}
+
+.final-cta-section .btn-cta:hover span,
+.final-cta-section .btn-cta:focus span,
+.final-cta-section .btn-cta:active span {
+    color: #fff;
 }
 
 /* Responsividade */

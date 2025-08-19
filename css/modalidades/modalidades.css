@@ -281,7 +281,7 @@
     background-color: var(--color-white);
 }
 
-.jiujitsu-schedule-table {
+.schedule-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 50px;
@@ -290,8 +290,8 @@
     overflow: hidden; /* Para bordas arredondadas funcionarem com thead/tbody */
 }
 
-.jiujitsu-schedule-table th,
-.jiujitsu-schedule-table td {
+.schedule-table th,
+.schedule-table td {
     border: 1px solid #ddd;
     padding: 20px;
     text-align: center;
@@ -299,7 +299,7 @@
     color: var(--color-black);
 }
 
-.jiujitsu-schedule-table th {
+.schedule-table th {
     background-color: var(--color-dark-green);
     color: var(--color-white);
     font-family: var(--font-heading);
@@ -307,11 +307,11 @@
     font-weight: normal;
 }
 
-.jiujitsu-schedule-table tbody tr:nth-child(even) {
+.schedule-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.jiujitsu-schedule-table tbody tr:hover {
+.schedule-table tbody tr:hover {
     background-color: #f0f0f0;
 }
 
@@ -601,8 +601,8 @@
         padding: 30px;
     }
 
-    .jiujitsu-schedule-table th,
-    .jiujitsu-schedule-table td {
+    .schedule-table th,
+    .schedule-table td {
         padding: 15px;
         font-size: 0.9rem;
     }

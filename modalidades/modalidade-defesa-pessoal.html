@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/modalidades/defesa-pessoal.css"> <!-- Estilo Específico da Defesa Pessoal -->
+    <link rel="stylesheet" href="../css/modalidades/modalidades.css"> <!-- Estilo Específico do Jiu-Jitsu -->
+    <link rel="stylesheet" href="../css/faq.css"> <!-- Estilo do FAQ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
-    <!-- SUGGESTION: Minify CSS files (style.css, defesa-pessoal.css, baguetteBox.min.css) for production. -->
+    <!-- SUGGESTION: Minify CSS files (style.css, jiu-jitsu.css, baguetteBox.min.css) for production. -->
 </head>
 <body>
 
@@ -57,7 +58,7 @@
 
         <!-- BENEFÍCIOS -->
         <section class="modality-section benefits-section">
-            <h2 class="section-title">Benefícios da Defesa Pessoal</h2>
+            <h2 class="section-title heading-style">Benefícios da Defesa Pessoal</h2>
             <div class="benefits-grid container">
                 <div class="benefit-card">
                     <h3 class="heading-style">Segurança e Consciência Situacional</h3>
@@ -80,8 +81,8 @@
 
         <!-- HORÁRIOS -->
         <section class="modality-section schedule-section container">
-            <h2 class="section-title">Horários das Aulas de Defesa Pessoal</h2>
-            <table class="defesapessoal-schedule-table">
+            <h2 class="section-title heading-style">Horários das Aulas de Defesa Pessoal</h2>
+            <table class="jiujitsu-schedule-table">
                 <thead>
                     <tr>
                         <th>Dia</th>
@@ -121,23 +122,161 @@
         </section>
 
         <!-- FAQ -->
-        <section class="modality-section faq-section">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-container container">
+        <section class="faq-container" style="max-width: 600px; margin: 2rem auto;">
+            <h2 class="section-title" style="text-align: center;">PERGUNTAS FREQUENTES</h2>
+
+            <div class="faq-item">
+            <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>Preciso ser forte ou ter bom preparo físico para aprender?</h3>
-                    <p>De forma alguma. O princípio da defesa pessoal é usar a técnica e a inteligência para superar a força. O condicionamento físico você adquire com o tempo, no seu ritmo.</p>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Preciso ser forte ou ter bom preparo físico para aprender?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>
+                                De forma alguma. O princípio da defesa pessoal é usar a técnica e a inteligência para superar a força. O condicionamento físico você adquire com o tempo, no seu ritmo.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>As aulas são muito agressivas?</h3>
-                    <p>Não. Nosso ambiente é de aprendizado e cooperação. Os treinos são controlados e seguros, focados em repetir as técnicas para que se tornem instintivas, sem o objetivo de machucar os colegas.</p>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>As aulas são muito agressivas?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>
+                                Não. Nosso ambiente é de aprendizado e cooperação. Os treinos são controlados e seguros, focados em repetir as técnicas para que se tornem instintivas, sem o objetivo de machucar os colegas.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Em quanto tempo eu aprendo a me defender?</h3>
-                    <p>Desde a primeira aula você já aprende conceitos importantes de postura e consciência. A confiança e a habilidade vêm com a prática contínua, mas cada aula adiciona uma nova ferramenta à sua segurança.</p>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Em quanto tempo eu aprendo a me defender?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>
+                                Desde a primeira aula você já aprende conceitos importantes de postura e consciência. A confiança e a habilidade vêm com a prática contínua, mas cada aula adiciona uma nova ferramenta à sua segurança.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.faq-answer').forEach(answer => {
+        answer.style.maxHeight = '0';
+        answer.style.opacity = '0';
+        answer.style.pointerEvents = 'none';
+    });
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const answer = btn.nextElementSibling;
+            const arrow = btn.querySelector('.faq-arrow');
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+            document.querySelectorAll('.faq-question').forEach(b => {
+                b.setAttribute('aria-expanded', 'false');
+                const bArrow = b.querySelector('.faq-arrow');
+                if (bArrow) bArrow.style.transform = 'rotate(0deg)';
+                if (b.nextElementSibling) {
+                    b.nextElementSibling.style.maxHeight = '0';
+                    b.nextElementSibling.style.opacity = '0';
+                    b.nextElementSibling.style.pointerEvents = 'none';
+                }
+            });
+
+            if (!expanded) {
+                btn.setAttribute('aria-expanded', 'true');
+                if (arrow) arrow.style.transform = 'rotate(180deg)';
+                if (answer) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.opacity = '1';
+                    answer.style.pointerEvents = 'auto';
+                }
+            }
+        });
+    });
+});
+</script>
+
+<style>
+.faq-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    animation: fadeInUp 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes fadeInUp {
+    from { opacity:0; transform:translateY(40px);}
+    to { opacity:1; transform:translateY(0);}
+}
+.faq-item {
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid #eee;
+    transition: box-shadow 0.3s;
+}
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s;
+}
+.faq-question:hover, .faq-question[aria-expanded="true"] {
+    background: #f7f7f7;
+}
+.faq-arrow {
+    transition: transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), filter 0.3s;
+    filter: drop-shadow(0 0 6px #ff1744);
+}
+.pulse-red {
+    animation: pulseRed 1.1s infinite;
+}
+@keyframes pulseRed {
+    0% { filter: drop-shadow(0 0 6px #ff1744); }
+    50% { filter: drop-shadow(0 0 18px #ff1744); }
+    100% { filter: drop-shadow(0 0 6px #ff1744); }
+}
+.faq-answer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.4s;
+    background: #f7f7f7;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 0.5rem;
+    pointer-events: none;
+}
+.faq-question[aria-expanded="true"] + .faq-answer {
+    opacity: 1;
+    pointer-events: auto;
+}
+.faq-answer-content {
+    padding: 1rem;
+    color: #444;
+    animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+    from { opacity:0; transform:translateY(10px);}
+    to { opacity:1; transform:translateY(0);}
+}
+</style>
 
         <!-- CTA FINAL -->
         <section class="final-cta-section">
@@ -156,13 +295,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
+    
+
     <!-- Custom Scripts -->
     <script src="../js/main.js" defer></script>
+    <script src="../js/animations.js" defer></script>
     <script src="../js/loader.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
-    <script src="../js/animations.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Assuming modalityPageDetailsAnimation is defined in one of the loaded scripts
+            if (typeof modalityPageDetailsAnimation === 'function') {
+                modalityPageDetailsAnimation();
+            }
             // Initialize lightbox
             if (typeof baguetteBox !== 'undefined') {
                 baguetteBox.run('.gallery-lightbox');
@@ -170,3 +315,4 @@
         });
     </script>
 </body>
+</html>

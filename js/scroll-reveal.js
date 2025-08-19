@@ -1,20 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.1 // 10% of the element must be visible
-    };
+    const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll, .hidden');
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target); // Stop observing once visible
             }
         });
-    }, observerOptions);
+    }, {
+        threshold: 0.1 // Trigger when 10% of the element is visible
+    });
 
-    document.querySelectorAll('.hidden, .hidden-pop, .animate-on-scroll').forEach(element => {
+    animateOnScrollElements.forEach(element => {
         observer.observe(element);
     });
 });

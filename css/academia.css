@@ -2,11 +2,9 @@
    ESTILOS PARA A PÁGINA "SOBRE NÓS" (A ACADEMIA)
    ========================================================================== */
 
-/* SUGGESTION: Headings throughout this file (h1, h2, h3) consistently use `font-family: var(--font-heading); font-weight: 700; text-transform: uppercase;`. Consider creating a utility class in `style.css` (e.g., `.section-title`) and applying it to these elements in the HTML to reduce repetition and improve maintainability. */
-
 /* HERO DA PÁGINA "SOBRE" */
 .hero-sobre {
-    background: url('../assets/hero.png') center/cover no-repeat;
+    background: url('../assets/heroe\ sobre\ nos.png') center/cover no-repeat;
     min-height: 70vh;
     display: flex;
     align-items: center;
@@ -123,46 +121,7 @@
     color: var(--color-black);
 }
 
-/* ESTRUTURA E EQUIPE */
-.equipe-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
 
-.membro-equipe {
-    background-color: var(--color-beige);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.membro-equipe:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.membro-equipe img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid var(--color-red);
-}
-
-.membro-equipe h3 {
-    color: var(--color-dark-green);
-    margin-bottom: 10px;
-}
-
-.membro-equipe p {
-    font-size: 0.95rem;
-    color: var(--color-dark-green);
-}
 
 .espaco-academia {
     margin-top: 60px;
@@ -237,4 +196,31 @@
     .espaco-academia img {
         margin-bottom: 15px;
     }
+}
+
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.media-card {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 1 / 1; /* Garante que os cards sejam quadrados */
+    transition: transform 0.3s ease;
+}
+.media-card:hover {
+    transform: scale(1.05); /* Efeito de zoom no hover */
+}
+.media-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

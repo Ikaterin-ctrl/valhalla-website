@@ -805,3 +805,71 @@ img.loaded {
 :target {
   scroll-margin-top: 100px; /* Use a altura aproximada do seu header */
 }
+
+/* Estilos para o Carrossel de Atletas */
+.cta-atletas .container {
+    margin-bottom: 40px; /* Espaço entre o texto e o carrossel */
+}
+
+.atletas-carrossel {
+    width: 100%;
+    overflow: hidden; /* Essencial para o efeito funcionar */
+    position: relative;
+    /* Efeito de fade nas laterais para um acabamento mais suave */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.carrossel-track {
+    display: flex;
+    /* (LarguradaCard + Gap) * NumerodeCards * 2 */
+    width: calc((250px + 30px) * 8); 
+    animation: scroll 30s linear infinite;
+}
+
+.atletas-carrossel:hover .carrossel-track {
+    animation-play-state: paused; /* Pausa a animação no hover */
+}
+
+.atleta-card {
+    flex-shrink: 0;
+    width: 250px;
+    margin: 0 15px; /* Metade do gap (30px) */
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.atleta-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.atleta-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin: 15px 0 5px;
+}
+
+.atleta-card p {
+    color: var(--color-red);
+    font-family: var(--font-body);
+    font-weight: bold;
+    padding-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* Animação de rolagem do carrossel */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move o track para a esquerda pela metade da sua largura total */
+        transform: translateX(calc(-1 * (250px + 30px) * 4));
+    }
+}

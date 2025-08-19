@@ -1,46 +1,84 @@
+// GSAP Animations for Modality Pages
+
+function animateModalityPage() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Section Animation
+    gsap.from(".hero-overlay h1", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out"
+    });
+    gsap.from(".hero-overlay p", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.3,
+        ease: "power3.out"
+    });
+
+    // Section Title Animation
+    gsap.utils.toArray(".modality-section .section-title").forEach(title => {
+        gsap.from(title, {
+            opacity: 0,
+            x: -100,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: title,
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+    });
+
+    // Card Animations (For Whom & Benefits)
+    gsap.utils.toArray(".for-whom-item, .benefit-card").forEach(card => {
+        gsap.from(card, {
+            opacity: 0,
+            scale: 0.8,
+            y: 50,
+            duration: 0.8,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+                trigger: card,
+                start: "top 85%",
+                toggleActions: "play none none none"
+            }
+        });
+    });
+
+    // Gallery Image Hover Animation
+    gsap.utils.toArray(".gallery-grid img").forEach(img => {
+        gsap.to(img, {
+            scale: 1.05,
+            duration: 0.3,
+            paused: true,
+            ease: "power1.out",
+            onEnter: () => gsap.to(img, { scale: 1.05, duration: 0.3 }),
+            onLeave: () => gsap.to(img, { scale: 1, duration: 0.3 })
+        });
+    });
+
+    // Optional: Add animation for the final CTA button
+    gsap.from(".final-cta-section .btn-cta", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: ".final-cta-section",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
+    });
+}
+
+// Call the animation function when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-  // Função para animar a sequência do Herói
-  function animateHero() {
-    const title = document.querySelector('.hero-content h1');
-    const subtitle = document.querySelector('.hero-subtitle');
-
-    // Ordem da animação com delay (atraso) em milissegundos
-    const sequence = [
-      { element: title, delay: 400 },
-      { element: subtitle, delay: 600 }
-    ];
-
-    sequence.forEach(item => {
-      if (item.element) {
-        setTimeout(() => {
-          item.element.classList.add('visible');
-        }, item.delay);
-      }
-    });
-  }
-
-  
-
-  // Inicia a animação do herói assim que a página carrega
-  animateHero();
-
-  
-
-  // Configuração do Intersection Observer para o resto da página
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Para a animação não repetir
-      }
-    });
-  }, {
-    threshold: 0.1 // Ativa quando 10% do elemento está visível
-  });
-
-  // Seleciona todos os outros elementos para animar na rolagem
-  // (Adicione a classe .animate-on-scroll neles no HTML)
-  const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
-  elementsToAnimate.forEach(el => observer.observe(el));
+    // Ensure GSAP and ScrollTrigger are loaded before calling the function
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        animateModalityPage();
+    }
 });
-

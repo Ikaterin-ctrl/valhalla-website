@@ -179,13 +179,22 @@
 
     <div id="footer-placeholder"></div>
 
-    <!-- Scripts -->
-    <script src="../js/loader.js" defer></script>
+    <!-- Scripts (padrão do site para consistência) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+
+    <!-- Custom Scripts -->
     <script src="../js/main.js" defer></script>
-    <script src="../js/animations.js" defer></script>
+    <script src="../js/loader.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
+    <script src="../js/animations.js" defer></script>
     <script>
-        // Inicializa o lightbox na nossa galeria
-        baguetteBox.run('.gallery-lightbox');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize lightbox
+            if (typeof baguetteBox !== 'undefined') {
+                baguetteBox.run('.gallery-lightbox');
+            }
+        });
     </script>
 </body>

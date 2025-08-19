@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
+    // Verifica se a página está em um subdiretório
+    const isSubdirectory = window.location.pathname.includes('/modalidades/') || window.location.pathname.includes('/blog/');
+    const basePath = isSubdirectory ? '../' : './';
+
     const handleImageLoading = (container) => {
         const images = container.querySelectorAll('img');
         images.forEach(img => {
@@ -17,15 +21,36 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (headerPlaceholder) {
-        fetch('header.html')
+        fetch(`${basePath}header.html`)
             .then(response => response.text())
             .then(data => {
                 headerPlaceholder.innerHTML = data;
                 handleImageLoading(headerPlaceholder);
+                
+                // Ajusta os caminhos dos links e imagens no header
+                const headerLinks = headerPlaceholder.querySelectorAll('a');
+                const headerImages = headerPlaceholder.querySelectorAll('img');
+
+                headerLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('#')) {
+                        link.setAttribute('href', `${basePath}${href}`);
+                    }
+                });
+
+                headerImages.forEach(img => {
+                    const src = img.getAttribute('src');
+                    if (src && !src.startsWith('http')) {
+                        img.setAttribute('src', `${basePath}${src}`);
+                    }
+                });
+
+
                 // Set active link
                 const navLinks = document.querySelectorAll('.menu a');
                 navLinks.forEach(link => {
-                    if (link.getAttribute('href') === currentPage) {
+                    // Compara o final do href com o nome da página atual
+                    if (link.getAttribute('href').endsWith(currentPage)) {
                         link.classList.add('active');
                     }
                 });
@@ -52,11 +77,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (footerPlaceholder) {
-        fetch('footer.html')
+        fetch(`${basePath}footer.html`)
             .then(response => response.text())
             .then(data => {
                 footerPlaceholder.innerHTML = data;
                 handleImageLoading(footerPlaceholder);
+
+                // Ajusta os caminhos no footer
+                const footerLinks = footerPlaceholder.querySelectorAll('a');
+                const footerImages = footerPlaceholder.querySelectorAll('img');
+
+                footerLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('#')) {
+                        link.setAttribute('href', `${basePath}${href}`);
+                    }
+                });
+
+                footerImages.forEach(img => {
+                    const src = img.getAttribute('src');
+                    if (src && !src.startsWith('http')) {
+                        img.setAttribute('src', `${basePath}${src}`);
+                    }
+                });
             });
     }
 

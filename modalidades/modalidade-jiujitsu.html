@@ -159,20 +159,40 @@
             <h2 class="section-title heading-style">Perguntas Frequentes</h2>
             <div class="faq-container container">
                 <div class="faq-item">
-                    <h3>Preciso ter um quimono para a aula experimental?</h3>
-                    <p>Não se preocupe! Para sua primeira aula, uma roupa de ginástica confortável (sem zíperes ou botões) é suficiente. Nós temos quimonos para emprestar caso seja necessário.</p>
+                    <button class="faq-question-button">
+                        Preciso ter um quimono para a aula experimental?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não se preocupe! Para sua primeira aula, uma roupa de ginástica confortável (sem zíperes ou botões) é suficiente. Nós temos quimonos para emprestar caso seja necessário.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3 class="heading-style">Não tenho nenhuma experiência, posso participar?</h3>
-                    <p>Com certeza. Nossas turmas são preparadas para receber alunos de todos os níveis. Nossos professores darão atenção especial aos seus primeiros passos, ensinando a base de forma segura.</p>
+                    <button class="faq-question-button heading-style">
+                        Não tenho nenhuma experiência, posso participar?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Com certeza. Nossas turmas são preparadas para receber alunos de todos os níveis. Nossos professores darão atenção especial aos seus primeiros passos, ensinando a base de forma segura.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3 class="heading-style">As aulas de jiu-jitsu são mistas?</h3>
-                    <p>Sim, nossas aulas são mistas e o ambiente é de máximo respeito entre todos os alunos e alunas. Acreditamos que a diversidade no tatame enriquece o aprendizado de todos.</p>
+                    <button class="faq-question-button heading-style">
+                        As aulas de jiu-jitsu são mistas?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim, nossas aulas são mistas e o ambiente é de máximo respeito entre todos os alunos e alunas. Acreditamos que a diversidade no tatame enriquece o aprendizado de todos.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <h3>Qual a idade mínima para começar no Jiu-Jitsu infantil?</h3>
-                    <p>Aceitamos crianças a partir dos 4 anos de idade. Nossas aulas são adaptadas para cada faixa etária, focando no desenvolvimento motor, disciplina e socialização.</p>
+                    <button class="faq-question-button">
+                        Qual a idade mínima para começar no Jiu-Jitsu infantil?
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Aceitamos crianças a partir dos 4 anos de idade. Nossas aulas são adaptadas para cada faixa etária, focando no desenvolvimento motor, disciplina e socialização.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -195,17 +215,17 @@
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
     <!-- Custom Scripts -->
-    <script src="../js/script.js" defer></script>
-    <script src="../js/gsap-animations.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/loader.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
+    <script src="../js/animations.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            modalityPageDetailsAnimation();
+            // Initialize lightbox
+            if (typeof baguetteBox !== 'undefined') {
+                baguetteBox.run('.gallery-lightbox');
+            }
         });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js" async></script>
-    <script>
-        // Inicializa o lightbox na nossa galeria
-        baguetteBox.run('.gallery-lightbox');
     </script>
 </body>
 </html>

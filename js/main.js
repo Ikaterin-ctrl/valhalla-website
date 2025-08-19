@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     setupContactModal();
     setupTabs();
+    setupFaqAccordion();
 });
 
 function setupContactModal() {
@@ -42,6 +43,23 @@ function setupTabs() {
                     content.classList.remove('active');
                 }
             });
+        });
+    });
+}
+
+function setupFaqAccordion() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(q => {
+                const faqItem = q.closest('.faq-item');
+                if (faqItem !== question.closest('.faq-item') && faqItem.classList.contains('active')) {
+                    faqItem.classList.remove('active');
+                }
+            });
+            question.closest('.faq-item').classList.toggle('active');
         });
     });
 }

@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/academia.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   
   <!-- SUGGESTION: Minify CSS files (style.css, academia.css, animations.css) for production. -->
 </head>
@@ -78,20 +79,27 @@
         <p>Mais que um lugar para treinar, um lugar para pertencer. Sinta a energia da nossa comunidade através das nossas fotos.</p>
     </div>
 
-    <div class="media-grid gallery-lightbox">
-        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-13 à(s) 18.33.57_4a418882.jpg" class="media-card animate-on-scroll">
-            <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-13 à(s) 18.33.57_4a418882.jpg" alt="Treino de Jiu Jitsu na Valhalla">
-        </a>
-        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-14 à(s) 20.49.48_cf4d36c7.jpg" class="media-card animate-on-scroll">
-            <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-14 à(s) 20.49.48_cf4d36c7.jpg" alt="Alunos de Muay Thai na Valhalla">
-        </a>
-        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-15 à(s) 17.43.38_5e3c732e.jpg" class="media-card animate-on-scroll">
-            <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-15 à(s) 17.43.38_5e3c732e.jpg" alt="Aula de Boxe na Valhalla">
-        </a>
-        <a href="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-18 à(s) 16.44.21_294a8907.jpg" class="media-card animate-on-scroll">
-            <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-18 à(s) 16.44.21_294a8907.jpg" alt="Comunidade reunida no tatame da Valhalla">
-        </a>
+    <div class="swiper gallery-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-13 à(s) 18.33.57_4a418882.jpg" alt="Treino de Jiu Jitsu na Valhalla">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-14 à(s) 20.49.48_cf4d36c7.jpg" alt="Alunos de Muay Thai na Valhalla">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-15 à(s) 17.43.38_5e3c732e.jpg" alt="Aula de Boxe na Valhalla">
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/Vibe_no_tatame/Imagem do WhatsApp de 2025-08-18 à(s) 16.44.21_294a8907.jpg" alt="Comunidade reunida no tatame da Valhalla">
+            </div>
         </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
 </section>
 
 <section class="cta-atletas">
@@ -160,6 +168,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="js/loader.js" defer></script>
   <script src="js/animations.js" defer></script>
   <script src="js/main.js" defer></script>

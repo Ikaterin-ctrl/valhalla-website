@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerView: 1,
     spaceBetween: 30,
     autoplay: {
-      delay: 2500,
+      delay: 20000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },

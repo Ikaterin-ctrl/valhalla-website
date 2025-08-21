@@ -136,16 +136,51 @@ body {
 
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+    .main-container {
+        padding-top: 100px;
+    }
+
+    .blog-header h1 {
+        font-size: clamp(2rem, 7vw, 2.8rem);
+    }
+
     .post-card {
         flex-direction: column;
     }
 
     .post-image {
-        flex-basis: 200px; /* Altura da imagem em telas menores */
+        flex-basis: 220px; /* Altura da imagem em telas menores */
+    }
+
+    .post-content {
+        padding: 20px;
     }
 
     .post-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .post-content p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding-top: 90px;
+    }
+
+    .filter-buttons {
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 0.85rem;
+    }
+
+    .post-content h2 {
+        font-size: 1.3rem;
     }
 }
 

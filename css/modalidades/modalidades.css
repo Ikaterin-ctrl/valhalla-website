@@ -476,16 +476,7 @@
     animation: ctaGlow 2.5s ease-in-out infinite alternate;
 }
 
-@keyframes ctaGlow {
-    0% {
-        box-shadow: 0 0 32px 8px rgba(255, 255, 180, 0.18), 0 0 64px 16px rgba(255, 180, 180, 0.12);
-        border-color: rgba(255,255,255,0.18);
-    }
-    100% {
-        box-shadow: 0 0 48px 16px rgba(255, 255, 180, 0.32), 0 0 96px 32px rgba(255, 180, 180, 0.22);
-        border-color: rgba(255,255,255,0.32);
-    }
-}
+
 
 @keyframes fadeInCta {
     from { opacity: 0; transform: translateY(30px);}

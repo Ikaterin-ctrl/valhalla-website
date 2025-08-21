@@ -218,13 +218,7 @@
     box-shadow: 0 0 0 3px rgba(85, 107, 47, 0.15);
 }
 
-.horarios-filters-wrapper {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
 #toggle-filters-btn {
-    display: none; /* Hidden by default, shown on mobile */
     margin-bottom: 20px;
     padding: 12px 25px;
     font-size: 1rem;
@@ -241,52 +235,75 @@
     background-color: #a02c2c;
 }
 
-#horarios-filtros.filters-hidden {
-    display: none; /* Hidden by default */
+/* New Modal Styles for Filters */
+.modal-filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Show filters on larger screens */
-@media (min-width: 769px) {
-    #horarios-filtros.filters-hidden {
-        display: flex; /* Always show on desktop */
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        overflow-x: visible; /* No scrollbar on desktop */
-        padding-bottom: 0;
-    }
-    #toggle-filters-btn {
-        display: none; /* Hide toggle button on desktop */
-    }
+.modal-filter-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Show toggle button and hide filters on smaller screens */
-@media (max-width: 768px) {
-    #toggle-filters-btn {
-        display: inline-block; /* Show toggle button */
-    }
-    #horarios-filtros {
-        display: flex; /* Default to flex for mobile, but hidden by filters-hidden */
-        justify-content: flex-start; /* Align to start for horizontal scroll */
-        gap: 10px;
-        flex-wrap: nowrap; /* Prevent wrapping on mobile */
-        overflow-x: auto; /* Enable horizontal scroll */
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding-bottom: 10px;
-    }
-    #horarios-filtros::-webkit-scrollbar {
-        display: none;
-    }
+.modal-filter-content {
+    background: var(--color-beige);
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
 }
 
-.horarios-filtros {
-    /* Existing styles for filter buttons container */
-    /* These will be overridden by media queries above */
+.modal-filter-overlay.is-active .modal-filter-content {
+    transform: translateY(0);
 }
 
-.horarios-filtros::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+.modal-filter-content h3 {
+    font-size: 1.8rem;
+    color: var(--color-dark-green);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.horarios-filtros-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.horarios-filtros-modal .filtro-btn {
+    width: 100%; /* Make buttons take full width in modal */
+}
+
+/* Re-use existing modal-close styles */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-black);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--color-red);
 }
 
 .filtro-btn {

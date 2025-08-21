@@ -156,11 +156,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const filterButtons = document.querySelectorAll('.filtro-btn');
         const searchInput = document.getElementById('horarios-search');
         const toggleFiltersBtn = document.getElementById('toggle-filters-btn');
-        const horariosFiltros = document.getElementById('horarios-filtros');
+        const modalFilterOverlay = document.getElementById('modal-filter-overlay');
+        const closeFilterModalBtn = document.getElementById('close-filter-modal-btn');
 
-        if (toggleFiltersBtn && horariosFiltros) {
+        if (toggleFiltersBtn && modalFilterOverlay) {
             toggleFiltersBtn.addEventListener('click', () => {
-                horariosFiltros.classList.toggle('filters-hidden');
+                modalFilterOverlay.classList.add('is-active');
+            });
+        }
+
+        if (closeFilterModalBtn && modalFilterOverlay) {
+            closeFilterModalBtn.addEventListener('click', () => {
+                modalFilterOverlay.classList.remove('is-active');
             });
         }
 
@@ -169,6 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 aplicarFiltros();
+                if (modalFilterOverlay) {
+                    modalFilterOverlay.classList.remove('is-active'); // Close modal after filter selection
+                }
             });
         });
 

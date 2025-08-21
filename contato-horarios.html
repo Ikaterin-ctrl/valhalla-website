@@ -37,17 +37,23 @@
         <div class="horarios-search-container">
             <input type="text" id="horarios-search" placeholder="Buscar aula ou modalidade...">
         </div>
-        <div class="horarios-filters-wrapper">
-            <button id="toggle-filters-btn" class="btn-cta">Filtrar por Modalidade</button>
-            <div id="horarios-filtros" class="filters-hidden">
-                <button class="filtro-btn active" data-filter="all">Ver Tudo</button>
-                <button class="filtro-btn" data-filter="jiujitsu">Jiu Jitsu</button>
-                <button class="filtro-btn" data-filter="boxe">Boxe</button>
-                <button class="filtro-btn" data-filter="muaythai">Muay Thai</button>
-                <button class="filtro-btn" data-filter="sanda">Sanda</button>
-                <button class="filtro-btn" data-filter="mma">MMA</button>
-                <button class="filtro-btn" data-filter="defesapessoal">Defesa Pessoal</button>
-                <button class="filtro-btn" data-filter="funcionalfight">Funcional Fight</button>
+        <button id="toggle-filters-btn" class="btn-cta">Filtrar por Modalidade</button>
+
+        <!-- Modal de Filtros -->
+        <div id="modal-filter-overlay" class="modal-filter-overlay">
+            <div class="modal-filter-content">
+                <button id="close-filter-modal-btn" class="modal-close" aria-label="Fechar filtros">&times;</button>
+                <h3>Filtrar por Modalidade</h3>
+                <div id="horarios-filtros" class="horarios-filtros-modal">
+                    <button class="filtro-btn active" data-filter="all">Ver Tudo</button>
+                    <button class="filtro-btn" data-filter="jiujitsu">Jiu Jitsu</button>
+                    <button class="filtro-btn" data-filter="boxe">Boxe</button>
+                    <button class="filtro-btn" data-filter="muaythai">Muay Thai</button>
+                    <button class="filtro-btn" data-filter="sanda">Sanda</button>
+                    <button class="filtro-btn" data-filter="mma">MMA</button>
+                    <button class="filtro-btn" data-filter="defesapessoal">Defesa Pessoal</button>
+                    <button class="filtro-btn" data-filter="funcionalfight">Funcional Fight</button>
+                </div>
             </div>
         </div>
 

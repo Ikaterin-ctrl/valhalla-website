@@ -54,14 +54,25 @@ function setupFaqAccordion() {
 
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(q => {
-                const faqItem = q.closest('.faq-item');
-                if (faqItem !== question.closest('.faq-item') && faqItem.classList.contains('active')) {
-                    faqItem.classList.remove('active');
+            const faqItem = question.closest('.faq-item');
+            const wasActive = faqItem.classList.contains('active');
+
+            // Close all other active FAQ items
+            document.querySelectorAll('.faq-item.active').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
                 }
             });
-            question.closest('.faq-item').classList.toggle('active');
+
+            // Toggle the clicked FAQ item
+            if (!wasActive) {
+                faqItem.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            } else {
+                faqItem.classList.remove('active');
+                question.setAttribute('aria-expanded', 'false');
+            }
         });
     });
 }

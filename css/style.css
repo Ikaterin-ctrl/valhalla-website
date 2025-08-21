@@ -150,6 +150,7 @@ h1, h2 {
     color: var(--color-white); /* Ensure text is white */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .hero-slogan {
@@ -166,7 +167,7 @@ h1, h2 {
 .hero-subtitle {
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.1;
     text-transform: uppercase;
     margin-bottom: 20px;

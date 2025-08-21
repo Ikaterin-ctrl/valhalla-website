@@ -518,55 +518,33 @@
 }
 
 .final-cta-section .btn-cta {
-    background: linear-gradient(90deg, #2ae6a6 60%, #ffeaea 100%);
-    color: #fff;
-    padding: 10px 28px;
-    border-radius: 24px;
+    background: var(--color-red);
+    color: var(--color-white);
+    padding: 12px 28px;
+    border-radius: 4px; /* Changed for consistency */
     text-transform: uppercase;
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: bold;
     letter-spacing: 1px;
     border: none;
-    box-shadow: 0 0 0 4px #ff2a2a, 0 2px 12px rgba(0,0,0,0.08); /* brilho só na borda vermelha */
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-    position: relative;
-    animation: popBtn 1s 0.2s cubic-bezier(.77,0,.175,1) both;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Adjusted transition */
     margin: 0 auto;
     display: block;
     width: fit-content;
-    filter: none;
-    animation: btnBorderGlow 2s infinite alternate;
-}
-
-@keyframes btnBorderGlow {
-    0% {
-        box-shadow: 0 0 0 4px #ff2a2a, 0 2px 12px rgba(0,0,0,0.08);
-    }
-    100% {
-        box-shadow: 0 0 0 10px #ff2a2a, 0 4px 18px rgba(0,0,0,0.12);
-    }
-}
-
-@keyframes popBtn {
-    0% { opacity: 0; transform: scale(0.9);}
-    80% { opacity: 1; transform: scale(1.04);}
-    100% { opacity: 1; transform: scale(1);}
 }
 
 .final-cta-section .btn-cta:hover,
 .final-cta-section .btn-cta:focus {
-    background: linear-gradient(90deg, #2ae6a6 60%, #ffeaea 100%);
-    color: #fff;
-    transform: translateY(-2px) scale(1.07);
-    box-shadow: 0 0 0 14px #ff2a2a, 0 4px 18px rgba(0,0,0,0.12);
+    background: var(--color-dark-green); /* Consistent with .btn:hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Consistent with .btn:hover */
 }
 
 .final-cta-section .btn-cta:active {
-    background: linear-gradient(90deg, #2ae6a6 60%, #ffeaea 100%);
-    color: #fff;
-    transform: scale(0.97);
+    transform: translateY(0); /* Reset transform on active */
+    box-shadow: none; /* Remove shadow on active */
 }
 
 .final-cta-section .btn-cta span {

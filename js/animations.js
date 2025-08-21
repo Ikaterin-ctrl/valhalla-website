@@ -51,14 +51,17 @@ function animateModalityPage() {
 
     // Gallery Image Hover Animation
     gsap.utils.toArray(".gallery-grid img").forEach(img => {
-        gsap.to(img, {
+        // Create a GSAP animation that is paused by default
+        const hoverAnim = gsap.to(img, {
             scale: 1.05,
             duration: 0.3,
-            paused: true,
-            ease: "power1.out",
-            onEnter: () => gsap.to(img, { scale: 1.05, duration: 0.3 }),
-            onLeave: () => gsap.to(img, { scale: 1, duration: 0.3 })
+            paused: true, // Keep it paused
+            ease: "power1.out"
         });
+
+        // Add event listeners to play/reverse the animation on hover
+        img.addEventListener('mouseenter', () => hoverAnim.play());
+        img.addEventListener('mouseleave', () => hoverAnim.reverse());
     });
 
     // Optional: Add animation for the final CTA button

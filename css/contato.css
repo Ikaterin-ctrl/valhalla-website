@@ -4,7 +4,7 @@
 
 /* STATUS DE FUNCIONAMENTO */
 .status-wrapper {
-    padding: 15px 5%;
+    padding: 20px 5%; /* Increased padding */
     text-align: center;
     font-family: var(--font-body);
     font-weight: 500;
@@ -18,35 +18,46 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    background-color: #f1f1f1;
-    border: 1px solid #ddd;
-    max-width: 300px; /* Limita a largura do box de status */
+    gap: 15px; /* Increased gap */
+    padding: 15px 30px; /* More padding */
+    border-radius: 10px; /* Slightly more rounded corners */
+    background-color: var(--color-white); /* White background for contrast */
+    border: 1px solid var(--color-light-green); /* Subtle border */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Subtle shadow */
+    max-width: 350px; /* Slightly wider box */
     margin: 0 auto; /* Centraliza o box */
+    transition: all 0.3s ease; /* Smooth transitions for any changes */
 }
 
 .status-dot {
-    width: 15px;
-    height: 15px;
+    width: 18px; /* Slightly larger dot */
+    height: 18px;
     border-radius: 50%;
     background-color: #ccc; /* Cor padrão enquanto carrega */
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, transform 0.3s ease; /* Add transform transition */
+    animation: pulse 1.5s infinite; /* Add a subtle pulse animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .status-aula.open .status-dot {
-    background-color: #2e7d32; /* Verde escuro */
+    background-color: #4CAF50; /* Brighter green */
 }
 
 .status-aula.closed .status-dot {
-    background-color: #e65100; /* Laranja escuro */
+    background-color: #F44336; /* Brighter red */
 }
 
 .status-text {
-    font-weight: bold;
-    font-size: 1.1rem;
+    font-weight: 700; /* Bolder text */
+    font-size: 1.2rem; /* Larger font size */
+    color: var(--color-dark-green); /* Use a theme color */
 }
+
 
 /* CONTAINER PRINCIPAL DA PÁGINA */
 .contato-page-wrapper {
@@ -177,33 +188,134 @@
 }
 
 /* SEÇÃO DE HORÁRIOS */
-.horarios-filtros {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+.horarios-search-container {
+    margin-bottom: 20px; /* Space between search and filters */
+    text-align: center;
+}
+
+#horarios-search {
+    width: 100%;
+    max-width: 400px; /* Limit width for desktop */
+    padding: 12px 20px;
+    border: 2px solid var(--color-light-green);
+    border-radius: 50px; /* Pill shape */
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-black);
+    background-color: var(--color-beige);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#horarios-search::placeholder {
+    color: var(--color-dark-green);
+    opacity: 0.7;
+}
+
+#horarios-search:focus {
+    outline: none;
+    border-color: var(--color-dark-green);
+    box-shadow: 0 0 0 3px rgba(85, 107, 47, 0.15);
+}
+
+.horarios-filters-wrapper {
+    text-align: center;
     margin-bottom: 50px;
-    flex-wrap: wrap;
+}
+
+#toggle-filters-btn {
+    display: none; /* Hidden by default, shown on mobile */
+    margin-bottom: 20px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#toggle-filters-btn:hover {
+    background-color: #a02c2c;
+}
+
+#horarios-filtros.filters-hidden {
+    display: none; /* Hidden by default */
+}
+
+/* Show filters on larger screens */
+@media (min-width: 769px) {
+    #horarios-filtros.filters-hidden {
+        display: flex; /* Always show on desktop */
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        overflow-x: visible; /* No scrollbar on desktop */
+        padding-bottom: 0;
+    }
+    #toggle-filters-btn {
+        display: none; /* Hide toggle button on desktop */
+    }
+}
+
+/* Show toggle button and hide filters on smaller screens */
+@media (max-width: 768px) {
+    #toggle-filters-btn {
+        display: inline-block; /* Show toggle button */
+    }
+    #horarios-filtros {
+        display: flex; /* Default to flex for mobile, but hidden by filters-hidden */
+        justify-content: flex-start; /* Align to start for horizontal scroll */
+        gap: 10px;
+        flex-wrap: nowrap; /* Prevent wrapping on mobile */
+        overflow-x: auto; /* Enable horizontal scroll */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 10px;
+    }
+    #horarios-filtros::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.horarios-filtros {
+    /* Existing styles for filter buttons container */
+    /* These will be overridden by media queries above */
+}
+
+.horarios-filtros::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Edge */
 }
 
 .filtro-btn {
-    background-color: var(--color-light-green);
-    color: var(--color-black);
-    padding: 10px 20px;
-    border: 1px solid var(--color-dark-green);
-    border-radius: 5px;
-    font-family: var(--font-body);
-    font-size: 0.9rem;
+    background-color: var(--color-beige); /* Lighter background */
+    color: var(--color-dark-green); /* Darker text for contrast */
+    padding: 12px 25px; /* More padding for pill shape */
+    border: 2px solid var(--color-light-green); /* More prominent border */
+    border-radius: 50px; /* Pill shape */
+    font-family: var(--font-heading); /* Use heading font for emphasis */
+    font-size: 1rem; /* Slightly larger font */
+    font-weight: 600; /* Semi-bold */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transitions */
+    flex-shrink: 0; /* Prevent shrinking on mobile */
 }
 
 .filtro-btn:hover {
-    background-color: var(--color-dark-green);
-    color: var(--color-white);
+    background-color: var(--color-light-green); /* Subtle hover effect */
+    color: var(--color-black);
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow on hover */
 }
 
 .filtro-btn.active {
-    background-color: var(--color-red);
-    color: var(--color-white);
-    border-color: var(--color-red);
+    background-color: var(--color-red); /* Strong active background */
+    color: var(--color-white); /* White text for active */
+    border-color: var(--color-red); /* Matching border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* More pronounced shadow for active */
+    transform: translateY(0); /* Reset lift */
 }
 
 .horarios-grid {

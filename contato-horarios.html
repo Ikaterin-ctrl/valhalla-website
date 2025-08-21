@@ -34,16 +34,22 @@
           <h2 class="section-title heading-style">Nossa Grade de Horários</h2>
           <p>Filtre pela sua modalidade de interesse para ver os horários disponíveis.</p>
         </div>
-        <div id="horarios-filtros">
-    <button class="filtro-btn active" data-filter="all">Ver Tudo</button>
-    <button class="filtro-btn" data-filter="jiujitsu">Jiu Jitsu</button>
-    <button class="filtro-btn" data-filter="boxe">Boxe</button>
-    <button class="filtro-btn" data-filter="muaythai">Muay Thai</button>
-    <button class="filtro-btn" data-filter="sanda">Sanda</button>
-    <button class="filtro-btn" data-filter="mma">MMA</button>
-    <button class="filtro-btn" data-filter="defesapessoal">Defesa Pessoal</button>
-    <button class="filtro-btn" data-filter="funcionalfight">Funcional Fight</button>
-</div>
+        <div class="horarios-search-container">
+            <input type="text" id="horarios-search" placeholder="Buscar aula ou modalidade...">
+        </div>
+        <div class="horarios-filters-wrapper">
+            <button id="toggle-filters-btn" class="btn-cta">Filtrar por Modalidade</button>
+            <div id="horarios-filtros" class="filters-hidden">
+                <button class="filtro-btn active" data-filter="all">Ver Tudo</button>
+                <button class="filtro-btn" data-filter="jiujitsu">Jiu Jitsu</button>
+                <button class="filtro-btn" data-filter="boxe">Boxe</button>
+                <button class="filtro-btn" data-filter="muaythai">Muay Thai</button>
+                <button class="filtro-btn" data-filter="sanda">Sanda</button>
+                <button class="filtro-btn" data-filter="mma">MMA</button>
+                <button class="filtro-btn" data-filter="defesapessoal">Defesa Pessoal</button>
+                <button class="filtro-btn" data-filter="funcionalfight">Funcional Fight</button>
+            </div>
+        </div>
 
 <table id="grade-horarios">
     <thead>

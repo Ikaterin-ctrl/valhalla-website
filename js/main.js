@@ -4,7 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setupFaqAccordion();
     setupLightbox();
     setupScrollAnimations(); // Call the new function
+    setupResponsiveTables(); // Add this call
 });
+
+function setupResponsiveTables() {
+    const tables = document.querySelectorAll('.schedule-table');
+    tables.forEach(table => {
+        const headers = Array.from(table.querySelectorAll('thead th')).map(th => th.textContent);
+        table.querySelectorAll('tbody tr').forEach(row => {
+            row.querySelectorAll('td').forEach((td, index) => {
+                td.setAttribute('data-label', headers[index]);
+            });
+        });
+    });
+}
 
 function setupContactModal() {
     const modal = document.getElementById('contact-form-modal');

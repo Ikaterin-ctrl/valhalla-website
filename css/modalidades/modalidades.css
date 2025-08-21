@@ -553,7 +553,7 @@
 /* Responsividade */
 @media (max-width: 768px) {
     .modality-section.container {
-        padding: 80px 5%;
+        padding: 60px 5%;
     }
 
     .instructors-grid,
@@ -561,19 +561,53 @@
     .benefits-grid,
     .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .instructor-profile,
     .for-whom-item,
     .benefit-card,
     .faq-item {
-        padding: 30px;
+        padding: 25px;
     }
 
-    .schedule-table th,
+    /* Estilos da Tabela Responsiva */
+    .schedule-table {
+        border: none;
+        box-shadow: none;
+    }
+    .schedule-table thead {
+        display: none;
+    }
+    .schedule-table tr {
+        display: block;
+        margin-bottom: 1em;
+        border: 1px solid var(--color-light-green);
+        border-radius: 8px;
+        padding: 1em;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
     .schedule-table td {
-        padding: 15px;
-        font-size: 0.9rem;
+        display: block;
+        text-align: right;
+        border: none;
+        border-bottom: 1px dotted var(--color-light-green);
+        padding: 10px 5px;
+        font-size: 1rem;
+    }
+    .schedule-table td:last-child {
+        border-bottom: none;
+    }
+    .schedule-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        color: var(--color-dark-green);
+    }
+    .schedule-table td:empty {
+        display: none;
     }
 }
 

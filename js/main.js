@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLightbox();
     setupScrollAnimations(); // Call the new function
     setupResponsiveTables(); // Add this call
+    handleContactFormSubmission(); // Handle contact form submission
 });
 
 function setupResponsiveTables() {
@@ -37,6 +38,49 @@ function setupContactModal() {
         if (e.target === modal) {
             closeModal();
         }
+    });
+}
+
+function handleContactFormSubmission() {
+    const contactForm = document.querySelector('#contact-form-modal .modal-form');
+    const modalContent = document.querySelector('#contact-form-modal .modal-content');
+
+    if (!contactForm || !modalContent) return;
+
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission (page reload)
+
+        // Basic client-side validation (optional, as 'required' attribute is used)
+        const name = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('mensagem').value;
+
+        if (!name || !email || !message) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        // Simulate form submission success
+        modalContent.innerHTML = `
+            <button id="close-form-btn" class="modal-close" aria-label="Fechar formulário">&times;</button>
+            <h2 class="section-title heading-style">Mensagem Enviada!</h2>
+            <p>Obrigado por entrar em contato. Retornaremos o mais breve possível.</p>
+        `;
+
+        // Re-attach close button listener for the new content
+        document.getElementById('close-form-btn').addEventListener('click', () => {
+            document.getElementById('contact-form-modal').classList.remove('visible');
+            // Optionally, reload the original form content if the modal is reopened
+            // For simplicity, we'll just leave the thank you message for now.
+        });
+
+        // Optionally, close the modal after a few seconds
+        setTimeout(() => {
+            document.getElementById('contact-form-modal').classList.remove('visible');
+            // To reset the form for subsequent openings, you'd need to re-inject the original form HTML
+            // or reset the form fields if the form element itself is not replaced.
+            // For this example, we'll keep it simple.
+        }, 3000); // Close after 3 seconds
     });
 }
 

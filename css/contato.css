@@ -377,12 +377,21 @@
         padding: 30px 5%; /* Ajusta padding para mobile */
     }
     .tabs-nav {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .tabs-nav::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
     }
     .tab-button {
-        width: 100%;
-        margin-bottom: 10px;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+    }
+    .tab-button.active {
+        border-bottom: 2px solid var(--color-red);
     }
     .contato-wrapper {
         grid-template-columns: 1fr; /* Colunas empilham no mobile */
@@ -394,6 +403,63 @@
     }
     .info-item div {
         flex: 1;
+    }
+
+    /* Estilos da Tabela Responsiva */
+    #grade-horarios {
+        border: none;
+    }
+    #grade-horarios thead {
+        display: none;
+    }
+    #grade-horarios tr {
+        display: block;
+        margin-bottom: 1em;
+        border: 1px solid var(--color-light-green);
+        border-radius: 8px;
+        padding: 1em;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    #grade-horarios td {
+        display: block;
+        text-align: right;
+        border-bottom: 1px dotted var(--color-light-green);
+        padding: 10px 5px;
+    }
+    #grade-horarios td:last-child {
+        border-bottom: none;
+    }
+    #grade-horarios td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        color: var(--color-dark-green);
+    }
+    #grade-horarios td:empty {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .status-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .tab-button {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+    }
+    .horarios-filtros {
+        gap: 10px;
+    }
+    .filtro-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    .modal-content {
+        padding: 25px;
     }
 }
 

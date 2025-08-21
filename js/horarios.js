@@ -24,8 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para construir a tabela de horários dinamicamente
     function construirGradeHorarios(horarios) {
-        const tabelaBody = document.querySelector('#grade-horarios tbody');
-        if (!tabelaBody) return;
+        const tabela = document.querySelector('#grade-horarios');
+        if (!tabela) return;
+        const tabelaBody = tabela.querySelector('tbody');
+        const tabelaHead = tabela.querySelector('thead');
+        if (!tabelaBody || !tabelaHead) return;
 
         tabelaBody.innerHTML = ''; // Limpa a tabela antes de preencher
 
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const dias = ['domingo', 'segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
             const diaStr = dias[aula.dia];
-            acc[hora][diaStr] = `<td class="${aula.classe}">${aula.aula}</td>`;
+            acc[hora][diaStr] = `<div class="aula ${aula.classe}">${aula.aula}</div>`; // Usar div para agrupar aulas
             return acc;
         }, {});
 
@@ -47,14 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // Cria as linhas da tabela
         horasOrdenadas.forEach(hora => {
             const linha = document.createElement('tr');
-            linha.innerHTML = `<td>${hora}</td>` + 
-                              `${horariosAgrupados[hora].segunda || '<td></td>'}` +
-                              `${horariosAgrupados[hora].terca || '<td></td>'}` +
-                              `${horariosAgrupados[hora].quarta || '<td></td>'}` +
-                              `${horariosAgrupados[hora].quinta || '<td></td>'}` +
-                              `${horariosAgrupados[hora].sexta || '<td></td>'}` +
-                              `${horariosAgrupados[hora].sabado || '<td></td>'}`;
+            let celulas = `<td>${hora}</td>`;
+            const diasDaSemana = ['segunda', 'terca', 'quarta', 'quinta', 'sexta', 'sabado'];
+            diasDaSemana.forEach(dia => {
+                celulas += `<td>${horariosAgrupados[hora][dia] || ''}</td>`;
+            });
+            linha.innerHTML = celulas;
             tabelaBody.appendChild(linha);
+        });
+
+        // Adiciona os data-labels para responsividade
+        const headers = Array.from(tabelaHead.querySelectorAll('th')).map(th => th.textContent);
+        tabelaBody.querySelectorAll('tr').forEach(tr => {
+            tr.querySelectorAll('td').forEach((td, i) => {
+                td.setAttribute('data-label', headers[i]);
+            });
         });
     }
 

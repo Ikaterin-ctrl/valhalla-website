@@ -116,10 +116,35 @@ body.article-page {
 /* 7. Responsividade */
 @media (max-width: 768px) {
     .article-container {
-        padding-top: 100px;
+        padding: 100px 5% 60px 5%;
     }
 
     .article-header h1 {
         font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .article-content {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    .article-content h2,
+    .article-content h3 {
+        margin-top: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-container {
+        padding-top: 90px;
+        padding-bottom: 40px;
+    }
+
+    .article-header h1 {
+        font-size: clamp(1.8rem, 9vw, 2.5rem);
+    }
+
+    .article-content {
+        font-size: 1rem;
     }
 }

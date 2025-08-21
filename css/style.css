@@ -639,25 +639,40 @@ img.loaded {
 }
 
 @media (max-width: 768px) {
-    .historia, .modalidades-home, .depoimentos, .cta-final { padding: 80px 5%; }
+    .historia, .modalidades-home, .depoimentos, .cta-final { padding: 60px 5%; }
     .cards { justify-content: center; }
+    .card {
+        width: 90%;
+        max-width: 340px; /* Aumenta a largura máxima para melhor aproveitamento */
+    }
     .contato-wrapper { grid-template-columns: 1fr; }
     .mestre-content { flex-direction: column; text-align: center; }
     .hero {
         flex-direction: column; 
         text-align: center;
         padding-top: 80px; 
+        justify-content: center;
     }
-    .hero-content h1 { margin-top: 2em; font-size: clamp(2.2rem, 8vw, 3rem); }
+    .hero-content {
+        margin-left: 0;
+    }
+    .hero-content h1 { 
+        margin-top: 1em; /* Reduz a margem superior */
+        font-size: clamp(2.5rem, 10vw, 3.5rem); /* Ajusta o clamp para melhor responsividade */
+    }
+    .hero-subtitle {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+    }
 
     .hero-visual img {
-        height: 50vh;
+        height: 45vh; /* Leve ajuste na altura */
         object-position: center 20%;
     }
 
     .footer-content {
         flex-direction: column; 
         gap: 30px; 
+        align-items: center; /* Centraliza os itens */
     }
 
     .footer-logo {
@@ -667,6 +682,7 @@ img.loaded {
     .footer-links {
         display: flex;
         flex-direction: column; 
+        align-items: center; /* Centraliza os links */
         gap: 15px; 
     }
 
@@ -677,6 +693,31 @@ img.loaded {
     .modalidade-page .mod-destaque-img {
         order: -1; 
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2.section-title {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 0.95rem;
+    }
+    .btn {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+    .hero-content h1 {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+    }
+    .hero-subtitle {
+        font-size: clamp(1.5rem, 10vw, 2.2rem);
+    }
+    .depoimento {
+        padding: 20px;
+    }
+    .historia, .modalidades-home, .depoimentos, .cta-final {
+        padding: 50px 5%;
     }
 }
 
